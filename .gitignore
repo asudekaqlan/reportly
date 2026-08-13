@@ -24,3 +24,9 @@ Thumbs.db
 # Buyuk ham veri (GitHub'a yuklenmez)
 data/raw/complaints.csv
 data/raw/*.csv
+
+# Egitilmis modeller (yeniden uretilebilir)
+models/
+
+# Islenmis ara dosyalar (script ile tekrar uretilir)
+data/processed/complaints_clean.csv
