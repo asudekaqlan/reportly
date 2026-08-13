@@ -2,19 +2,19 @@ import pandas as pd
 
 path = "data/raw/complaints.csv"
 
-# Sadece ihtiyacimiz olan 2 kolon
+# Only the two columns we need
 cols = ["Consumer complaint narrative", "Product"]
 
-print("Veri okunuyor (biraz surebilir)...")
+print("Reading data (this may take a while)...")
 df = pd.read_csv(path, usecols=cols)
 
-print("Okunan satir sayisi:", len(df))
+print("Rows read:", len(df))
 
-# Metni bos olanlari at
+# Drop rows with empty text
 df = df.dropna(subset=["Consumer complaint narrative"])
-print("Metni olan satir sayisi:", len(df))
+print("Rows with text:", len(df))
 
-# Kolon adlarini sadelestir
+# Simplify column names
 df = df.rename(
     columns={
         "Consumer complaint narrative": "text",
@@ -22,16 +22,16 @@ df = df.rename(
     }
 )
 
-# Rastgele 5000 ornek al
+# Take a random sample of 5000 rows
 sample_size = 5000
 df_sample = df.sample(n=sample_size, random_state=42)
 
-# Kaydet
+# Save
 out_path = "data/processed/complaints_sample.csv"
 df_sample.to_csv(out_path, index=False)
 
-print("Kaydedildi:", out_path)
-print("Orneklem satiri:", len(df_sample))
+print("Saved:", out_path)
+print("Sample rows:", len(df_sample))
 print()
-print("Kategori dagilimi:")
+print("Category distribution:")
 print(df_sample["category"].value_counts())

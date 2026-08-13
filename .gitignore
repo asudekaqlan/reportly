@@ -1,18 +1,18 @@
-# Sanal ortam
+# Virtual environment
 .asude/
 .venv/
 venv/
 
-# Python onbellek
+# Python cache
 __pycache__/
 *.py[cod]
 *.pyo
 
-# Ortam / gizli bilgiler
+# Secrets / env files
 .env
 .env.*
 
-# Editor / sistem
+# Editor / system
 .vscode/
 .idea/
 .DS_Store
@@ -21,12 +21,12 @@ Thumbs.db
 # Jupyter
 .ipynb_checkpoints/
 
-# Buyuk ham veri (GitHub'a yuklenmez)
+# Large raw data (do not upload to GitHub)
 data/raw/complaints.csv
 data/raw/*.csv
 
-# Egitilmis modeller (yeniden uretilebilir)
+# Trained models (can be regenerated)
 models/
 
-# Islenmis ara dosyalar (script ile tekrar uretilir)
+# Intermediate processed files (can be regenerated)
 data/processed/complaints_clean.csv

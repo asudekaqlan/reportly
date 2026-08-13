@@ -1,28 +1,28 @@
 import joblib
 from pathlib import Path
 
-# 1) Kayitli model ve vectorizer'i yukle
+# 1) Load saved model and vectorizer
 models_dir = Path("models")
 vectorizer = joblib.load(models_dir / "tfidf_vectorizer.joblib")
 model = joblib.load(models_dir / "logreg_model.joblib")
 
-# 2) Tahmin edilecek ornek metin
-text = input("Sikayet metnini yaz: ").strip()
+# 2) Complaint text to predict
+text = input("Enter complaint text: ").strip()
 
 if not text:
-    print("Bos metin girdin.")
+    print("Empty text entered.")
     raise SystemExit
 
-# 3) Ayni TF-IDF ile sayiya cevir
+# 3) Convert with the same TF-IDF
 X = vectorizer.transform([text])
 
-# 4) Tahmin
+# 4) Predict
 pred = model.predict(X)[0]
 
-# 5) (Istege bagli) olasiliklar
+# 5) Optional probabilities
 proba = model.predict_proba(X)[0]
 confidence = max(proba)
 
-print("Metin:", text)
-print("Tahmin kategori:", pred)
-print("Guven skoru:", round(confidence, 3))
+print("Text:", text)
+print("Predicted category:", pred)
+print("Confidence:", round(confidence, 3))

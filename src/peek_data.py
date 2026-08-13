@@ -1,13 +1,13 @@
 import pandas as pd
 
-# Ham veri yolu
+# Raw data path
 path = "data/raw/complaints.csv"
 
-# Sadece ilk 5 satiri oku (tum dosyayi degil)
+# Read only the first 5 rows (not the full file)
 df = pd.read_csv(path, nrows=5)
 
-print("Kolonlar:")
+print("Columns:")
 print(df.columns.tolist())
 print()
-print("Ilk 5 satir:")
+print("First 5 rows:")
 print(df)

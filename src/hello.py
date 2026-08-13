@@ -1,1 +1,1 @@
-print("NLU Insight Lab basladi.")
+print("NLU Insight Lab started.")
