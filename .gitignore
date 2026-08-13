@@ -3,7 +3,7 @@
 .venv/
 venv/
 
-# Python önbellek
+# Python onbellek
 __pycache__/
 *.py[cod]
 *.pyo
@@ -12,13 +12,13 @@ __pycache__/
 .env
 .env.*
 
-# Editör / sistem
+# Editor / sistem
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 
-# Jupyter (ileride kullanırsan)
+# Jupyter
 .ipynb_checkpoints/
 
 # Buyuk ham veri (GitHub'a yuklenmez)
