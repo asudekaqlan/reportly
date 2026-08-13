@@ -1,0 +1,26 @@
+# Sanal ortam
+.asude/
+.venv/
+venv/
+
+# Python önbellek
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ortam / gizli bilgiler
+.env
+.env.*
+
+# Editör / sistem
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter (ileride kullanırsan)
+.ipynb_checkpoints/
+
+# Buyuk ham veri (GitHub'a yuklenmez)
+data/raw/complaints.csv
+data/raw/*.csv

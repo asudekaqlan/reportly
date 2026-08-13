@@ -1,0 +1,1 @@
+print("NLU Insight Lab basladi.")
