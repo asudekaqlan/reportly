@@ -5,7 +5,7 @@ Python + Streamlit. No API gateway and no SQL database in the current build.
 ## 1. Runtime flow
 
 ```text
-Customer message (English)
+Customer message
     → nlu_engine.predict_category
     → sentiment.analyze_sentiment
     → intents.detect_intents

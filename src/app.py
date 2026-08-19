@@ -105,9 +105,9 @@ SAMPLE_COMPLAINTS = (
 )
 
 CONSENT_TEXT = (
-    "Reportly hesabı oluştururken adım, soyadım ve e-posta adresimin hesap açma, "
-    "oturum doğrulama ve şikayet kaydımın takibi için işlenmesini kabul ediyorum. "
-    "Bu açık rızamı dilediğim zaman geri çekebilirim."
+    "By creating a Reportly account I agree that my first name, last name, and email "
+    "address may be processed to open the account, verify my session, and follow my "
+    "complaint record. I may withdraw this consent at any time."
 )
 
 CUSTOM_CSS = """
@@ -1009,7 +1009,7 @@ div.stButton > button:hover {
 def _blank_conversation() -> dict:
     return {
         "id": uuid.uuid4().hex[:10],
-        "title": "Yeni sohbet",
+        "title": "New chat",
         "messages": [{"role": "assistant", "content": WELCOME}],
         "phase": "open",
         "last_rule_id": None,
@@ -1110,9 +1110,9 @@ def _debug_line(debug: dict | None) -> str:
     action = debug.get("action") or "—"
     conf = debug.get("confidence") or 0
     return (
-        f"konu: {debug.get('category', '—')} ({conf:.0%}) · "
-        f"duygu: {debug.get('sentiment', '—')} · "
-        f"kural: {rule} · işlem: {action}"
+        f"topic: {debug.get('category', '—')} ({conf:.0%}) · "
+        f"sentiment: {debug.get('sentiment', '—')} · "
+        f"rule: {rule} · action: {action}"
     )
 
 
@@ -1157,11 +1157,11 @@ def _sample_ticker_html() -> str:
         return (
             f'<article class="sample-card" style="animation-duration:{cycle:.2f}s;'
             f'animation-delay:{delay:.2f}s">'
-            '<div class="sample-card-kicker">isim</div>'
+            '<div class="sample-card-kicker">name</div>'
             f'<div class="sample-card-name">{_esc(item["name"])}</div>'
-            '<div class="sample-card-kicker" style="margin-top:0.28rem">marka</div>'
+            '<div class="sample-card-kicker" style="margin-top:0.28rem">brand</div>'
             f'<div class="sample-card-brand">{_esc(item["brand"])}</div>'
-            '<div class="sample-card-kicker" style="margin-top:0.28rem">şikayet</div>'
+            '<div class="sample-card-kicker" style="margin-top:0.28rem">complaint</div>'
             f'<div class="sample-card-text">{_esc(item["text"])}</div>'
             "</article>"
         )
@@ -1200,9 +1200,9 @@ def _messages_html(messages: list[dict], typing: bool = False) -> str:
         <div class="chat-panel glass">
           <div class="chat-bar">
             <span class="spark">✦</span>
-            <span class="chat-bar-title">Asistan</span>
-            <span class="chat-bar-sub">ilk hat · kural öncelikli</span>
-            <a class="new-chat" href="?reset=1">yeni sohbet</a>
+            <span class="chat-bar-title">Assistant</span>
+            <span class="chat-bar-sub">first line · rule first</span>
+            <a class="new-chat" href="?reset=1">new chat</a>
           </div>
           <div class="chat-thread">
         """
@@ -1251,11 +1251,11 @@ def _apply_turn(prompt: str) -> None:
 def _password_checklist_html(password: str) -> str:
     checks = password_checks(password)
     labels = (
-        ("length", "En az 12 karakter"),
-        ("upper", "En az bir büyük harf"),
-        ("lower", "En az bir küçük harf"),
-        ("digit", "En az bir sayı"),
-        ("special", "En az bir özel karakter"),
+        ("length", "At least 12 characters"),
+        ("upper", "At least one uppercase letter"),
+        ("lower", "At least one lowercase letter"),
+        ("digit", "At least one number"),
+        ("special", "At least one special character"),
     )
     items = []
     for key, label in labels:
@@ -1272,29 +1272,29 @@ def _close_auth_dialog() -> None:
 
 
 def _render_login_panel() -> None:
-    email = st.text_input("E-posta", key="login_email", placeholder="you@example.com")
-    password = st.text_input("Şifre", key="login_password", type="password")
-    st.caption("Captcha doğrulama")
+    email = st.text_input("Email", key="login_email", placeholder="you@example.com")
+    password = st.text_input("Password", key="login_password", type="password")
+    st.caption("Captcha check")
     cap_row = st.columns([3, 1])
     with cap_row[0]:
         letters = "".join(f"<span>{_esc(ch)}</span>" for ch in st.session_state.captcha_answer)
         st.markdown(f'<div class="captcha-box">{letters}</div>', unsafe_allow_html=True)
     with cap_row[1]:
-        if st.button("Yenile", key="captcha_refresh", use_container_width=True):
+        if st.button("Refresh", key="captcha_refresh", use_container_width=True):
             _refresh_captcha()
             st.rerun()
     captcha = st.text_input(
-        "Görseldeki kodu yazın",
+        "Enter the code from the image",
         key=f"login_captcha_{st.session_state.captcha_field_key}",
     )
-    if st.button("Giriş yap", key="login_submit", use_container_width=True, type="primary"):
+    if st.button("Log in", key="login_submit", use_container_width=True, type="primary"):
         if not captcha_matches(st.session_state.captcha_answer, captcha):
-            st.session_state.auth_error = "Captcha doğrulaması başarısız."
+            st.session_state.auth_error = "Captcha check failed."
             _refresh_captcha()
             st.rerun()
         user = authenticate(email, password, role="customer")
         if not user:
-            st.session_state.auth_error = "E-posta veya şifre hatalı."
+            st.session_state.auth_error = "Email or password is incorrect."
             _refresh_captcha()
             st.rerun()
         st.session_state.user = user
@@ -1302,7 +1302,7 @@ def _render_login_panel() -> None:
         st.session_state.auth_error = ""
         st.rerun()
     st.button(
-        "Admin girişi",
+        "Admin login",
         key="admin_entry_btn",
         type="tertiary",
         on_click=lambda: st.session_state.update(auth_mode="admin_login", auth_error=""),
@@ -1310,13 +1310,13 @@ def _render_login_panel() -> None:
 
 
 def _render_admin_login_panel() -> None:
-    st.caption("Yönetici")
-    email = st.text_input("E-posta", key="admin_email")
-    password = st.text_input("Şifre", key="admin_password", type="password")
-    if st.button("Giriş yap", key="admin_submit", use_container_width=True, type="primary"):
+    st.caption("Administrator")
+    email = st.text_input("Email", key="admin_email")
+    password = st.text_input("Password", key="admin_password", type="password")
+    if st.button("Log in", key="admin_submit", use_container_width=True, type="primary"):
         user = authenticate(email, password, role="admin")
         if not user:
-            st.session_state.auth_error = "Yönetici girişi başarısız."
+            st.session_state.auth_error = "Admin login failed."
             st.rerun()
         st.session_state.user = user
         st.session_state.auth_open = False
@@ -1324,7 +1324,7 @@ def _render_admin_login_panel() -> None:
         st.session_state.chat_drawer_open = False
         st.rerun()
     st.button(
-        "Müşteri girişine dön",
+        "Back to customer login",
         key="admin_back_btn",
         type="tertiary",
         on_click=lambda: st.session_state.update(auth_mode="login", auth_error=""),
@@ -1340,23 +1340,23 @@ def _start_email_verification() -> None:
     consent = bool(st.session_state.get("reg_consent"))
 
     if not first or not last:
-        st.session_state.auth_error = "İsim ve soyisim gerekli."
+        st.session_state.auth_error = "First and last name are required."
         return
     if not is_valid_email(email):
-        st.session_state.auth_error = "Geçerli bir e-posta adresi girin."
+        st.session_state.auth_error = "Enter a valid email address."
         return
     if find_user(email):
-        st.session_state.auth_error = "Bu e-posta ile bir hesap zaten var."
+        st.session_state.auth_error = "An account with this email already exists."
         return
     issues = password_issues(password)
     if issues:
         st.session_state.auth_error = " ".join(issues)
         return
     if password != confirm:
-        st.session_state.auth_error = "Şifreler eşleşmiyor."
+        st.session_state.auth_error = "Passwords do not match."
         return
     if not consent:
-        st.session_state.auth_error = "Devam etmek için açık rıza metnini onaylayın."
+        st.session_state.auth_error = "Please accept the consent notice to continue."
         return
 
     st.session_state.pending_registration = {
@@ -1373,19 +1373,19 @@ def _render_register_panel() -> None:
     pending = st.session_state.get("pending_registration")
     if pending:
         st.info(
-            f"{pending['email']} adresine bir doğrulama kodu gönderildi. "
-            f"Demo ortamında kod: **{pending['code']}**"
+            f"A verification code was sent to {pending['email']}. "
+            f"Demo code: **{pending['code']}**"
         )
-        code = st.text_input("E-posta doğrulama kodu", key="reg_verify_code")
+        code = st.text_input("Email verification code", key="reg_verify_code")
         actions = st.columns(2)
         if actions[0].button(
-            "Doğrula ve kayıt ol",
+            "Verify and sign up",
             key="reg_verify_btn",
             use_container_width=True,
             type="primary",
         ):
             if (code or "").strip() != pending["code"]:
-                st.session_state.auth_error = "Doğrulama kodu hatalı."
+                st.session_state.auth_error = "Verification code is incorrect."
                 st.rerun()
             try:
                 user = register_user(
@@ -1402,7 +1402,7 @@ def _render_register_panel() -> None:
             st.session_state.auth_open = False
             st.session_state.auth_error = ""
             st.rerun()
-        if actions[1].button("Geri", key="reg_verify_back", use_container_width=True):
+        if actions[1].button("Back", key="reg_verify_back", use_container_width=True):
             st.session_state.pending_registration = None
             st.session_state.auth_error = ""
             st.rerun()
@@ -1410,27 +1410,27 @@ def _render_register_panel() -> None:
 
     names = st.columns(2)
     with names[0]:
-        st.text_input("İsim", key="reg_first")
+        st.text_input("First name", key="reg_first")
     with names[1]:
-        st.text_input("Soyisim", key="reg_last")
-    st.text_input("E-posta", key="reg_email", placeholder="you@example.com")
-    password = st.text_input("Şifre", key="reg_password", type="password")
+        st.text_input("Last name", key="reg_last")
+    st.text_input("Email", key="reg_email", placeholder="you@example.com")
+    password = st.text_input("Password", key="reg_password", type="password")
     st.markdown(_password_checklist_html(password), unsafe_allow_html=True)
-    st.text_input("Şifre (tekrar)", key="reg_password2", type="password")
+    st.text_input("Password (again)", key="reg_password2", type="password")
     st.markdown(f'<div class="consent-copy">{_esc(CONSENT_TEXT)}</div>', unsafe_allow_html=True)
-    st.checkbox("Açık rıza metnini okudum ve onaylıyorum.", key="reg_consent")
-    if st.button("Kayıt ol", key="reg_submit", use_container_width=True, type="primary"):
+    st.checkbox("I have read and accept the consent notice.", key="reg_consent")
+    if st.button("Sign up", key="reg_submit", use_container_width=True, type="primary"):
         _start_email_verification()
         st.rerun()
 
 
-@st.dialog("Hesap", width="large", on_dismiss=_close_auth_dialog)
+@st.dialog("Account", width="large", on_dismiss=_close_auth_dialog)
 def _auth_dialog() -> None:
     if st.session_state.auth_mode != "admin_login":
         login_col, register_col = st.columns(2)
         with login_col:
             if st.button(
-                "Giriş yap",
+                "Log in",
                 key="auth_tab_login",
                 use_container_width=True,
                 type="primary" if st.session_state.auth_mode == "login" else "secondary",
@@ -1440,7 +1440,7 @@ def _auth_dialog() -> None:
                 st.rerun()
         with register_col:
             if st.button(
-                "Kayıt ol",
+                "Sign up",
                 key="auth_tab_register",
                 use_container_width=True,
                 type="primary" if st.session_state.auth_mode == "register" else "secondary",
@@ -1479,26 +1479,26 @@ def _render_topbar() -> None:
                 "☰",
                 key="top_chat_btn",
                 type="tertiary",
-                help="Menüyü kapat" if drawer_open else "Menüyü aç",
+                help="Close menu" if drawer_open else "Open menu",
             ):
                 st.session_state.chat_drawer_open = not drawer_open
         user = st.session_state.get("user")
         if user:
-            role_mark = "Yönetici · " if _is_admin() else ""
+            role_mark = "Admin · " if _is_admin() else ""
             label = (
                 f"{role_mark}{user.get('first_name', '')} {user.get('last_name', '')}".strip()
-                or "Hesap"
+                or "Account"
             )
             with st.popover(label, icon=":material/person:"):
                 st.caption(user.get("email", ""))
                 if st.button(
-                    "Çıkış yap",
+                    "Log out",
                     key="logout_btn",
                     use_container_width=True,
                     on_click=_logout,
                 ):
                     st.rerun()
-        elif st.button("Giriş yap / Kayıt ol", key="top_auth_btn"):
+        elif st.button("Log in / Sign up", key="top_auth_btn"):
             st.session_state.auth_open = True
             st.session_state.auth_mode = "login"
             st.session_state.auth_error = ""
@@ -1513,8 +1513,8 @@ def _conversation_label(conv: dict) -> str:
     if first_user:
         return " ".join(str(first_user).split())[:42]
     if conv.get("id") == st.session_state.current_conv_id:
-        return "Güncel sohbet"
-    return "Boş sohbet"
+        return "Current chat"
+    return "Empty chat"
 
 
 def _close_drawer() -> None:
@@ -1532,26 +1532,26 @@ def _render_ticket_body(ticket: dict) -> None:
             f"<li>{_esc(item.get('text') if isinstance(item, dict) else item)}</li>"
             for item in followups
         )
-        followup_html = f"<p><strong>Ek detay</strong></p><ul>{items}</ul>"
+        followup_html = f"<p><strong>Extra detail</strong></p><ul>{items}</ul>"
     st.markdown(
         f"""
         <div class="ticket-card glass">
           <div class="ticket-kicker">{_esc(ticket.get("status", "open"))} · {_esc(ticket.get("created_at", ""))}</div>
           <div class="ticket-title">{_esc(ticket["id"])}</div>
           <div class="ticket-meta">
-            <span class="urgency-{_esc(urgency)}">aciliyet: {_esc(urgency)}</span>
-            &nbsp;· kategori: {_esc(ticket.get("category"))}
+            <span class="urgency-{_esc(urgency)}">urgency: {_esc(urgency)}</span>
+            &nbsp;· category: {_esc(ticket.get("category"))}
             ({ticket.get("category_confidence", 0):.0%})
-            &nbsp;· duygu: {_esc(ticket.get("sentiment"))}
+            &nbsp;· sentiment: {_esc(ticket.get("sentiment"))}
           </div>
-          <p><strong>Müşteri talebi</strong><br>{_esc(ticket.get("customer_ask", ""))}</p>
-          <p><strong>Neden çözülemedi</strong><br>{_esc(ticket.get("why_unresolved", ""))}</p>
-          <p><strong>Denenen kurallar</strong><br>{_esc(rules)}</p>
-          <p><strong>Yönetici özeti</strong></p>
+          <p><strong>Customer ask</strong><br>{_esc(ticket.get("customer_ask", ""))}</p>
+          <p><strong>Why unresolved</strong><br>{_esc(ticket.get("why_unresolved", ""))}</p>
+          <p><strong>Rules tried</strong><br>{_esc(rules)}</p>
+          <p><strong>Manager brief</strong></p>
           <ul>{bullets}</ul>
-          <p><strong>Önerilen sonraki adım</strong><br>{_esc(ticket.get("recommended_next_step", ""))}</p>
+          <p><strong>Recommended next step</strong><br>{_esc(ticket.get("recommended_next_step", ""))}</p>
           {followup_html}
-          <p><strong>Kayıt notu</strong></p>
+          <p><strong>Record notes</strong></p>
           <div class="handoff">{_esc(ticket.get("handoff_notes", ""))}</div>
         </div>
         """,
@@ -1559,10 +1559,10 @@ def _render_ticket_body(ticket: dict) -> None:
     )
     actions = st.columns(2)
     ticket_id = ticket["id"]
-    if actions[0].button("İşleme al", key=f"prog-{ticket_id}", use_container_width=True):
+    if actions[0].button("In progress", key=f"prog-{ticket_id}", use_container_width=True):
         update_status(ticket_id, "in_progress")
         st.rerun()
-    if actions[1].button("Çözüldü", key=f"res-{ticket_id}", use_container_width=True):
+    if actions[1].button("Resolved", key=f"res-{ticket_id}", use_container_width=True):
         update_status(ticket_id, "resolved")
         st.rerun()
 
@@ -1572,13 +1572,13 @@ def _render_chat_drawer() -> None:
     head = st.columns([4, 1])
     with head[0]:
         st.markdown(
-            '<div class="drawer-head"><span class="drawer-title">Menü</span></div>',
+            '<div class="drawer-head"><span class="drawer-title">Menu</span></div>',
             unsafe_allow_html=True,
         )
     with head[1]:
-        st.button("✕", key="drawer_close", help="Paneli kapat", on_click=_close_drawer)
+        st.button("✕", key="drawer_close", help="Close panel", on_click=_close_drawer)
 
-    if st.button("Yeni sohbet", key="drawer_new_chat", use_container_width=True):
+    if st.button("New chat", key="drawer_new_chat", use_container_width=True):
         _reset_chat()
         st.rerun()
 
@@ -1598,7 +1598,7 @@ def _render_chat_drawer() -> None:
                 for item in reversed(conv.get("messages") or [])
                 if item.get("role") == "user"
             ),
-            "Henüz mesaj yok",
+            "No messages yet",
         )
         st.markdown(f'<div class="conv-preview">{_esc(last)}</div>', unsafe_allow_html=True)
 
@@ -1607,22 +1607,22 @@ def _render_admin_home() -> None:
     st.markdown(
         """
         <div class="hero">
-          <div class="admin-kicker">Yönetim</div>
+          <div class="admin-kicker">Admin</div>
           <div class="brand">Reportly</div>
-          <p class="lede">Şikayet kuyruğu</p>
+          <p class="lede">Complaint queue</p>
         </div>
         """,
         unsafe_allow_html=True,
     )
     tickets = list(reversed(load_tickets()))
     if not tickets:
-        st.info("Henüz kayıt yok. Müşteri sohbetinde çözülemeyen bir şikayet burada görünür.")
+        st.info("No records yet. Unresolved complaints from customer chat appear here.")
         return
     labels = [
         f"{t['id']} · {t.get('urgency', '?')} · {t.get('category', '?')} · {t.get('status', 'open')}"
         for t in tickets
     ]
-    choice = st.selectbox("Kayıt", options=range(len(tickets)), format_func=lambda i: labels[i])
+    choice = st.selectbox("Record", options=range(len(tickets)), format_func=lambda i: labels[i])
     _render_ticket_body(tickets[choice])
 
 
@@ -1639,8 +1639,8 @@ def _render_home() -> None:
 
     if not model_available():
         st.warning(
-            "Kategori modeli yok; kurallar yine çalışır. "
-            "Tam yönlendirme için proje kökünden `python src\\classic_nlu.py` çalıştırın."
+            "No category model; rules still run. "
+            "For full routing, run `python src\\classic_nlu.py` from the project root."
         )
 
     _render_customer_tab()
@@ -1659,11 +1659,11 @@ def _render_customer_tab() -> None:
         with cols[0]:
             prompt = st.text_input(
                 "complaint",
-                placeholder="Şikayetini yaz… (İngilizce)",
+                placeholder="Write your complaint…",
                 label_visibility="collapsed",
             )
         with cols[1]:
-            sent = st.form_submit_button("➤", help="Gönder")
+            sent = st.form_submit_button("➤", help="Send")
 
     if sent:
         prompt = (prompt or "").strip()

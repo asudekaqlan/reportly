@@ -4,9 +4,7 @@ Rule-first complaint assistant. It tries a standard procedure, then opens a spec
 
 The old NLU lab (TF-IDF + logistic regression on CFPB complaints) is still the category engine behind the assistant.
 
-Customer messages must be **English**. The Streamlit chrome may be Turkish.
-
-See `PRD.md`, `ARCHITECTURE.md`, and `TODO.md`.
+See `PRD.md`, `ARCHITECTURE.md`, `TODO.md`, and `TERMS.md`.
 
 ## What it does
 - Classifies the product/category of a complaint
@@ -41,13 +39,11 @@ The assistant still runs without `models/`; rules and tickets work, category rou
 streamlit run src\app.py
 ```
 
-- **Customer home** — English complaint chat. The hamburger opens past conversations.
-- **Giriş yap / Kayıt ol** — local JSONL accounts (`data/users.jsonl`).
-- **Admin girişi** — on the login dialog; opens the complaint queue (manager brief, notes, status).
+- **Customer home** — complaint chat and past conversations
+- **Log in / Sign up** — local JSONL accounts (`data/users.jsonl`)
+- **Admin login** — on the login dialog; opens the complaint queue (manager brief, notes, status)
 
 Local demo admin: `admin@reportly.local` / `AdminReportly1!`
-
-Do not type Turkish in the message box; rules and the category model will miss.
 
 ### Demo sentences
 ```

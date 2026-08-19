@@ -5,10 +5,10 @@ Repo: `reportly`. Product: **Reportly**. This PRD describes **what exists now** 
 ## 1. Overview
 A first-line complaint assistant. It tries a defined procedure, then opens a specialist record with a structured manager brief if that fails or the customer asks. An angry customer can request a formal complaint.
 
-Training data and live chat text are **English CFPB-style complaints**. The Streamlit chrome may be Turkish. Demo and CV walkthroughs use English in the message box.
+Training data is CFPB-style consumer complaints. The Streamlit UI is English.
 
 ## 2. Personas
-- **Customer:** Describes a complaint in English chat; wants a procedure or a complaint record. May register a local account.
+- **Customer:** Describes a complaint in chat; wants a procedure or a complaint record. May register a local account.
 - **Admin / supervisor:** Logs in separately, reads the queue: urgency, category, bullets, why unresolved, record notes. Does not yet get clustering or CRM.
 
 ## 3. Current MVP (shipped)
@@ -32,13 +32,13 @@ Training data and live chat text are **English CFPB-style complaints**. The Stre
 - Extra detail after a ticket is open stays on the same record (`ticket_followup` writes `followups` + notes); live agent handoff is out of scope.
 
 ### D. UI
-- Customer home: chat panel. Hamburger menu lists conversations.
+- Customer home: chat panel. The side menu lists conversations.
 - Login / register (local JSONL in `data/users.jsonl`).
 - Admin login opens the complaint queue (ticket inspector + status actions).
 - Debug line under assistant replies: topic, sentiment, rule, action.
 
 ## 4. Out of scope for now
-Semantic clustering, UUID CRM, TypeScript/API backend, Turkish live-chat NLU, RFM, forecasting. Do not implement these unless this PRD’s “later” section is explicitly chosen.
+Semantic clustering, UUID CRM, TypeScript/API backend, RFM, forecasting. Do not implement these unless this PRD’s “later” section is explicitly chosen.
 
 ## 5. Later (when the MVP is stable)
 Similar-ticket grouping for the admin view.

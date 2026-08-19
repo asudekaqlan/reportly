@@ -3,9 +3,8 @@
 ## Project
 Repo: `reportly`. Product: **Reportly**, a rule-first complaint assistant on CFPB (English) data.
 
-- UI chrome may be Turkish.
-- Customer messages, rules, intents, bot replies, and ticket text are English.
-- Do not machine-translate the CFPB dataset to “make it Turkish.”
+- UI, docs, customer messages, rules, intents, bot replies, and ticket text are English.
+- Do not machine-translate the CFPB dataset.
 
 ## Stack (do not change without asking)
 Python 3.10+, Streamlit, scikit-learn (TF-IDF + logistic regression), JSONL tickets.
