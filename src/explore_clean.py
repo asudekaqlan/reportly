@@ -1,8 +1,11 @@
 import pandas as pd
 import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
 
 # 1) Load the sample
-path = "data/processed/complaints_sample.csv"
+path = ROOT / "data" / "processed" / "complaints_sample.csv"
 df = pd.read_csv(path)
 
 print("Row count:", len(df))
@@ -38,7 +41,7 @@ def clean_text(text):
 df["text_clean"] = df["text"].apply(clean_text)
 
 # 6) Save
-out_path = "data/processed/complaints_clean.csv"
+out_path = ROOT / "data" / "processed" / "complaints_clean.csv"
 df[["text_clean", "category"]].rename(
     columns={"text_clean": "text"}
 ).to_csv(out_path, index=False)

@@ -1,13 +1,20 @@
-# NLU Insight Lab
+# Reportly
 
-A Python project that predicts product/category labels from customer complaint texts.
+Rule-first complaint assistant. It tries a standard procedure, then opens a specialist record with a manager brief if that fails or the customer asks. Angry customers can request a formal complaint.
+
+The old NLU lab (TF-IDF + logistic regression on CFPB complaints) is still the category engine behind the assistant.
+
+Customer messages must be **English**. The Streamlit chrome may be Turkish.
+
+See `PRD.md`, `ARCHITECTURE.md`, and `TODO.md`.
 
 ## What it does
-- Samples the CFPB Consumer Complaints dataset
-- Cleans the texts
-- Classifies with TF-IDF + Logistic Regression
-- Predicts new texts with a saved model
-- Provides a modern Streamlit demo UI
+- Classifies the product/category of a complaint
+- Detects tone (angry / negative / calm) and intents (file a complaint, still unresolved)
+- Matches 8 self-serve rules before opening a record
+- Opens a structured ticket when rules cannot finish the job
+- Keeps extra detail on the same record (no second ticket)
+- Customer home is the chat; supervisors read the queue after admin login
 
 ## Setup
 ```powershell
@@ -16,29 +23,68 @@ python -m venv .asude
 python -m pip install -r requirements.txt
 ```
 
-## Data
+## Data and category model
 The raw file (`data/raw/complaints.csv`) is not in the repo.
 Download CFPB / Kaggle Consumer Complaints and save it as `data/raw/complaints.csv`.
 
-Then run:
+Then train the category model (optional but recommended):
 ```powershell
 python src\prepare_sample.py
 python src\explore_clean.py
 python src\classic_nlu.py
 ```
 
-## Prediction (terminal)
-```powershell
-python src\predict.py
-```
+The assistant still runs without `models/`; rules and tickets work, category routing is weaker.
 
-## UI
-After training (`models/` must exist):
+## Run the assistant
 ```powershell
 streamlit run src\app.py
 ```
 
-Open the browser page, paste a complaint, and get a prediction.
+- **Customer home** — English complaint chat. The hamburger opens past conversations.
+- **Giriş yap / Kayıt ol** — local JSONL accounts (`data/users.jsonl`).
+- **Admin girişi** — on the login dialog; opens the complaint queue (manager brief, notes, status).
 
-## Sample result
+Local demo admin: `admin@reportly.local` / `AdminReportly1!`
+
+Do not type Turkish in the message box; rules and the category model will miss.
+
+### Demo sentences
+```
+My student loan servicer never applied my payments correctly and now they say I am late even though I paid on time.
+That did not help, still the same.
+The last payment was on March 3, confirmation 8821.
+```
+
+Fee example that should hit a rule:
+```
+The bank deducted an unexpected fee from my checking account.
+```
+
+Tickets are appended to `data/tickets.jsonl`. Extra messages after a ticket is open are written onto that same record.
+
+Optional LLM copy for the manager brief only (Ollama). The orchestrator still decides rule vs ticket:
+
+```powershell
+$env:ASSISTANT_USE_LLM = "1"
+streamlit run src\app.py
+```
+
+If Ollama is down, templates are used.
+
+Check expected actions:
+```powershell
+python src\eval_dialogues.py
+```
+
+## How a turn is decided
+1. Category (saved model) + sentiment (lexicon) + intent (keywords)
+2. Rule match (category + keywords)
+3. Then one of:
+   - procedure reply
+   - background ticket with a supervisor brief
+   - follow-up on an already open record
+
+## Sample model result
 On a 5,000-row sample (after dropping rare classes), test accuracy is about 0.64.
+That number is the category engine, not the assistant. Assistant quality is whether the right rule or ticket happened.

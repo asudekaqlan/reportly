@@ -7,8 +7,10 @@ from sklearn.metrics import classification_report, accuracy_score
 import joblib
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parent.parent
+
 # 1) Load cleaned data
-df = pd.read_csv("data/processed/complaints_clean.csv")
+df = pd.read_csv(ROOT / "data" / "processed" / "complaints_clean.csv")
 
 # Drop rare categories (keep classes with at least 20 samples)
 min_count = 20
@@ -58,7 +60,7 @@ print()
 print(classification_report(y_test, y_pred, zero_division=0))
 
 # 7) Save model and vectorizer
-models_dir = Path("models")
+models_dir = ROOT / "models"
 models_dir.mkdir(exist_ok=True)
 
 joblib.dump(vectorizer, models_dir / "tfidf_vectorizer.joblib")

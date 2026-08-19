@@ -30,3 +30,9 @@ models/
 
 # Intermediate processed files (can be regenerated)
 data/processed/complaints_clean.csv
+
+# Runtime specialist tickets
+data/tickets.jsonl
+
+# Local demo accounts
+data/users.jsonl

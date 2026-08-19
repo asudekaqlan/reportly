@@ -1,6 +1,8 @@
 import pandas as pd
+from pathlib import Path
 
-path = "data/raw/complaints.csv"
+ROOT = Path(__file__).resolve().parent.parent
+path = ROOT / "data" / "raw" / "complaints.csv"
 
 # Only the two columns we need
 cols = ["Consumer complaint narrative", "Product"]
@@ -27,7 +29,8 @@ sample_size = 5000
 df_sample = df.sample(n=sample_size, random_state=42)
 
 # Save
-out_path = "data/processed/complaints_sample.csv"
+out_path = ROOT / "data" / "processed" / "complaints_sample.csv"
+out_path.parent.mkdir(parents=True, exist_ok=True)
 df_sample.to_csv(out_path, index=False)
 
 print("Saved:", out_path)
