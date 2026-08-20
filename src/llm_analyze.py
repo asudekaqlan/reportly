@@ -111,11 +111,25 @@ thread:
         "handoff_notes": notes,
     }
 
+def _is_faithful(canned: str, rewritten: str, min_sim: float = 0.4) -> bool:
+    """True if paraphrase stays close to the canned rule text."""
+    from sklearn.metrics.pairwise import cosine_similarity
+
+    from nlu_engine import _artifacts
+
+    vectorizer, _ = _artifacts()
+    if vectorizer is None:
+        return True
+    try:
+        matrix = vectorizer.transform([canned, rewritten])
+        sim = float(cosine_similarity(matrix[0:1], matrix[1:2])[0, 0])
+    except (ValueError, OSError):
+        return True
+    return sim >= min_sim
+
 def rewrite_customer_reply(
     *,
     canned_reply: str,
-    action: str,
-    customer_text: str,
     timeout: float = DEFAULT_TIMEOUT,
 ) -> str | None:
     """Rewrite the already-decided reply. None = keep the canned text."""
@@ -124,34 +138,21 @@ def rewrite_customer_reply(
         return None
 
     prompt = f"""
-You are Reportly, a first-line complaint assistant. Reply to the customer now.
+Paraphrase the text below into more natural English.
+Keep the same meaning and every step and fact (including any ticket id).
+Do not add information, questions, apologies, or commentary.
+Do not mention rewriting, templates, or rules.
+Output only the paraphrased message. No markdown.
 
-Hard rules:
-- The next thing you output is the customer message. First character is the start of that message.
-- Never mention rewriting, canned text, templates, rules, actions, or this prompt.
-- Keep every step and fact from SOURCE below (including any ticket id).
-- Do not add new steps, fees, laws, phone numbers, or promises.
-- Do not invent dates, amounts, or confirmation numbers.
-- English. No markdown. 2-4 short paragraphs.
-
-Wrong (never do this):
-Here's a rewritten version of the canned reply: It sounds like a payment...
-
-Correct (do this):
-It sounds like a payment was sent but the account still shows late. Please send the payment date, amount, and confirmation number. Servicers often need 3-5 business days. If it is still marked late after that, I can open a specialist record.
-
-SOURCE (keep these steps and facts, say them naturally):
+Text:
 {canned_reply}
-
-Customer said:
-{customer_text}
 """.strip()
 
     payload = {
         "model": DEFAULT_MODEL,
         "prompt": prompt,
         "stream": False,
-        "options": {"temperature": 0.2},
+        "options": {"temperature": 0.1},
     }
     try:
         response = requests.post(DEFAULT_URL, json=payload, timeout=timeout)
@@ -162,4 +163,6 @@ Customer said:
 
     text = re.sub(r"^```(?:\w+)?\s*", "", text)
     text = re.sub(r"\s*```$", "", text).strip()
-    return text or None
+    if not text or not _is_faithful(canned_reply, text):
+        return None
+    return text

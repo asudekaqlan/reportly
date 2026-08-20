@@ -106,12 +106,12 @@ def _with_llm_reply(result: TurnResult, customer_text: str) -> TurnResult:
     """Rewrite customer-facing text only. Decision stays in handle_turn."""
     if not llm_enabled():
         return result
+    if len((customer_text or "").strip()) < 12:
+        return result
     from llm_analyze import rewrite_customer_reply
 
     rewritten = rewrite_customer_reply(
         canned_reply=result.reply,
-        action=str(result.debug.get("action") or ""),
-        customer_text=customer_text,
     )
     if rewritten:
         result.reply = rewritten
@@ -281,6 +281,23 @@ def handle_turn(
                 reply=rule.reply + angry_note,
                 phase="waiting_if_resolved",
                 last_rule_id=rule.id,
+                debug=debug,
+            ),
+            text,
+        )
+
+    unclear = nlu["category"] == "Unknown" or low_conf
+    if unclear and phase != "needs_clarify":
+        debug["action"] = "clarify"
+        return _with_llm_reply(
+            TurnResult(
+                reply=(
+                    "I didn't catch the issue clearly. Please describe what went wrong "
+                    "in a bit more detail — for example a payment that did not post, "
+                    "an unexpected fee, or a transfer that has not arrived."
+                ),
+                phase="needs_clarify",
+                last_rule_id=last_rule_id,
                 debug=debug,
             ),
             text,
