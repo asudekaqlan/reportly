@@ -22,17 +22,12 @@ Thumbs.db
 .ipynb_checkpoints/
 
 # Large raw data (do not upload to GitHub)
-data/raw/complaints.csv
-data/raw/*.csv
-
-# Trained models (can be regenerated)
-models/
-
-# Intermediate processed files (can be regenerated)
-data/processed/complaints_clean.csv
+data/raw/
+data/processed/
 
 # Runtime specialist tickets
 data/tickets.jsonl
+data/report_jobs.jsonl
 
 # Local demo accounts
 data/users.jsonl

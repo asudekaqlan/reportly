@@ -1,26 +1,21 @@
-# TODO — Reportly
-
-Work top to bottom. Do not start Later items before Now is done.
+# TODO — ITSM Asistanı
 
 ## Done
-- [x] Rule-first orchestrator (8 rules, sentiment, intents)
-- [x] Tickets + manager brief (`data/tickets.jsonl`)
-- [x] Streamlit: customer chat home + admin complaint queue
-- [x] Local JSONL accounts (customer register / login, admin queue)
-- [x] CFPB category model (TF-IDF + logreg, ~0.64)
-- [x] `PRD.md` / `ARCHITECTURE.md` / `TERMS.md` / `.cursorrules` aligned to this repo
-- [x] 4 demo paths + 10 expected-action dialogues (`python src/eval_dialogues.py`)
-- [x] Bank/checking fee rule (`Bank account or service`, `unexpected fee`)
-- [x] README: demo sentences, doc links
-- [x] Tighten 8 rules (category aliases + fee keywords)
-- [x] Shorter manager brief (`summaries.py`, 3 bullets)
-- [x] Ticket statuses: `in_progress` / `resolved`
-- [x] Ticket follow-up writes extra detail onto the same JSONL record
-- [x] Optional LLM for bullets/record notes only (`ASSISTANT_USE_LLM=1`), orchestrator still decides
+- [x] ITSM chatbot prototype (classify, suggest, fill, ticket)
+- [x] 4-level taxonomy: Talep → Birim → Modül → Süreç
+- [x] Seeded solution records
+- [x] Required fields: asset, location, impact
+- [x] Report command queue + daily_jobs.py
+- [x] Streamlit requester chat + admin queue
+- [x] Local JSONL accounts
+- [x] Expected-action dialogues
 
 ## Later
-- [ ] Similar-ticket grouping on the admin queue
+- [ ] Real ITSM API (ServiceNow / Jira)
+- [ ] Mail/Teams delivery of JOB output
+- [ ] Hand-labeled gold subset for the taxonomy
 
 ## Won’t do (unless PRD changes)
-- HearBack e-commerce rewrite, TypeScript API, real CRM
-- RFM, forecasting, scraping third-party complaint sites
+- Marketplace iade/kargo bot
+- CFPB English finance
+- Scraping third-party sites

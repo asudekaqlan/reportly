@@ -1,35 +1,38 @@
-# Reportly — Cursor rules
+# ITSM Asistanı — Cursor rules
 
 ## Project
-Repo: `reportly`. Product: **Reportly**, a rule-first complaint assistant on CFPB (English) data.
+Repo: `nlu-insight-lab`. Product: **ITSM Asistanı**, an AI-supported ITSM chatbot (ticket classify, suggest, fill, report).
 
-- UI, docs, customer messages, rules, intents, bot replies, and ticket text are English.
-- Do not machine-translate the CFPB dataset.
+- UI, docs, user messages, taxonomy, bot replies, and ticket text are Turkish.
+- Do not bring back marketplace returns, CFPB, or live ServiceNow APIs unless asked.
 
 ## Stack (do not change without asking)
-Python 3.10+, Streamlit, scikit-learn (TF-IDF + logistic regression), JSONL tickets.
+Python 3.10+, Streamlit, scikit-learn, JSONL tickets.
 No TypeScript, no extra web framework, no database unless explicitly requested.
 
 ## Architecture
 Keep these layers separate; do not dump logic into `app.py`:
 
-- `nlu_engine.py` — category model
-- `sentiment.py` / `intents.py` / `rules.py` — signals and procedures
-- `orchestrator.py` — turn decision (the brain)
-- `tickets.py` / `summaries.py` — persistence and manager brief
-- `auth.py` — local JSONL accounts (customer vs admin)
+- `taxonomy.py` — Talep → Birim → Modül → Süreç (keyword, then `itsm_nlu.py`)
+- `solutions.py` — past solution retrieval
+- `slots.py` — field completion
+- `sentiment.py` / `intents.py` / `rules.py` — signals
+- `reports.py` — report command queue
+- `orchestrator.py` — turn decision
+- `tickets.py` / `summaries.py` — persistence and admin brief
+- `auth.py` — local JSONL accounts
 - `app.py` — UI only
 
-The LLM (`llm_analyze.py`, Ollama) is optional and must not decide escalate vs resolve. Default summaries are templates.
+The LLM (`llm_analyze.py`, Ollama) is optional and must not decide ticket vs self-serve. Default summaries are templates.
 
 ## Product rules
-- Try a self-serve rule first.
-- Open a ticket when no rule matches, the rule rarely resolves, the issue is high-risk (fraud / identity theft / legal / foreclosure), the customer says it did not help, or they ask to file a complaint.
-- Angry tone offers a complaint; it does not silently open a ticket unless high-risk.
-- A ticket carries a manager brief plus conversation notes so a supervisor can read the story without a live chat handoff.
+- Understand the request; clarify if the 4-level class is unclear.
+- Offer matching ITSM solution records before opening a ticket (unless high-severity).
+- Collect varlık / konum / etki, then open one ticket.
+- Reporting commands are queued; `daily_jobs.py` is the JOB stand-in.
+- Extra detail stays on the same ticket id.
 
 ## Coding
 - Prefer small, readable Python. Type hints on new public functions.
 - Do not add packages without asking.
-- Do not expand to RFM, forecasting, CRM, or semantic clustering unless asked.
-- Before large refactors, check `PRD.md` and `ARCHITECTURE.md` (current vs later).
+- Before large refactors, check `PRD.md` and `ARCHITECTURE.md`.

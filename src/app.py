@@ -1,5 +1,5 @@
 """
-Reportly — Streamlit UI
+ITSM Asistanı — Streamlit UI
 Run from the project root:
     streamlit run src/app.py
 """
@@ -24,9 +24,10 @@ from auth import (
     random_email_code,
     register_user,
 )
-from nlu_engine import model_available
+from reports import load_jobs
 from orchestrator import handle_turn
-from tickets import load_tickets, update_status
+from taxonomy import classify_request  # loaded with the UI so Streamlit picks up classifier changes
+from tickets import load_tickets, tickets_for_customer, update_status
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -47,73 +48,29 @@ def _brand_font_face() -> str:
     )
 
 st.set_page_config(
-    page_title="Reportly",
+    page_title="ITSM Asistanı",
     page_icon="✦",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
 
 WELCOME = (
-    "I am the first-line complaint assistant. I will try a standard procedure first. "
-    "If that cannot close it — or you ask to file a complaint — I open a specialist record "
-    "with a manager brief.\n\n"
-    "Try something like: *My student loan servicer never applied my payments correctly "
-    "and now they say I am late even though I paid on time.*"
-)
-
-SAMPLE_COMPLAINTS = (
-    {
-        "name": "Maya Chen",
-        "brand": "Navient",
-        "text": "My student loan servicer never applied my payments correctly and now they say I am late even though I paid on time.",
-    },
-    {
-        "name": "Jordan Hale",
-        "brand": "Chase",
-        "text": "The bank deducted an unexpected fee from my checking account.",
-    },
-    {
-        "name": "Priya Shah",
-        "brand": "Capital One",
-        "text": "This charge is unauthorized fraud, I did not make this purchase on my credit card.",
-    },
-    {
-        "name": "Sam Ortiz",
-        "brand": "Portfolio Recovery",
-        "text": "I am furious about harassing collection calls every night. This is ridiculous. File a complaint.",
-    },
-    {
-        "name": "Elena Rossi",
-        "brand": "Encore Capital",
-        "text": "This is not my debt. I never owed this collector anything.",
-    },
-    {
-        "name": "Chris Park",
-        "brand": "Equifax",
-        "text": "There is an incorrect account on my credit report that is not mine.",
-    },
-    {
-        "name": "Amina Diallo",
-        "brand": "Western Union",
-        "text": "I sent a transfer two days ago and it still has not arrived.",
-    },
-    {
-        "name": "Ben Walsh",
-        "brand": "Ally Financial",
-        "text": "I bought the car from the dealer and the transmission failed. The vehicle loan company will not help.",
-    },
+    "Merhaba, ben ITSM asistanın. "
+    "Talebini doğal dille yaz; sınıflandırır, varsa çözüm kaydı öneririm, "
+    "gerekirse eksik alanları tamamlayıp ticket açarım.\n\n"
+    "Örneğin: *Bilgisayarım bozuldu, talep açmak istiyorum.*"
 )
 
 CONSENT_TEXT = (
-    "By creating a Reportly account I agree that my first name, last name, and email "
-    "address may be processed to open the account, verify my session, and follow my "
-    "complaint record. I may withdraw this consent at any time."
+    "Hesap açarak adımın, soyadımın ve e-posta adresimin hesap açmak, "
+    "oturumu doğrulamak ve ITSM taleplerimi izlemek için işlenmesini kabul ederim. "
+    "Bu onayı dilediğim zaman geri çekebilirim."
 )
 
 CUSTOM_CSS = """
 <style>
 """ + _brand_font_face() + """
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,700&family=Figtree:wght@400;500;600;650&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,700&family=Figtree:ital,wght@0,400;0,500;0,600;0,650;1,300;1,400&display=swap');
 
 :root {
   --olive-deep: #4D5A2E;
@@ -132,9 +89,11 @@ CUSTOM_CSS = """
   --paper: #F3EBE0;
   --ink: #F4EAD4;
   --muted: #D5C9A8;
-  --card-near: 88%;
-  --card-spread: 124%;
-  --card-off: 175%;
+  --page-gutter: 1.65rem;
+  --head-h: 7.15rem;
+  --board-h: calc(100vh - (2 * var(--page-gutter)) - var(--head-h));
+  --chat-chrome: 7.7rem;
+  --panel-radius: 26px;
 }
 
 html, body, [class*="css"] {
@@ -143,10 +102,10 @@ html, body, [class*="css"] {
 }
 
 html, body {
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
+  overflow: hidden !important;
   max-width: 100%;
   width: 100%;
+  height: 100% !important;
 }
 
 html, body, .stApp,
@@ -157,25 +116,14 @@ section.main {
 }
 
 .stApp,
-[data-testid="stAppViewContainer"] {
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
+[data-testid="stAppViewContainer"],
 [data-testid="stMain"],
 section.main,
-.main,
-.block-container {
-  overflow: visible !important;
-}
-
-[data-testid="stMain"],
-section.main,
-.main {
+.stMain {
+  overflow: hidden !important;
   width: 100% !important;
   max-width: 100% !important;
+  height: 100% !important;
 }
 
 .stApp {
@@ -229,20 +177,90 @@ section.main,
   50% { opacity: 0.55; }
 }
 
-header[data-testid="stHeader"] {
+header[data-testid="stHeader"],
+header.stAppHeader,
+[data-testid="stDecoration"],
+[data-testid="stToolbar"],
+[data-testid="stStatusWidget"],
+.stDeployButton,
+div[data-testid="stMain"] > div[data-testid="stHeader"] {
   display: none !important;
+  height: 0 !important;
 }
 [data-testid="stToolbar"] { display: none; }
 #MainMenu, footer { visibility: hidden; }
 
-.block-container {
+.block-container,
+[data-testid="stMainBlockContainer"],
+.stMainBlockContainer {
   position: relative;
   z-index: 1;
-  padding-top: 4.7rem;
-  padding-bottom: 2.2rem;
-  padding-left: clamp(0.8rem, 4vw, 2rem);
-  padding-right: clamp(0.8rem, 4vw, 2rem);
-  max-width: min(920px, 100%);
+  padding-top: var(--page-gutter) !important;
+  padding-bottom: var(--page-gutter) !important;
+  padding-left: clamp(1.1rem, 3.2vw, 2.1rem) !important;
+  padding-right: clamp(1.1rem, 3.2vw, 2.1rem) !important;
+  max-width: min(1280px, 100%);
+  overflow: hidden !important;
+  min-height: 100vh !important;
+  max-height: 100vh !important;
+  box-sizing: border-box !important;
+}
+
+.page-head {
+  margin: 0 0 0.7rem 0;
+}
+.page-title {
+  font-family: "Bodoni Moda", serif !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+  font-size: clamp(2.45rem, 5vw, 3.55rem) !important;
+  line-height: 1.08;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--paper);
+  margin: 0 !important;
+  text-align: left !important;
+}
+.page-sub {
+  margin: 0.12rem 0 0 0 !important;
+  color: var(--paper);
+  opacity: 0.78;
+  font-family: "Figtree", sans-serif;
+  font-style: italic;
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  max-width: 42rem;
+}
+div[data-testid="stMarkdownContainer"]:has(.page-head) {
+  text-align: left !important;
+}
+div[data-testid="stElementContainer"]:has(.page-head) {
+  margin-bottom: 0.15rem !important;
+}
+
+.st-key-workspace {
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.st-key-workspace [data-testid="stHorizontalBlock"] {
+  align-items: stretch !important;
+  gap: 1.15rem !important;
+}
+.st-key-workspace [data-testid="column"],
+.st-key-workspace [data-testid="stColumn"],
+.st-key-workspace [data-testid="stHorizontalBlock"] > div {
+  min-width: 0 !important;
+}
+.st-key-workspace [data-testid="stVerticalBlockBorderWrapper"]:has(.st-key-chat_shell),
+.st-key-workspace [data-testid="stVerticalBlockBorderWrapper"]:has(.st-key-tickets_pane),
+.st-key-workspace .stElementContainer:has(.st-key-chat_shell),
+.st-key-workspace .stElementContainer:has(.st-key-tickets_pane) {
+  height: var(--board-h) !important;
+  min-height: var(--board-h) !important;
 }
 
 .st-key-app_topbar {
@@ -439,6 +457,22 @@ header[data-testid="stHeader"] {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.st-key-chat_drawer .st-key-drawer_my_records div.stButton > button {
+  margin-top: 0.15rem;
+}
+.record-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+.record-empty {
+  color: var(--muted);
+  text-align: left;
+  padding: 0.85rem 1.1rem 0.4rem;
+  line-height: 1.5;
+  margin: 0;
+}
 
 .captcha-box {
   display: flex;
@@ -584,13 +618,261 @@ p.lede {
     inset 0 -1px 0 rgba(0, 0, 0, 0.12);
 }
 
+.bubble.assistant.has-orders {
+  max-width: min(92%, 36rem);
+}
+.order-card-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0.4em;
+  margin-top: 0.65em;
+}
+.order-card {
+  flex: 1 1 0;
+  min-width: 5.2rem;
+  max-width: 7.4rem;
+  margin: 0;
+  padding: 0.48em 0.5em 0.42em;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 0.72em;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  color: var(--cream);
+  background: linear-gradient(
+    180deg,
+    rgba(246, 239, 224, 0.2) 0%,
+    rgba(61, 70, 32, 0.42) 100%
+  );
+  border: 1px solid rgba(246, 239, 224, 0.32);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  box-sizing: border-box;
+}
+.order-card:hover {
+  color: var(--paper);
+  background: linear-gradient(165deg, rgba(252, 156, 81, 0.5), rgba(233, 118, 127, 0.38));
+  border-color: rgba(254, 198, 124, 0.5);
+}
+.order-card-id {
+  font-weight: 700;
+  font-size: 0.92em;
+  letter-spacing: 0.02em;
+}
+.order-card-date {
+  margin-top: 0.18em;
+  font-size: 0.84em;
+  opacity: 0.88;
+}
+.order-card-items {
+  margin: 0.32em 0 0;
+  padding: 0;
+  list-style: none;
+}
+.order-card-items li {
+  margin: 0 0 0.15em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.order-card-more {
+  margin-top: 0.2em;
+  font-size: 0.84em;
+  font-weight: 650;
+  color: var(--apricot);
+}
+.st-key-chat_shell {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: var(--board-h) !important;
+  min-height: var(--board-h) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  overflow: hidden !important;
+  border-radius: var(--panel-radius) !important;
+  border: 1px solid rgba(246, 239, 224, 0.28) !important;
+  background: linear-gradient(
+    165deg,
+    rgba(94, 92, 45, 0.62) 0%,
+    rgba(77, 90, 46, 0.52) 55%,
+    rgba(61, 70, 32, 0.58) 100%
+  ) !important;
+  backdrop-filter: blur(22px) saturate(1.35);
+  -webkit-backdrop-filter: blur(22px) saturate(1.35);
+  box-shadow:
+    0 18px 50px rgba(77, 90, 46, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+.st-key-tickets_pane {
+  position: relative !important;
+  width: 100% !important;
+  height: var(--board-h) !important;
+  min-height: var(--board-h) !important;
+  max-height: var(--board-h) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+  padding: 0 0 0.85rem !important;
+  border-radius: var(--panel-radius) !important;
+  background: linear-gradient(
+    165deg,
+    rgba(94, 92, 45, 0.62) 0%,
+    rgba(77, 90, 46, 0.52) 55%,
+    rgba(61, 70, 32, 0.58) 100%
+  ) !important;
+  backdrop-filter: blur(22px) saturate(1.35);
+  -webkit-backdrop-filter: blur(22px) saturate(1.35);
+  border: 1px solid rgba(246, 239, 224, 0.28) !important;
+  box-shadow:
+    0 18px 50px rgba(77, 90, 46, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+.tickets-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.65em;
+  padding: 0.85em 5.6rem 0.85em 1.1em;
+  margin: 0 0 0.55rem 0;
+  border-bottom: 1px solid rgba(246, 239, 224, 0.16);
+  background: linear-gradient(90deg, rgba(196, 186, 101, 0.18), rgba(254, 198, 124, 0.1));
+}
+.st-key-tickets_pane .ticket-card {
+  margin: 0.55rem 0.9rem 0;
+  padding: 0.85rem 0.95rem;
+}
+.st-key-tickets_pane .ticket-title {
+  font-size: 1.15rem;
+  margin-bottom: 0.45rem;
+}
+.st-key-tickets_pane .st-key-tickets_login,
+.st-key-tickets_pane .st-key-tickets_logout {
+  position: absolute !important;
+  top: 0.62rem;
+  right: 0.75rem;
+  width: auto !important;
+  z-index: 3;
+}
+.st-key-tickets_pane [data-testid="stElementContainer"]:has(.st-key-tickets_login),
+.st-key-tickets_pane [data-testid="stElementContainer"]:has(.st-key-tickets_logout),
+.st-key-tickets_pane .stElementContainer:has(.st-key-tickets_login),
+.st-key-tickets_pane .stElementContainer:has(.st-key-tickets_logout) {
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+}
+.st-key-tickets_pane div.stButton > button {
+  background: var(--paper) !important;
+  color: #4D5A2E !important;
+  border: 1px solid rgba(246, 239, 224, 0.45) !important;
+  min-height: 2.05rem !important;
+  height: 2.05rem !important;
+  padding: 0 0.85rem !important;
+  font-size: 0.82rem !important;
+}
+.st-key-chat_shell [data-testid="stVerticalBlock"],
+.st-key-chat_shell [data-testid="stHorizontalBlock"] {
+  gap: 0 !important;
+  row-gap: 0 !important;
+}
+.st-key-chat_shell [data-testid="stElementContainer"],
+.st-key-chat_shell .stElementContainer,
+.st-key-chat_shell [data-testid="stVerticalBlockBorderWrapper"] {
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.st-key-chat_shell [data-testid="stForm"] {
+  margin: 0 !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(246, 239, 224, 0.12) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.st-key-chat_shell [data-testid="stElementContainer"]:has(.st-key-order_card_hits),
+.st-key-chat_shell .stElementContainer:has(.st-key-order_card_hits) {
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  top: auto !important;
+  bottom: 5.15rem;
+  width: 100% !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: visible !important;
+  z-index: 20;
+  pointer-events: none;
+}
+.st-key-order_card_hits {
+  height: 0 !important;
+  max-height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  pointer-events: none;
+}
+.st-key-order_card_hits [data-testid="stWidgetLabel"] {
+  display: none !important;
+}
+.st-key-order_card_hits [data-testid="stHorizontalBlock"] {
+  position: absolute !important;
+  left: 1.85rem;
+  top: auto !important;
+  bottom: 0;
+  width: min(92%, 36rem);
+  transform: translateY(-100%);
+  gap: 0.4em !important;
+  pointer-events: none;
+}
+.st-key-order_card_hits [data-testid="column"],
+.st-key-order_card_hits [data-testid="stColumn"] {
+  min-width: 0 !important;
+  pointer-events: none;
+}
+.st-key-order_card_hits div.stButton > button {
+  opacity: 0 !important;
+  height: 5.9rem !important;
+  min-height: 5.9rem !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+.return-caption {
+  max-width: 44rem;
+  margin: 0.4rem auto 0.2rem auto;
+  color: var(--paper);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 .chat-panel {
   position: relative;
-  margin-top: 0.35rem;
-  border-radius: 22px 22px 0 0;
+  margin-top: 0;
+  width: 100%;
+  border-radius: 0;
   overflow: hidden;
   color: var(--cream);
   font-size: clamp(0.78rem, 0.55rem + 1.1vw, 1rem);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .chat-bar {
@@ -649,7 +931,8 @@ p.lede {
 }
 
 .chat-thread {
-  height: clamp(220px, 48vh, 440px);
+  height: calc(var(--board-h) - var(--chat-chrome));
+  min-height: 12rem;
   overflow-x: hidden;
   overflow-y: auto;
   padding: 1.1em 1em 1.2em;
@@ -677,12 +960,20 @@ p.lede {
   overflow-wrap: anywhere;
 }
 .bubble.assistant {
-  background: rgba(246, 239, 224, 0.14);
-  border: 1px solid rgba(246, 239, 224, 0.28);
+  background: linear-gradient(
+    160deg,
+    rgba(254, 198, 124, 0.34) 0%,
+    rgba(196, 186, 101, 0.4) 52%,
+    rgba(138, 140, 65, 0.36) 100%
+  );
+  color: var(--cream);
+  border: 1px solid rgba(254, 198, 124, 0.38);
   border-bottom-left-radius: 6px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px) saturate(1.15);
+  -webkit-backdrop-filter: blur(12px) saturate(1.15);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 8px 18px rgba(77, 90, 46, 0.16);
 }
 .bubble.user {
   background: linear-gradient(135deg, #FC9C51 0%, #E9767F 58%, #A16A84 140%);
@@ -822,20 +1113,27 @@ div.stButton > button:hover {
 
 [data-testid="stForm"] [data-testid="stTextInput"] input,
 [data-testid="stForm"] [data-testid="stTextInput"] > div > div {
-  background: var(--paper) !important;
-  color: #4D5A2E !important;
-  border: 1px solid rgba(77, 90, 46, 0.18) !important;
-  border-radius: 12px !important;
-  box-shadow: 0 2px 10px rgba(77, 90, 46, 0.12) !important;
+  background: linear-gradient(
+    160deg,
+    rgba(254, 198, 124, 0.34) 0%,
+    rgba(196, 186, 101, 0.4) 52%,
+    rgba(138, 140, 65, 0.36) 100%
+  ) !important;
+  color: var(--cream) !important;
+  border: 1px solid rgba(254, 198, 124, 0.38) !important;
+  border-radius: 16px !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 8px 18px rgba(77, 90, 46, 0.12) !important;
   min-height: 2.55rem !important;
 }
 [data-testid="stForm"] [data-testid="stTextInput"] input::placeholder {
-  color: #5E5C2D !important;
-  opacity: 0.72 !important;
+  color: var(--cream) !important;
+  opacity: 0.62 !important;
 }
 [data-testid="stForm"] [data-testid="stTextInput"] input:focus {
-  border-color: #4D5A2E !important;
-  box-shadow: 0 0 0 3px rgba(77, 90, 46, 0.18) !important;
+  border-color: rgba(254, 198, 124, 0.7) !important;
+  box-shadow: 0 0 0 3px rgba(254, 198, 124, 0.18) !important;
 }
 
 [data-testid="stForm"] div.stButton > button,
@@ -899,107 +1197,59 @@ div.stButton > button:hover {
   border-color: rgba(246, 239, 224, 0.28) !important;
 }
 
-.sample-ticker {
-  position: relative;
-  z-index: 2;
-  margin: 1rem 0 0.5rem;
-  overflow-x: clip;
-  overflow-y: visible;
-  background: none;
-  border: 0;
-  box-shadow: none;
-  padding: 0.2rem 0 1.1rem;
-  max-width: 100%;
-}
-.sample-ticker-stage {
-  position: relative;
-  height: clamp(11.6rem, 42vw, 13rem);
-  overflow: visible;
-  isolation: isolate;
-}
-.sample-card {
-  position: absolute;
-  top: auto;
-  bottom: 0.15rem;
-  left: 50%;
-  width: min(280px, 48%);
-  box-sizing: border-box;
-  padding: 0.78em 0.9em 0.85em;
-  border-radius: 14px;
-  background: linear-gradient(
-    165deg,
-    rgba(94, 92, 45, 0.62) 0%,
-    rgba(77, 90, 46, 0.52) 55%,
-    rgba(61, 70, 32, 0.58) 100%
-  );
-  backdrop-filter: blur(22px) saturate(1.35);
-  -webkit-backdrop-filter: blur(22px) saturate(1.35);
-  border: 1px solid rgba(246, 239, 224, 0.28);
-  color: var(--cream);
-  font-size: clamp(0.72rem, 0.58rem + 1.15vw, 0.92rem);
-  transform-origin: center bottom;
-  animation-name: sample-ltr;
-  animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-  will-change: transform, filter, opacity, box-shadow;
-  pointer-events: none;
-}
-.sample-card-kicker {
-  font-size: 0.68em;
-  font-weight: 650;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.sample-card-name {
-  margin-top: 0.08em;
-  font-size: 1em;
-  font-weight: 650;
-  line-height: 1.2;
-  color: var(--paper);
-}
-.sample-card-brand {
-  margin-top: 0.28em;
-  font-size: 0.92em;
-  font-weight: 600;
-  color: var(--apricot);
-}
-.sample-card-text {
-  margin-top: 0.28em;
-  font-size: 0.85em;
-  line-height: 1.4;
-  color: var(--cream);
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+@media (max-width: 860px) {
+  :root {
+    --page-gutter: 1.1rem;
+    --head-h: 6.6rem;
+    --board-h: calc((100vh - (2 * var(--page-gutter)) - var(--head-h) - 1rem) / 2);
+    --chat-chrome: 7.2rem;
+  }
+  html, body, .stApp,
+  [data-testid="stAppViewContainer"],
+  [data-testid="stMain"],
+  section.main {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+  }
+  .block-container,
+  [data-testid="stMainBlockContainer"] {
+    overflow: visible !important;
+    min-height: auto !important;
+    max-height: none !important;
+  }
+  .st-key-workspace [data-testid="stHorizontalBlock"] {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 1rem !important;
+  }
+  .st-key-workspace [data-testid="column"],
+  .st-key-workspace [data-testid="stColumn"],
+  .st-key-workspace [data-testid="stHorizontalBlock"] > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+  }
+  .chat-bar-sub { display: none; }
+  .st-key-chat_shell [data-testid="stElementContainer"]:has(.st-key-order_card_hits),
+  .st-key-chat_shell .stElementContainer:has(.st-key-order_card_hits) {
+    bottom: 4.25rem;
+  }
 }
 @media (max-width: 720px) {
   :root {
-    --card-near: 78%;
-    --card-spread: 104%;
-    --card-off: 155%;
+    --head-h: 6.4rem;
   }
-  .brand {
-    transform: none;
-    letter-spacing: 0.01em;
-  }
-  .chat-bar-sub { display: none; }
-  .chat-panel { border-radius: 16px 16px 0 0; }
-  [data-testid="stForm"] { border-radius: 0 0 16px 16px !important; padding: 0.65rem 0.65rem 0.7rem !important; }
-  .sample-card { width: min(230px, 62%); }
+  [data-testid="stForm"] { padding: 0.65rem 0.65rem 0.7rem !important; }
 }
 @media (max-width: 480px) {
   :root {
-    --card-near: 74%;
-    --card-spread: 98%;
+    --head-h: 6.2rem;
+    --chat-chrome: 6.9rem;
   }
-  .chat-thread { height: clamp(200px, 44vh, 280px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .sample-card { animation: none !important; opacity: 0; filter: none; transform: translateX(-50%); }
-  .sample-card:first-of-type { opacity: 1; }
   .bubble.typing span { animation: none; opacity: 0.7; }
 }
 </style>
@@ -1009,13 +1259,15 @@ div.stButton > button:hover {
 def _blank_conversation() -> dict:
     return {
         "id": uuid.uuid4().hex[:10],
-        "title": "New chat",
+        "title": "Yeni sohbet",
         "messages": [{"role": "assistant", "content": WELCOME}],
         "phase": "open",
         "last_rule_id": None,
         "last_ticket_id": None,
         "last_debug": None,
         "pending_prompt": None,
+        "slots": {},
+        "classification": None,
     }
 
 
@@ -1037,6 +1289,8 @@ def _bind_conversation(conv: dict) -> None:
     st.session_state.last_ticket_id = conv["last_ticket_id"]
     st.session_state.last_debug = conv["last_debug"]
     st.session_state.pending_prompt = conv.get("pending_prompt")
+    st.session_state.slots = dict(conv.get("slots") or {})
+    st.session_state.classification = conv.get("classification")
 
 
 def _sync_conversation() -> None:
@@ -1047,6 +1301,8 @@ def _sync_conversation() -> None:
     conv["last_ticket_id"] = st.session_state.last_ticket_id
     conv["last_debug"] = st.session_state.last_debug
     conv["pending_prompt"] = st.session_state.get("pending_prompt")
+    conv["slots"] = dict(st.session_state.get("slots") or {})
+    conv["classification"] = st.session_state.get("classification")
     first_user = next(
         (item.get("content") for item in conv["messages"] if item.get("role") == "user"),
         None,
@@ -1075,6 +1331,8 @@ def _init_state():
     st.session_state.setdefault("last_ticket_id", None)
     st.session_state.setdefault("last_debug", None)
     st.session_state.setdefault("pending_prompt", None)
+    st.session_state.setdefault("slots", {})
+    st.session_state.setdefault("classification", None)
     st.session_state.setdefault("captcha_field_key", 0)
     st.session_state.setdefault("auth_open", False)
     st.session_state.setdefault("auth_mode", "login")
@@ -1082,6 +1340,8 @@ def _init_state():
     st.session_state.setdefault("pending_registration", None)
     st.session_state.setdefault("chat_drawer_open", False)
     st.session_state.setdefault("user", None)
+    st.session_state.setdefault("my_ticket_ids", [])
+    st.session_state.setdefault("customer_view", "chat")
     if not st.session_state.get("captcha_answer"):
         st.session_state.captcha_answer = random_captcha()
     ensure_default_admin()
@@ -1106,86 +1366,16 @@ def _refresh_captcha() -> None:
 def _debug_line(debug: dict | None) -> str:
     if not debug:
         return ""
-    rule = debug.get("rule_id") or "—"
     action = debug.get("action") or "—"
-    conf = debug.get("confidence") or 0
     return (
-        f"topic: {debug.get('category', '—')} ({conf:.0%}) · "
-        f"sentiment: {debug.get('sentiment', '—')} · "
-        f"rule: {rule} · action: {action}"
+        f"{debug.get('talep_turu', '—')} → {debug.get('birim', '—')} → "
+        f"{debug.get('modul', '—')} → {debug.get('surec', '—')} · "
+        f"üslup: {debug.get('sentiment', '—')} · eylem: {action}"
     )
 
 
 def _esc(value: object) -> str:
     return html.escape(str(value or ""))
-
-
-def _sample_ticker_html() -> str:
-    n = max(len(SAMPLE_COMPLAINTS), 1)
-    hold = 2.0
-    move = 1.9
-    slot = hold + move
-    cycle = n * slot
-    h = (hold / cycle) * 100
-    p = h + (move / cycle) * 100
-
-    center = (
-        "transform:translateX(-50%) scale(1.07);filter:blur(0);opacity:1;z-index:5;"
-        "box-shadow:0 22px 44px rgba(31,36,18,.48),0 8px 18px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.3)"
-    )
-    left_near = (
-        "transform:translateX(-50%) translateX(calc(-1 * var(--card-near))) scale(0.88);"
-        "filter:blur(2px);opacity:0.9;z-index:4;"
-        "box-shadow:0 6px 14px rgba(31,36,18,.16)"
-    )
-    right_near = (
-        "transform:translateX(-50%) translateX(var(--card-near)) scale(0.88);"
-        "filter:blur(2px);opacity:0.9;z-index:4;"
-        "box-shadow:0 6px 14px rgba(31,36,18,.16)"
-    )
-    off_left = (
-        "transform:translateX(-50%) translateX(calc(-1 * var(--card-off))) scale(0.84);"
-        "filter:blur(4px);opacity:0;z-index:1;box-shadow:none"
-    )
-    off_right = (
-        "transform:translateX(-50%) translateX(var(--card-off)) scale(0.84);"
-        "filter:blur(4px);opacity:0;z-index:1;box-shadow:none"
-    )
-
-    def card(index: int, item: dict) -> str:
-        delay = -((n - index) % n) * slot
-        return (
-            f'<article class="sample-card" style="animation-duration:{cycle:.2f}s;'
-            f'animation-delay:{delay:.2f}s">'
-            '<div class="sample-card-kicker">name</div>'
-            f'<div class="sample-card-name">{_esc(item["name"])}</div>'
-            '<div class="sample-card-kicker" style="margin-top:0.28rem">brand</div>'
-            f'<div class="sample-card-brand">{_esc(item["brand"])}</div>'
-            '<div class="sample-card-kicker" style="margin-top:0.28rem">complaint</div>'
-            f'<div class="sample-card-text">{_esc(item["text"])}</div>'
-            "</article>"
-        )
-
-    cards = "".join(card(index, item) for index, item in enumerate(SAMPLE_COMPLAINTS))
-    return (
-        "<style>"
-        "@keyframes sample-ltr {"
-        f"0%{{{center}}}"
-        f"{h:.3f}%{{{center}}}"
-        f"{p:.3f}%{{{right_near}}}"
-        f"{p + h:.3f}%{{{right_near}}}"
-        f"{2 * p:.3f}%{{{off_right}}}"
-        f"{100 - 2 * p:.3f}%{{{off_left}}}"
-        f"{100 - 2 * p + h:.3f}%{{{off_left}}}"
-        f"{100 - p:.3f}%{{{left_near}}}"
-        f"{100 - p + h:.3f}%{{{left_near}}}"
-        f"100%{{{center}}}"
-        "}"
-        "</style>"
-        '<div class="sample-ticker">'
-        f'<div class="sample-ticker-stage">{cards}</div>'
-        "</div>"
-    )
 
 
 def _format_text(text: str) -> str:
@@ -1194,29 +1384,56 @@ def _format_text(text: str) -> str:
     return escaped.replace("\n", "<br>")
 
 
-def _messages_html(messages: list[dict], typing: bool = False) -> str:
+def _format_tr_date(iso_value: str) -> str:
+    raw = str(iso_value or "").strip()
+    parts = raw.split("-")
+    if len(parts) == 3 and all(parts):
+        return f"{parts[2]}.{parts[1]}.{parts[0]}"
+    return raw
+
+
+def _messages_html(
+    messages: list[dict],
+    typing: bool = False,
+    picker_html: str = "",
+) -> str:
+    last_assistant = -1
+    for index, message in enumerate(messages):
+        if message.get("role") != "user":
+            last_assistant = index
+    panel_class = "chat-panel glass"
     parts = [
-        """
-        <div class="chat-panel glass">
+        f"""
+        <div class="{panel_class}">
           <div class="chat-bar">
             <span class="spark">✦</span>
-            <span class="chat-bar-title">Assistant</span>
-            <span class="chat-bar-sub">first line · rule first</span>
-            <a class="new-chat" href="?reset=1">new chat</a>
+            <span class="chat-bar-title">Sohbet</span>
+            <a class="new-chat" href="?reset=1">yeni sohbet</a>
           </div>
           <div class="chat-thread">
         """
     ]
-    for message in messages:
+    for index, message in enumerate(messages):
         role = message.get("role", "assistant")
         css_role = "user" if role == "user" else "assistant"
         body = _format_text(str(message.get("content", "")))
         meta = ""
-        if css_role == "assistant" and message.get("debug"):
+        extra = ""
+        bubble_class = f"bubble {css_role}"
+        attach = (
+            bool(picker_html)
+            and not typing
+            and css_role == "assistant"
+            and index == last_assistant
+        )
+        if attach:
+            extra = picker_html
+            bubble_class = "bubble assistant has-orders"
+        elif css_role == "assistant" and message.get("debug"):
             meta = f'<div class="bubble-meta">{html.escape(_debug_line(message["debug"]))}</div>'
         parts.append(
             f'<div class="bubble-row {css_role}">'
-            f'<div class="bubble {css_role}">{body}{meta}</div>'
+            f'<div class="{bubble_class}">{body}{extra}{meta}</div>'
             "</div>"
         )
     if typing:
@@ -1236,7 +1453,14 @@ def _apply_turn(prompt: str) -> None:
         phase=st.session_state.phase,
         last_rule_id=st.session_state.last_rule_id,
         last_ticket_id=st.session_state.last_ticket_id,
+        customer_email=_customer_email(),
+        slots=st.session_state.get("slots") or {},
+        classification=st.session_state.get("classification"),
     )
+    _apply_result(result)
+
+
+def _apply_result(result) -> None:
     st.session_state.messages.append(
         {"role": "assistant", "content": result.reply, "debug": result.debug}
     )
@@ -1245,17 +1469,27 @@ def _apply_turn(prompt: str) -> None:
     st.session_state.last_debug = result.debug
     if result.ticket:
         st.session_state.last_ticket_id = result.ticket["id"]
+        ids = list(st.session_state.get("my_ticket_ids") or [])
+        tid = result.ticket["id"]
+        if tid not in ids:
+            ids.append(tid)
+        st.session_state.my_ticket_ids = ids
+    st.session_state.slots = dict(result.slots or {})
+    st.session_state.classification = result.classification
+    if result.phase == "open":
+        st.session_state.slots = {}
+        st.session_state.classification = None
     _sync_conversation()
 
 
 def _password_checklist_html(password: str) -> str:
     checks = password_checks(password)
     labels = (
-        ("length", "At least 12 characters"),
-        ("upper", "At least one uppercase letter"),
-        ("lower", "At least one lowercase letter"),
-        ("digit", "At least one number"),
-        ("special", "At least one special character"),
+        ("length", "En az 12 karakter"),
+        ("upper", "En az bir büyük harf"),
+        ("lower", "En az bir küçük harf"),
+        ("digit", "En az bir rakam"),
+        ("special", "En az bir özel karakter"),
     )
     items = []
     for key, label in labels:
@@ -1272,29 +1506,29 @@ def _close_auth_dialog() -> None:
 
 
 def _render_login_panel() -> None:
-    email = st.text_input("Email", key="login_email", placeholder="you@example.com")
-    password = st.text_input("Password", key="login_password", type="password")
-    st.caption("Captcha check")
+    email = st.text_input("E-posta", key="login_email", placeholder="ornek@posta.com")
+    password = st.text_input("Şifre", key="login_password", type="password")
+    st.caption("Captcha kontrolü")
     cap_row = st.columns([3, 1])
     with cap_row[0]:
         letters = "".join(f"<span>{_esc(ch)}</span>" for ch in st.session_state.captcha_answer)
         st.markdown(f'<div class="captcha-box">{letters}</div>', unsafe_allow_html=True)
     with cap_row[1]:
-        if st.button("Refresh", key="captcha_refresh", use_container_width=True):
+        if st.button("Yenile", key="captcha_refresh", use_container_width=True):
             _refresh_captcha()
             st.rerun()
     captcha = st.text_input(
-        "Enter the code from the image",
+        "Görüntüdeki kodu yazın",
         key=f"login_captcha_{st.session_state.captcha_field_key}",
     )
-    if st.button("Log in", key="login_submit", use_container_width=True, type="primary"):
+    if st.button("Giriş", key="login_submit", use_container_width=True, type="primary"):
         if not captcha_matches(st.session_state.captcha_answer, captcha):
-            st.session_state.auth_error = "Captcha check failed."
+            st.session_state.auth_error = "Captcha doğrulaması başarısız."
             _refresh_captcha()
             st.rerun()
         user = authenticate(email, password, role="customer")
         if not user:
-            st.session_state.auth_error = "Email or password is incorrect."
+            st.session_state.auth_error = "E-posta veya şifre hatalı."
             _refresh_captcha()
             st.rerun()
         st.session_state.user = user
@@ -1302,7 +1536,7 @@ def _render_login_panel() -> None:
         st.session_state.auth_error = ""
         st.rerun()
     st.button(
-        "Admin login",
+        "Yönetici girişi",
         key="admin_entry_btn",
         type="tertiary",
         on_click=lambda: st.session_state.update(auth_mode="admin_login", auth_error=""),
@@ -1310,13 +1544,13 @@ def _render_login_panel() -> None:
 
 
 def _render_admin_login_panel() -> None:
-    st.caption("Administrator")
-    email = st.text_input("Email", key="admin_email")
-    password = st.text_input("Password", key="admin_password", type="password")
-    if st.button("Log in", key="admin_submit", use_container_width=True, type="primary"):
+    st.caption("Yönetici")
+    email = st.text_input("E-posta", key="admin_email")
+    password = st.text_input("Şifre", key="admin_password", type="password")
+    if st.button("Giriş", key="admin_submit", use_container_width=True, type="primary"):
         user = authenticate(email, password, role="admin")
         if not user:
-            st.session_state.auth_error = "Admin login failed."
+            st.session_state.auth_error = "Yönetici girişi başarısız."
             st.rerun()
         st.session_state.user = user
         st.session_state.auth_open = False
@@ -1324,7 +1558,7 @@ def _render_admin_login_panel() -> None:
         st.session_state.chat_drawer_open = False
         st.rerun()
     st.button(
-        "Back to customer login",
+        "Müşteri girişine dön",
         key="admin_back_btn",
         type="tertiary",
         on_click=lambda: st.session_state.update(auth_mode="login", auth_error=""),
@@ -1340,23 +1574,23 @@ def _start_email_verification() -> None:
     consent = bool(st.session_state.get("reg_consent"))
 
     if not first or not last:
-        st.session_state.auth_error = "First and last name are required."
+        st.session_state.auth_error = "Ad ve soyad gerekli."
         return
     if not is_valid_email(email):
-        st.session_state.auth_error = "Enter a valid email address."
+        st.session_state.auth_error = "Geçerli bir e-posta yazın."
         return
     if find_user(email):
-        st.session_state.auth_error = "An account with this email already exists."
+        st.session_state.auth_error = "Bu e-posta ile kayıtlı bir hesap zaten var."
         return
     issues = password_issues(password)
     if issues:
         st.session_state.auth_error = " ".join(issues)
         return
     if password != confirm:
-        st.session_state.auth_error = "Passwords do not match."
+        st.session_state.auth_error = "Şifreler eşleşmiyor."
         return
     if not consent:
-        st.session_state.auth_error = "Please accept the consent notice to continue."
+        st.session_state.auth_error = "Devam etmek için onay metnini kabul edin."
         return
 
     st.session_state.pending_registration = {
@@ -1373,19 +1607,19 @@ def _render_register_panel() -> None:
     pending = st.session_state.get("pending_registration")
     if pending:
         st.info(
-            f"A verification code was sent to {pending['email']}. "
-            f"Demo code: **{pending['code']}**"
+            f"Doğrulama kodu {pending['email']} adresine gönderildi. "
+            f"Demo kod: **{pending['code']}**"
         )
-        code = st.text_input("Email verification code", key="reg_verify_code")
+        code = st.text_input("E-posta doğrulama kodu", key="reg_verify_code")
         actions = st.columns(2)
         if actions[0].button(
-            "Verify and sign up",
+            "Doğrula ve kaydol",
             key="reg_verify_btn",
             use_container_width=True,
             type="primary",
         ):
             if (code or "").strip() != pending["code"]:
-                st.session_state.auth_error = "Verification code is incorrect."
+                st.session_state.auth_error = "Doğrulama kodu hatalı."
                 st.rerun()
             try:
                 user = register_user(
@@ -1402,7 +1636,7 @@ def _render_register_panel() -> None:
             st.session_state.auth_open = False
             st.session_state.auth_error = ""
             st.rerun()
-        if actions[1].button("Back", key="reg_verify_back", use_container_width=True):
+        if actions[1].button("Geri", key="reg_verify_back", use_container_width=True):
             st.session_state.pending_registration = None
             st.session_state.auth_error = ""
             st.rerun()
@@ -1410,27 +1644,27 @@ def _render_register_panel() -> None:
 
     names = st.columns(2)
     with names[0]:
-        st.text_input("First name", key="reg_first")
+        st.text_input("Ad", key="reg_first")
     with names[1]:
-        st.text_input("Last name", key="reg_last")
-    st.text_input("Email", key="reg_email", placeholder="you@example.com")
-    password = st.text_input("Password", key="reg_password", type="password")
+        st.text_input("Soyad", key="reg_last")
+    st.text_input("E-posta", key="reg_email", placeholder="ornek@posta.com")
+    password = st.text_input("Şifre", key="reg_password", type="password")
     st.markdown(_password_checklist_html(password), unsafe_allow_html=True)
-    st.text_input("Password (again)", key="reg_password2", type="password")
+    st.text_input("Şifre (tekrar)", key="reg_password2", type="password")
     st.markdown(f'<div class="consent-copy">{_esc(CONSENT_TEXT)}</div>', unsafe_allow_html=True)
-    st.checkbox("I have read and accept the consent notice.", key="reg_consent")
-    if st.button("Sign up", key="reg_submit", use_container_width=True, type="primary"):
+    st.checkbox("Onay metnini okudum ve kabul ediyorum.", key="reg_consent")
+    if st.button("Kaydol", key="reg_submit", use_container_width=True, type="primary"):
         _start_email_verification()
         st.rerun()
 
 
-@st.dialog("Account", width="large", on_dismiss=_close_auth_dialog)
+@st.dialog("Hesap", width="large", on_dismiss=_close_auth_dialog)
 def _auth_dialog() -> None:
     if st.session_state.auth_mode != "admin_login":
         login_col, register_col = st.columns(2)
         with login_col:
             if st.button(
-                "Log in",
+                "Giriş",
                 key="auth_tab_login",
                 use_container_width=True,
                 type="primary" if st.session_state.auth_mode == "login" else "secondary",
@@ -1440,7 +1674,7 @@ def _auth_dialog() -> None:
                 st.rerun()
         with register_col:
             if st.button(
-                "Sign up",
+                "Kaydol",
                 key="auth_tab_register",
                 use_container_width=True,
                 type="primary" if st.session_state.auth_mode == "register" else "secondary",
@@ -1465,10 +1699,18 @@ def _is_admin() -> bool:
     return user.get("role") == "admin"
 
 
+def _customer_email() -> str:
+    user = st.session_state.get("user") or {}
+    if user.get("role") == "admin":
+        return ""
+    return str(user.get("email") or "").strip().lower()
+
+
 def _logout() -> None:
     st.session_state.user = None
     st.session_state.chat_drawer_open = False
     st.session_state.auth_mode = "login"
+    st.session_state.customer_view = "chat"
 
 
 def _render_topbar() -> None:
@@ -1479,26 +1721,26 @@ def _render_topbar() -> None:
                 "☰",
                 key="top_chat_btn",
                 type="tertiary",
-                help="Close menu" if drawer_open else "Open menu",
+                help="Menüyü kapat" if drawer_open else "Menüyü aç",
             ):
                 st.session_state.chat_drawer_open = not drawer_open
         user = st.session_state.get("user")
         if user:
-            role_mark = "Admin · " if _is_admin() else ""
+            role_mark = "Yönetici · " if _is_admin() else ""
             label = (
                 f"{role_mark}{user.get('first_name', '')} {user.get('last_name', '')}".strip()
-                or "Account"
+                or "Hesap"
             )
             with st.popover(label, icon=":material/person:"):
                 st.caption(user.get("email", ""))
                 if st.button(
-                    "Log out",
+                    "Çıkış",
                     key="logout_btn",
                     use_container_width=True,
                     on_click=_logout,
                 ):
                     st.rerun()
-        elif st.button("Log in / Sign up", key="top_auth_btn"):
+        elif st.button("Giriş / Kaydol", key="top_auth_btn"):
             st.session_state.auth_open = True
             st.session_state.auth_mode = "login"
             st.session_state.auth_error = ""
@@ -1513,18 +1755,91 @@ def _conversation_label(conv: dict) -> str:
     if first_user:
         return " ".join(str(first_user).split())[:42]
     if conv.get("id") == st.session_state.current_conv_id:
-        return "Current chat"
-    return "Empty chat"
+        return "Bu sohbet"
+    return "Boş sohbet"
 
 
 def _close_drawer() -> None:
     st.session_state.chat_drawer_open = False
 
 
+def _record_type_label(ticket: dict) -> str:
+    return str(ticket.get("path_label") or ticket.get("surec_label") or "ITSM talebi")
+
+
+def _record_status_label(status: str) -> str:
+    return {
+        "accepted": "Onaylandı",
+        "open": "Açık",
+        "in_progress": "İşleniyor",
+        "resolved": "Tamamlandı",
+    }.get(status, status or "—")
+
+
+def _render_customer_record_card(ticket: dict) -> None:
+    status = str(ticket.get("status") or "")
+    created = str(ticket.get("created_at") or "")
+    st.markdown(
+        f"""
+        <div class="ticket-card glass">
+          <div class="ticket-kicker">{_esc(_record_type_label(ticket))} · {_esc(_record_status_label(status))} · {_esc(created)}</div>
+          <div class="ticket-title">{_esc(ticket.get("id", ""))}</div>
+          <p><strong>Talebin</strong><br>{_esc(ticket.get("customer_ask", ""))}</p>
+          <p><strong>Alanlar</strong><br>varlık: {_esc(ticket.get("asset"))} · konum: {_esc(ticket.get("location"))} · etki: {_esc(ticket.get("impact"))}</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def _render_tickets_pane() -> None:
+    with st.container(key="tickets_pane"):
+        st.markdown(
+            """
+            <div class="tickets-bar">
+              <span class="spark">✦</span>
+              <span class="chat-bar-title">Kayıtlar</span>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        user = st.session_state.get("user")
+        if user and not _is_admin():
+            if st.button("Çıkış", key="tickets_logout", on_click=_logout):
+                st.rerun()
+        elif not user:
+            if st.button("Giriş", key="tickets_login"):
+                st.session_state.auth_open = True
+                st.session_state.auth_mode = "login"
+                st.session_state.auth_error = ""
+                _refresh_captcha()
+                st.rerun()
+
+        email = _customer_email()
+        records = tickets_for_customer(
+            email=email,
+            extra_ids=list(st.session_state.get("my_ticket_ids") or []),
+        )
+        if not email and not records:
+            st.markdown(
+                '<p class="record-empty">Giriş yapınca kayıtların burada durur. '
+                "Sohbette ticket açınca da bu listeye düşer.</p>",
+                unsafe_allow_html=True,
+            )
+            return
+        if not records:
+            st.markdown(
+                '<p class="record-empty">Henüz kayıtlı ticketın yok.</p>',
+                unsafe_allow_html=True,
+            )
+            return
+        for ticket in records:
+            _render_customer_record_card(ticket)
+
+
 def _render_ticket_body(ticket: dict) -> None:
     urgency = ticket.get("urgency", "medium")
     bullets = "".join(f"<li>{_esc(item)}</li>" for item in ticket.get("summary_bullets", []))
-    rules = ", ".join(ticket.get("tried_rules") or ["—"])
     followup_html = ""
     followups = ticket.get("followups") or []
     if followups:
@@ -1532,26 +1847,25 @@ def _render_ticket_body(ticket: dict) -> None:
             f"<li>{_esc(item.get('text') if isinstance(item, dict) else item)}</li>"
             for item in followups
         )
-        followup_html = f"<p><strong>Extra detail</strong></p><ul>{items}</ul>"
+        followup_html = f"<p><strong>Ek ayrıntı</strong></p><ul>{items}</ul>"
     st.markdown(
         f"""
         <div class="ticket-card glass">
-          <div class="ticket-kicker">{_esc(ticket.get("status", "open"))} · {_esc(ticket.get("created_at", ""))}</div>
+          <div class="ticket-kicker">{_esc(ticket.get("path_label") or "ITSM")} · {_esc(ticket.get("status", "open"))} · {_esc(ticket.get("created_at", ""))}</div>
           <div class="ticket-title">{_esc(ticket["id"])}</div>
           <div class="ticket-meta">
-            <span class="urgency-{_esc(urgency)}">urgency: {_esc(urgency)}</span>
-            &nbsp;· category: {_esc(ticket.get("category"))}
-            ({ticket.get("category_confidence", 0):.0%})
-            &nbsp;· sentiment: {_esc(ticket.get("sentiment"))}
+            <span class="urgency-{_esc(urgency)}">öncelik: {_esc(urgency)}</span>
+            &nbsp;· üslup: {_esc(ticket.get("sentiment"))}
           </div>
-          <p><strong>Customer ask</strong><br>{_esc(ticket.get("customer_ask", ""))}</p>
-          <p><strong>Why unresolved</strong><br>{_esc(ticket.get("why_unresolved", ""))}</p>
-          <p><strong>Rules tried</strong><br>{_esc(rules)}</p>
-          <p><strong>Manager brief</strong></p>
+          <p><strong>Kullanıcı talebi</strong><br>{_esc(ticket.get("customer_ask", ""))}</p>
+          <p><strong>Sınıf</strong><br>{_esc(ticket.get("talep_turu_label"))} → {_esc(ticket.get("birim_label"))} → {_esc(ticket.get("modul_label"))} → {_esc(ticket.get("surec_label"))}</p>
+          <p><strong>Alanlar</strong><br>varlık: {_esc(ticket.get("asset"))} · konum: {_esc(ticket.get("location"))} · etki: {_esc(ticket.get("impact"))}</p>
+          <p><strong>Neden açık</strong><br>{_esc(ticket.get("why_unresolved", ""))}</p>
+          <p><strong>Yönetici özeti</strong></p>
           <ul>{bullets}</ul>
-          <p><strong>Recommended next step</strong><br>{_esc(ticket.get("recommended_next_step", ""))}</p>
+          <p><strong>Önerilen sonraki adım</strong><br>{_esc(ticket.get("recommended_next_step", ""))}</p>
           {followup_html}
-          <p><strong>Record notes</strong></p>
+          <p><strong>Kayıt notları</strong></p>
           <div class="handoff">{_esc(ticket.get("handoff_notes", ""))}</div>
         </div>
         """,
@@ -1559,10 +1873,10 @@ def _render_ticket_body(ticket: dict) -> None:
     )
     actions = st.columns(2)
     ticket_id = ticket["id"]
-    if actions[0].button("In progress", key=f"prog-{ticket_id}", use_container_width=True):
+    if actions[0].button("İşleniyor", key=f"prog-{ticket_id}", use_container_width=True):
         update_status(ticket_id, "in_progress")
         st.rerun()
-    if actions[1].button("Resolved", key=f"res-{ticket_id}", use_container_width=True):
+    if actions[1].button("Çözüldü", key=f"res-{ticket_id}", use_container_width=True):
         update_status(ticket_id, "resolved")
         st.rerun()
 
@@ -1572,14 +1886,24 @@ def _render_chat_drawer() -> None:
     head = st.columns([4, 1])
     with head[0]:
         st.markdown(
-            '<div class="drawer-head"><span class="drawer-title">Menu</span></div>',
+            '<div class="drawer-head"><span class="drawer-title">Menü</span></div>',
             unsafe_allow_html=True,
         )
     with head[1]:
-        st.button("✕", key="drawer_close", help="Close panel", on_click=_close_drawer)
+        st.button("✕", key="drawer_close", help="Paneli kapat", on_click=_close_drawer)
 
-    if st.button("New chat", key="drawer_new_chat", use_container_width=True):
+    if st.button("Yeni sohbet", key="drawer_new_chat", use_container_width=True):
+        st.session_state.customer_view = "chat"
         _reset_chat()
+        st.rerun()
+
+    if st.button(
+        "Taleplerim",
+        key="drawer_my_records",
+        use_container_width=True,
+        type="primary" if st.session_state.get("customer_view") == "records" else "secondary",
+    ):
+        _open_customer_records()
         st.rerun()
 
     for conv in reversed(st.session_state.conversations):
@@ -1590,6 +1914,7 @@ def _render_chat_drawer() -> None:
             use_container_width=True,
             type="primary" if active else "secondary",
         ):
+            st.session_state.customer_view = "chat"
             _bind_conversation(conv)
             st.rerun()
         last = next(
@@ -1598,72 +1923,99 @@ def _render_chat_drawer() -> None:
                 for item in reversed(conv.get("messages") or [])
                 if item.get("role") == "user"
             ),
-            "No messages yet",
+            "Henüz mesaj yok",
         )
         st.markdown(f'<div class="conv-preview">{_esc(last)}</div>', unsafe_allow_html=True)
 
 
+def _open_customer_records() -> None:
+    return
+
+
 def _render_admin_home() -> None:
+    top = st.columns([5, 1], vertical_alignment="center")
+    with top[0]:
+        st.markdown(
+            """
+            <div class="page-head">
+              <h1 class="page-title">ITSM Asistanı</h1>
+              <p class="page-sub">Yönetici kuyruğu</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    with top[1]:
+        if st.button("Çıkış", key="admin_logout", use_container_width=True, on_click=_logout):
+            st.rerun()
     st.markdown(
         """
         <div class="hero">
-          <div class="admin-kicker">Admin</div>
-          <div class="brand">Reportly</div>
-          <p class="lede">Complaint queue</p>
+          <div class="admin-kicker">Yönetici</div>
+          <p class="lede">ITSM kuyruğu — sınıflandırılmış talepler</p>
         </div>
         """,
         unsafe_allow_html=True,
     )
     tickets = list(reversed(load_tickets()))
     if not tickets:
-        st.info("No records yet. Unresolved complaints from customer chat appear here.")
-        return
-    labels = [
-        f"{t['id']} · {t.get('urgency', '?')} · {t.get('category', '?')} · {t.get('status', 'open')}"
-        for t in tickets
-    ]
-    choice = st.selectbox("Record", options=range(len(tickets)), format_func=lambda i: labels[i])
-    _render_ticket_body(tickets[choice])
+        st.info("Henüz ticket yok. Chatbot kayıtları burada görünür.")
+    else:
+        labels = [
+            f"{t['id']} · {t.get('birim_label') or '—'} · {t.get('surec_label') or '—'} · {t.get('status', 'open')}"
+            for t in tickets
+        ]
+        choice = st.selectbox("Kayıt", options=range(len(tickets)), format_func=lambda i: labels[i])
+        _render_ticket_body(tickets[choice])
+    jobs = list(reversed(load_jobs()))
+    if jobs:
+        st.markdown("#### Rapor JOB kuyruğu")
+        for job in jobs[:8]:
+            st.caption(
+                f"{job.get('id')} · {job.get('status')} · {job.get('command', '')[:80]}"
+            )
+            if job.get("result"):
+                st.text(job["result"])
 
 
 def _render_home() -> None:
     st.markdown(
         """
-        <div class="hero">
-          <div class="brand">Reportly</div>
-          <p class="lede">Here for your reports.</p>
+        <div class="page-head">
+          <h1 class="page-title">ITSM Asistanı</h1>
+          <p class="page-sub">Kurum içi destek asistanı. Talebi doğal dille alır, sınıflandırır, geçmiş çözümlerden önerir ve gerektiğinde kayıt açar.</p>
         </div>
         """,
         unsafe_allow_html=True,
     )
-
-    if not model_available():
-        st.warning(
-            "No category model; rules still run. "
-            "For full routing, run `python src\\classic_nlu.py` from the project root."
-        )
-
-    _render_customer_tab()
-    st.markdown(_sample_ticker_html(), unsafe_allow_html=True)
+    with st.container(key="workspace"):
+        left, right = st.columns([1.42, 0.78], gap="medium")
+        with left:
+            _render_customer_tab()
+        with right:
+            _render_tickets_pane()
 
 
 def _render_customer_tab() -> None:
     pending = st.session_state.get("pending_prompt")
-    st.markdown(
-        _messages_html(st.session_state.messages, typing=bool(pending)),
-        unsafe_allow_html=True,
-    )
-
-    with st.form("composer", clear_on_submit=True):
-        cols = st.columns([12, 1], gap="small")
-        with cols[0]:
-            prompt = st.text_input(
-                "complaint",
-                placeholder="Write your complaint…",
-                label_visibility="collapsed",
-            )
-        with cols[1]:
-            sent = st.form_submit_button("➤", help="Send")
+    with st.container(key="chat_shell"):
+        st.markdown(
+            _messages_html(
+                st.session_state.messages,
+                typing=bool(pending),
+                picker_html="",
+            ),
+            unsafe_allow_html=True,
+        )
+        with st.form("composer", clear_on_submit=True):
+            cols = st.columns([12, 1], gap="small")
+            with cols[0]:
+                prompt = st.text_input(
+                    "mesaj",
+                    placeholder="Mesaj…",
+                    label_visibility="collapsed",
+                )
+            with cols[1]:
+                sent = st.form_submit_button("➤", help="Gönder")
 
     if sent:
         prompt = (prompt or "").strip()
@@ -1687,17 +2039,12 @@ def main():
         st.query_params.clear()
         st.rerun()
 
-    _render_topbar()
     if st.session_state.auth_open:
         _auth_dialog()
 
     if _is_admin():
         _render_admin_home()
         return
-
-    if st.session_state.chat_drawer_open:
-        with st.container(key="chat_drawer"):
-            _render_chat_drawer()
 
     _render_home()
 

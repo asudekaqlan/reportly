@@ -1,4 +1,4 @@
-"""Persist structured manager tickets as JSONL."""
+"""ITSM tickets as JSONL. No live ServiceNow."""
 
 import json
 from datetime import datetime
@@ -52,38 +52,64 @@ def _rewrite(tickets: list[dict]) -> None:
 def create_ticket(
     *,
     urgency: str,
-    category: str,
-    category_confidence: float,
-    sentiment: str,
     customer_ask: str,
-    tried_rules: list[str],
     why_unresolved: str,
     summary_bullets: list[str],
     recommended_next_step: str,
     handoff_notes: str,
+    sentiment: str = "",
+    customer_email: str = "",
+    talep_turu: str = "",
+    talep_turu_label: str = "",
+    birim: str = "",
+    birim_label: str = "",
+    modul: str = "",
+    modul_label: str = "",
+    surec: str = "",
+    surec_label: str = "",
+    asset: str = "",
+    location: str = "",
+    impact: str = "",
+    solution_ids: list[str] | None = None,
+    kind: str = "ticket",
 ) -> dict:
     existing = load_tickets()
     ticket = {
         "id": _next_id(existing),
         "created_at": datetime.now().isoformat(timespec="seconds"),
+        "kind": kind,
+        "status": "open",
         "urgency": urgency,
-        "category": category,
-        "category_confidence": round(float(category_confidence), 3),
         "sentiment": sentiment,
         "customer_ask": customer_ask.strip(),
-        "tried_rules": tried_rules,
         "why_unresolved": why_unresolved,
         "summary_bullets": summary_bullets,
         "recommended_next_step": recommended_next_step,
         "handoff_notes": handoff_notes,
         "followups": [],
-        "status": "open",
+        "customer_email": (customer_email or "").strip().lower(),
+        "talep_turu": talep_turu,
+        "talep_turu_label": talep_turu_label,
+        "birim": birim,
+        "birim_label": birim_label,
+        "modul": modul,
+        "modul_label": modul_label,
+        "surec": surec,
+        "surec_label": surec_label,
+        "asset": asset,
+        "location": location,
+        "impact": impact,
+        "solution_ids": list(solution_ids or []),
+        "path_label": " → ".join(
+            part
+            for part in (talep_turu_label, birim_label, modul_label, surec_label)
+            if part
+        ),
     }
     return save_ticket(ticket)
 
 
 def append_followup(ticket_id: str, text: str) -> dict | None:
-    """Keep extra customer detail on the same record. Never opens a second ticket."""
     note = (text or "").strip()
     if not ticket_id or not note:
         return None
@@ -121,3 +147,19 @@ def update_status(ticket_id: str, status: str) -> dict | None:
         return None
     _rewrite(tickets)
     return updated
+
+
+def tickets_for_customer(
+    *,
+    email: str = "",
+    extra_ids: list[str] | None = None,
+) -> list[dict]:
+    email = (email or "").strip().lower()
+    extra = set(extra_ids or [])
+    matched: list[dict] = []
+    for ticket in load_tickets():
+        owner = str(ticket.get("customer_email") or "").strip().lower()
+        tid = str(ticket.get("id") or "")
+        if tid in extra or (email and owner == email):
+            matched.append(ticket)
+    return list(reversed(matched))

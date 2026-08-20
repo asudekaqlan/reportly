@@ -70,7 +70,7 @@ JSON schema:
 
 Rules:
 - Exactly 3 summary_bullets, each under 160 characters.
-- English only.
+- Turkish only.
 - Include category, tone, and why it is still open.
 
 Material:
@@ -138,7 +138,7 @@ def rewrite_customer_reply(
         return None
 
     prompt = f"""
-Paraphrase the text below into more natural English.
+Paraphrase the text below into more natural Turkish.
 Keep the same meaning and every step and fact (including any ticket id).
 Do not add information, questions, apologies, or commentary.
 Do not mention rewriting, templates, or rules.

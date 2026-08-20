@@ -1,0 +1,1001 @@
+﻿id,talep_metni,birim,modul,surec_talep_tipi,oncelik
+1,"Yazıcıdan çıktı alamıyorum, bu ay içinde beri arızalı.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Yüksek
+2,"Yazıcı kağıdı ve kalem stoku bitti, tedarik rica ederim.",İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+3,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Düşük
+4,Burak Bey ile birlikte hedef belirleme toplantısı planlamak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Orta
+5,"Ayşe Hanım'in görev tanımı güncellenecek, talep açıyorum.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Düşük
+6,"Priz kıvılcım yapıyor, acil müdahale gerekiyor.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Yüksek
+7,"Mükremin Bey'in kartı çalındı, iptal edilip yenisi verilmeli.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Yüksek
+8,"Ali Bey'in görev tanımı güncellenecek, talep açıyorum.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Düşük
+9,"Yazıcı kağıdı ve kalem stoku bitti, tedarik rica ederim.",İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+10,Emre Bey için ofis koltuğu değişimi rica ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Düşük
+11,Ali Bey servis güzergahının değiştirilmesini talep ediyor.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Düşük
+12,bu sabah için ziyaretçi girişi talep ediyorum.,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Düşük
+13,Zeynep Hanım için hizmet belgesi çıkarılmasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Orta
+14,"el terminalim açılmıyor, bir arıza var galiba.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Kritik
+15,"Sunucu çok yavaş çalışıyor, tüm ekip etkilendi.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Kritik
+16,"İnternetim çok yavaş, kontrol edilebilir mi?",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Yüksek
+17,Onaylanan iznimi iptal etmek istiyorum.,İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Orta
+18,"Bu ayki bordromu görüntüleyemiyorum, iletebilir misiniz?",İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+19,"Dosya sunucusuna erişemiyoruz, geçen hafta beri sorun var.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Yüksek
+20,"Satış ofisi'daki klima çalışmıyor, çok sıcak/soğuk oluyor.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Orta
+21,Yemeklerin kalitesiyle ilgili bir şikayetim var.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Düşük
+22,Dahili hattım bu ay içinde beri kesik.,Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+23,İkametgah için işyerinden yazı almam gerekiyor.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Düşük
+24,"faremim açılmıyor, bir arıza var galiba.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Yüksek
+25,"Çağrı merkezi'daki lavabo tıkalı, su akmıyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Kritik
+26,Aday hakkında önceki işyerinden referans teyidi istiyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+27,"İzin tarihimi değiştirmek istiyorum, uygun müsaitlik var mı?",İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Orta
+28,Mehmet Bey'in SAP modülüne erişim yetkisi olması gerekiyor.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Orta
+29,Hangi eğitimlere katılabileceğimi öğrenmek istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+30,"2. kat toplantı salonu'a giriş yetkim yok, tanımlanmasını rica ederim.",İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Düşük
+31,Bu dönemki eğitim takvimi hakkında bilgi almak istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+32,Mehmet Bey müşteri ziyareti için araç tahsisi istiyor.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Orta
+33,"3. kat'daki yazıcının toneri bitti, yenisi gerekiyor.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Düşük
+34,205 plakalı araçta motor arızası var.,İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Yüksek
+35,Gökhan Bey için mesleki gelişim eğitimi talep ediyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+36,2. kat toplantı salonu sunucusu için yedekleme planı oluşturulmasını istiyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Yüksek
+37,204 TL tutarındaki satınalma talebimin onaylanmasını rica ederim.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Orta
+38,Burak Bey'in bilgisayarının donanımının yenilenmesini rica ediyoruz.,Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Düşük
+39,Bu ayki maaşımda bir eksik ödeme fark ettim.,İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Yüksek
+40,İnsan Kaynakları katı temizliğinin yapılmasını rica ediyorum.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Orta
+41,Geçmiş aylara ait bordro dökümü talep ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+42,"Ağ yazıcısına bağlanamıyorum, kurulum desteği rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Orta
+43,"Yazıcı mürekkebi azaldı, tedarik edilmesini rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Orta
+44,Çağrı merkezi yazıcısı bağlantı hatası veriyor.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Yüksek
+45,"2. kat toplantı salonu'daki lavabo tıkalı, su akmıyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Yüksek
+46,"İnsan Kaynakları katı'daki klima çalışmıyor, çok sıcak/soğuk oluyor.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Orta
+47,Silinen dosyalarımın yedekten geri yüklenmesi gerekiyor.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Orta
+48,"İK ofisi'a giriş yetkim yok, tanımlanmasını rica ederim.",İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Düşük
+49,Fatma Hanım için unvan değişikliği talep ediyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Orta
+50,Su baskını sonrası acil temizlik talep ediyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Orta
+51,Fatma Hanım için ofis koltuğu değişimi rica ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Düşük
+52,"Klimadan su damlıyor, acil kontrol rica ederim.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Yüksek
+53,Fatma Hanım için vejetaryen menü talep ediyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+54,"Fazla mesai ücretim bordroma yansımamış, kontrol edilebilir mi?",İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Kritik
+55,Ali Bey için unvan değişikliği talep ediyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Düşük
+56,Yeni başlayanlar için oryantasyon eğitimi planlanmasını istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+57,Adobe Acrobat kullanırken sistem kilitleniyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+58,Zeynep Hanım için performans görüşmesi planlanmasını rica ediyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Orta
+59,dün için şirket aracı talep ediyorum.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Orta
+60,"İzmir şubesi sunucusu yanıt vermiyor, acil kontrol gerekiyor.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Yüksek
+61,VPN şifremi girmeme rağmen bağlantı sağlanamıyor.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Orta
+62,Toplantı öncesi Lojistik binası'un özel olarak temizlenmesini istiyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Yüksek
+63,Outlook sistemine erişim yetkisi talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Düşük
+64,"muhasebe programı dosyalarımı kaydetmiyor, acil bakılabilir mi?",Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Kritik
+65,Zeynep Hanım için referans kontrolü yapılmasını rica ediyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+66,305 plakalı araçta motor arızası var.,İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Kritik
+67,geçen hafta için şirket aracı talep ediyorum.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Orta
+68,Servis güzergahına yeni bir durak eklenmesini rica ediyorum.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Orta
+69,"Telefonumda ses gelmiyor, arıza kaydı açmak istiyorum.",Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+70,207 TL tutarındaki satınalma talebimin onaylanmasını rica ederim.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Orta
+71,"Kocaeli fabrikası'da el dezenfektanı bitti, yenisi gerekiyor.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+72,"Ana bina'da Wi-Fi sinyali çok zayıf, kontrol edilebilir mi?",Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Orta
+73,Lojistik binası yazıcısı bağlantı hatası veriyor.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Orta
+74,Satış ofisi için servis saatleri hakkında bilgi almak istiyorum.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Düşük
+75,"Hesabım kilitlendi, şifre sıfırlama talep ediyorum.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Yüksek
+76,Dahili hattım bugün beri kesik.,Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Orta
+77,bu sabah için şirket aracı talep ediyorum.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Orta
+78,Uzaktan çalışırken VPN sürekli kopuyor.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Yüksek
+79,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Düşük
+80,Ana bina'a yeni bir çalışma masası talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Düşük
+81,Muhasebe birimi'a yeni telefon hattı çekilmesini istiyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+82,İnsan Kaynakları katı sunucusu için yedekleme planı oluşturulmasını istiyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Orta
+83,Hangi eğitimlere katılabileceğimi öğrenmek istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+84,Saha çalışması için bir araca ihtiyacımız var.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Düşük
+85,"Ağ yazıcısına bağlanamıyorum, kurulum desteği rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Orta
+86,"dün itibarıyla izne çıkmak istiyorum, onay rica ederim.",İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Orta
+87,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Orta
+88,"Muhasebe birimi'da el terminalim çalışmıyor, teknisyen gönderebilir misiniz?",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Kritik
+89,"İş telefonumun hattı arızalı, yenisi gerekiyor.",Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Düşük
+90,"Lojistik binası'da aydınlatma çalışmıyor, karanlıkta kaldık.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Yüksek
+91,Depo'a yeni telefon hattı çekilmesini istiyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+92,"Depo'daki yazıcının toneri bitti, yenisi gerekiyor.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Düşük
+93,"Şifremi unuttum, sıfırlanmasını rica ediyorum.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Orta
+94,Emre Bey hakkında 360 derece geri bildirim süreci başlatmak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+95,"Tavan sızıntısı var, acil kontrol edilmesi gerekiyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Yüksek
+96,"RAM yetersiz kalıyor, masaüstü bilgisayarım için yükseltme talep ediyorum.",Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Orta
+97,10 günlük yıllık izin talebinde bulunmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Orta
+98,"Elif Hanım'in görev tanımı güncellenecek, talep açıyorum.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Orta
+99,"Excel şifremi sıfırlamam gerekiyor, acil.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Yüksek
+100,Performans değerlendirme dönemim hakkında bilgi almak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Orta
+101,bugün saat için toplantı ikramı talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+102,"İş telefonumun hattı arızalı, yenisi gerekiyor.",Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Orta
+103,Glutensiz menü talebinde bulunmak istiyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+104,Projemiz için 2 adet ek bilgisayar temin edilebilir mi?,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Düşük
+105,"SSD değişimi için talep açmak istiyorum, masaüstü bilgisayarım çok yavaş.",Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Orta
+106,Görüşme yapılan adaylar için geri bildirim formu talep ediyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Düşük
+107,VPN şifremi girmeme rağmen bağlantı sağlanamıyor.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Orta
+108,"Sunucu çok yavaş çalışıyor, tüm ekip etkilendi.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Kritik
+109,İnsan Kaynakları katı'da yeni alınan yazıcının kurulumu yapılabilir mi?,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Orta
+110,Yurt dışı hattı açılması için talep oluşturuyorum.,Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Düşük
+111,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Düşük
+112,VPN istemcisi sistemine erişim yetkisi talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Düşük
+113,Görüşme yapılan adaylar için geri bildirim formu talep ediyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Orta
+114,Ali Bey olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+115,Yeni ekipman alımı için satınalma onayı bekliyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Yüksek
+116,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Düşük
+117,"Ali Bey'in kartı çalındı, iptal edilip yenisi verilmeli.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Yüksek
+118,Sunucu kaynakları yetersiz kalıyor gibi görünüyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+119,"3. kat için ek personel ihtiyacımız var, ilan açılabilir mi?",İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Düşük
+120,Gökhan Bey için yeni bir sistem hesabı açılmasını rica ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+121,Bu ayki maaşımda bir eksik ödeme fark ettim.,İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Kritik
+122,"Lojistik binası'da el dezenfektanı bitti, yenisi gerekiyor.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+123,"Priz kıvılcım yapıyor, acil müdahale gerekiyor.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Yüksek
+124,"Kocaeli fabrikası'daki yazıcının toneri bitti, yenisi gerekiyor.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Düşük
+125,Mehmet Bey'e CRM uygulaması için kullanıcı hesabı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+126,Tuvalet kağıdı ve kağıt havlu talep ediyorum.,İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+127,İzmir şubesi yazıcısı bağlantı hatası veriyor.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Yüksek
+128,"Kocaeli fabrikası'da Wi-Fi sinyali çok zayıf, kontrol edilebilir mi?",Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Orta
+129,"Priz kıvılcım yapıyor, acil müdahale gerekiyor.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Yüksek
+130,Fatma Hanım rahatsızlandığı için bugün rapor kullanacak.,İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Yüksek
+131,Servis güzergahına yeni bir durak eklenmesini rica ediyorum.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Orta
+132,az önce için ziyaretçi girişi talep ediyorum.,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Orta
+133,Burak Bey adlı misafirim için giriş izni oluşturur musunuz?,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Düşük
+134,"Selin Hanım'in görev tanımı güncellenecek, talep açıyorum.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Düşük
+135,Departmanımıza bir uzman alımı için talep oluşturuyorum.,İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Düşük
+136,"Satış ofisi'da aydınlatma çalışmıyor, karanlıkta kaldık.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Kritik
+137,ITSM portalı eğitimine kayıt olmak istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Orta
+138,458 plakalı araçta motor arızası var.,İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Yüksek
+139,Fatma Hanım'in bilgisayarının donanımının yenilenmesini rica ediyoruz.,Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Orta
+140,"İstifa dilekçemi iletmek istiyorum, süreç hakkında bilgi rica ederim.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Orta
+141,Terfi sürecimin ne durumda olduğunu öğrenmek istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Orta
+142,Gökhan Bey için şirket telefonu talep ediyorum.,Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Düşük
+143,"İK ofisi'a giriş yetkim yok, tanımlanmasını rica ederim.",İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Düşük
+144,Gökhan Bey için bina giriş kartı talep ediyorum.,İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Orta
+145,Deniz Hanım ile birlikte hedef belirleme toplantısı planlamak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Orta
+146,Su baskını sonrası acil temizlik talep ediyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Yüksek
+147,"Ana bina genelinde internet erişimi yok, herkes şikayetçi.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Kritik
+148,İkametgah için işyerinden yazı almam gerekiyor.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Orta
+149,Selin Hanım ile birlikte hedef belirleme toplantısı planlamak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Düşük
+150,Sunucu kaynakları yetersiz kalıyor gibi görünüyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+151,Satış ofisi'a yeni telefon hattı çekilmesini istiyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+152,İnsan Kaynakları katı sunucusu için yedekleme planı oluşturulmasını istiyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Orta
+153,Elif Hanım hakkında 360 derece geri bildirim süreci başlatmak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+154,"SAP dosyalarımı kaydetmiyor, acil bakılabilir mi?",Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Yüksek
+155,Ayşe Hanım için yeni bir klavye ve fare talebinde bulunuyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Orta
+156,Toplantı öncesi Genel Müdürlük'un özel olarak temizlenmesini istiyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Yüksek
+157,"Çağrı merkezi'daki klima çalışmıyor, çok sıcak/soğuk oluyor.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Yüksek
+158,Yeni ekipman alımı için satınalma onayı bekliyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Yüksek
+159,Ayşe Hanım servis güzergahının değiştirilmesini talep ediyor.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Düşük
+160,Misafir Wi-Fi ağına erişim talep ediyorum.,Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Düşük
+161,Hangi eğitimlere katılabileceğimi öğrenmek istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+162,Genel Müdürlük yazıcısı bağlantı hatası veriyor.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Yüksek
+163,"Fazla mesai ücretim bordroma yansımamış, kontrol edilebilir mi?",İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Yüksek
+164,"Klimadan su damlıyor, acil kontrol rica ederim.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Yüksek
+165,Sunucu kaynakları yetersiz kalıyor gibi görünüyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+166,"Çağrı merkezi sunucusu yanıt vermiyor, acil kontrol gerekiyor.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Yüksek
+167,Departmanımıza bir uzman alımı için talep oluşturuyorum.,İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Orta
+168,"İstifa dilekçemi iletmek istiyorum, süreç hakkında bilgi rica ederim.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Yüksek
+169,bugün için şirket aracı talep ediyorum.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Orta
+170,"Çağrı merkezi'da internet bağlantısı kesik, bu ay içinde beri.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Yüksek
+171,Gökhan Bey olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Düşük
+172,Yeni ekipman alımı için satınalma onayı bekliyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Yüksek
+173,"Hijyen malzemeleri stoku azaldı, tedarik rica ederim.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+174,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Orta
+175,Dosyalarımın yedeklenmesini talep ediyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Yüksek
+176,"Fazla mesai ücretim bordroma yansımamış, kontrol edilebilir mi?",İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Yüksek
+177,Vizite kağıdı talebinde bulunuyorum.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Orta
+178,Ayşe Hanım'e SAP için kullanıcı hesabı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+179,"Araç periyodik bakım zamanı geldi, randevu talep ediyorum.",İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Kritik
+180,Muhasebe birimi'a yeni telefon hattı çekilmesini istiyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+181,Zeynep Hanım'in bilgisayarının donanımının yenilenmesini rica ediyoruz.,Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Orta
+182,Caner Bey için şirket telefonu talep ediyorum.,Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Orta
+183,Glutensiz menü talebinde bulunmak istiyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+184,bugün saat için toplantı ikramı talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+185,Selin Hanım adlı misafirim için giriş izni oluşturur musunuz?,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Orta
+186,3 günlük istirahat raporumu iletiyorum.,İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Yüksek
+187,Terfi sürecimin ne durumda olduğunu öğrenmek istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Orta
+188,15 günlük yıllık izin talebinde bulunmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Orta
+189,Emre Bey ile birlikte hedef belirleme toplantısı planlamak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Düşük
+190,Satış ofisi'daki tüm bilgisayarlarda bordro yazılımı güncellensin lütfen.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Orta
+191,"İş telefonumun hattı arızalı, yenisi gerekiyor.",Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Orta
+192,Mükremin Bey rahatsızlandığı için bugün rapor kullanacak.,İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Yüksek
+193,"Giriş kartımı kaybettim, yenisinin çıkarılmasını rica ediyorum.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Yüksek
+194,Ayşe Hanım için bina giriş kartı talep ediyorum.,İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Düşük
+195,"Ankara ofisi sunucusu yanıt vermiyor, acil kontrol gerekiyor.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Yüksek
+196,"Emre Bey'in kartı çalındı, iptal edilip yenisi verilmeli.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Yüksek
+197,Emre Bey hakkında 360 derece geri bildirim süreci başlatmak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+198,Emre Bey olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+199,Bu ayki maaşımda bir eksik ödeme fark ettim.,İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Yüksek
+200,Misafir Wi-Fi ağına erişim talep ediyorum.,Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Düşük
+201,"Depo'daki lavabo tıkalı, su akmıyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Kritik
+202,"Tavan sızıntısı var, acil kontrol edilmesi gerekiyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Kritik
+203,"Klimadan su damlıyor, acil kontrol rica ederim.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Yüksek
+204,Departmanımıza bir uzman alımı için talep oluşturuyorum.,İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Düşük
+205,Mükremin Bey isimli adayın CV değerlendirmesi yapılabilir mi?,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Orta
+206,"Hijyen malzemeleri stoku azaldı, tedarik rica ederim.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+207,"ITSM portalı açılırken hata veriyor, geçen hafta beri sorun yaşıyorum.",Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Orta
+208,"Klimadan su damlıyor, acil kontrol rica ederim.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Yüksek
+209,"Excel açılırken hata veriyor, dün beri sorun yaşıyorum.",Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Kritik
+210,Saha çalışması için bir araca ihtiyacımız var.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Orta
+211,Ahmet Bey'in bilgisayarının donanımının yenilenmesini rica ediyoruz.,Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Orta
+212,Toplantı öncesi Ankara ofisi'un özel olarak temizlenmesini istiyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Yüksek
+213,3. kat'a yeni telefon hattı çekilmesini istiyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+214,"Satış ofisi sunucusu yanıt vermiyor, acil kontrol gerekiyor.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Yüksek
+215,Yöneticimden yazılı geri bildirim talep ediyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+216,Yöneticimden yazılı geri bildirim talep ediyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+217,Ofisimizde genel temizlik ihtiyacı var.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Orta
+218,"İzin tarihimi değiştirmek istiyorum, uygun müsaitlik var mı?",İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Düşük
+219,Katıldığım eğitimin sertifikasını talep ediyorum.,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+220,Yurt dışı hattı açılması için talep oluşturuyorum.,Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Düşük
+221,Çağrı merkezi'daki toplantı için kahve ve su talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+222,Merve Hanım'in tamamladığı eğitim sertifikası iletilebilir mi?,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+223,Burak Bey hakkında 360 derece geri bildirim süreci başlatmak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+224,"İK ofisi için ek personel ihtiyacımız var, ilan açılabilir mi?",İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Orta
+225,"VPN'e bağlanamıyorum, dün beri hata alıyorum.",Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Yüksek
+226,Hakan Bey için çıkış işlemlerinin başlatılmasını istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Yüksek
+227,608 plakalı araçta motor arızası var.,İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Kritik
+228,Zeynep Hanım rahatsızlandığı için bugün rapor kullanacak.,İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Orta
+229,"geçen hafta itibarıyla izne çıkmak istiyorum, onay rica ederim.",İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Düşük
+230,İkametgah için işyerinden yazı almam gerekiyor.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Düşük
+231,"İş telefonumun hattı arızalı, yenisi gerekiyor.",Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Düşük
+232,2. kat toplantı salonu'daki halı yıkama talebinde bulunuyorum.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Düşük
+233,Servis güzergahına yeni bir durak eklenmesini rica ediyorum.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Orta
+234,"Burak Bey'in kartı çalındı, iptal edilip yenisi verilmeli.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Orta
+235,"Hijyen malzemeleri stoku azaldı, tedarik rica ederim.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+236,Bu dönem hedeflerimin sisteme girilmesi gerekiyor.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Düşük
+237,"Klimadan su damlıyor, acil kontrol rica ederim.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Yüksek
+238,Zeynep Hanım için unvan değişikliği talep ediyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Orta
+239,Katıldığım eğitimin sertifikasını talep ediyorum.,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+240,"Klimadan su damlıyor, acil kontrol rica ederim.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Yüksek
+241,"bordro yazılımı dosyalarımı kaydetmiyor, acil bakılabilir mi?",Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Orta
+242,Hakan Bey için mesleki gelişim eğitimi talep ediyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+243,Muhasebe birimi yazıcısı bağlantı hatası veriyor.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Yüksek
+244,"Araç periyodik bakım zamanı geldi, randevu talep ediyorum.",İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Kritik
+245,Aday hakkında önceki işyerinden referans teyidi istiyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+246,Mehmet Bey için mesleki gelişim eğitimi talep ediyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+247,Toplantı öncesi Lojistik binası'un özel olarak temizlenmesini istiyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Orta
+248,"Elif Hanım olarak internete bağlanamıyorum, acil destek gerekiyor.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Yüksek
+249,"Genel Müdürlük'daki lavabo tıkalı, su akmıyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Kritik
+250,"Giriş kartımı kaybettim, yenisinin çıkarılmasını rica ediyorum.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Yüksek
+251,Onaylanan iznimi iptal etmek istiyorum.,İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Düşük
+252,Lojistik binası'a yeni bir çalışma masası talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Orta
+253,Başvuran adayların mülakat sürecini planlamak istiyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Orta
+254,Başvuran adayların mülakat sürecini planlamak istiyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Orta
+255,Mükremin Bey olarak 3 gün izin kullanmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Düşük
+256,Zeynep Hanım olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+257,Yeni işe başlayan personel için e-posta hesabı talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+258,"Priz kıvılcım yapıyor, acil müdahale gerekiyor.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Yüksek
+259,Lojistik binası'da Wi-Fi şifresini alabilir miyim?,Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Düşük
+260,Toplantı öncesi Depo'un özel olarak temizlenmesini istiyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Yüksek
+261,Lojistik binası'daki bilgisayarlara ERP sistemi kurulması gerekiyor.,Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Düşük
+262,"monitörüm çok eski, yükseltme yapılabilir mi?",Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Orta
+263,Ofisimizde genel temizlik ihtiyacı var.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Orta
+264,"Kocaeli fabrikası'daki yazıcı çalışmıyor, kağıt sıkışması var.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Orta
+265,Ahmet Bey olarak ERP sistemi kullanırken hata kodu alıyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Orta
+266,İkametgah için işyerinden yazı almam gerekiyor.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Orta
+267,Servis güzergahına yeni bir durak eklenmesini rica ediyorum.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Orta
+268,Tuvalet kağıdı ve kağıt havlu talep ediyorum.,İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+269,"Çağrı merkezi'da internet bağlantısı kesik, bugün beri.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Yüksek
+270,Burak Bey'in ITSM portalı modülüne erişim yetkisi olması gerekiyor.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Düşük
+271,"Priz kıvılcım yapıyor, acil müdahale gerekiyor.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Yüksek
+272,Mehmet Bey'in tamamladığı eğitim sertifikası iletilebilir mi?,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+273,"Yazıcı kağıdı ve kalem stoku bitti, tedarik rica ederim.",İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+274,"Başka bir departmana geçiş yapmak istiyorum, süreç nasıl işliyor?",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Orta
+275,"Ana bina'da internet bağlantısı kesik, bu ay içinde beri.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Kritik
+276,Yeni işe başlayan arkadaşımız için dizüstü bilgisayar talep ediyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Düşük
+277,İnsan Kaynakları katı için kırtasiye malzemesi talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+278,VPN şifremi girmeme rağmen bağlantı sağlanamıyor.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Orta
+279,Excel eğitimine kayıt olmak istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+280,Merve Hanım için hizmet belgesi çıkarılmasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Orta
+281,Sunucu kaynakları yetersiz kalıyor gibi görünüyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+282,"İstifa dilekçemi iletmek istiyorum, süreç hakkında bilgi rica ederim.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Yüksek
+283,Fatma Hanım servis güzergahının değiştirilmesini talep ediyor.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Orta
+284,"Şifremi unuttum, sıfırlanmasını rica ediyorum.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Orta
+285,Selin Hanım için yeni bir dahili hat talep ediyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+286,Saha çalışması için bir araca ihtiyacımız var.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Orta
+287,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Orta
+288,Burak Bey müşteri ziyareti için araç tahsisi istiyor.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Düşük
+289,977 TL tutarındaki satınalma talebimin onaylanmasını rica ederim.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Yüksek
+290,"Yazıcı mürekkebi azaldı, tedarik edilmesini rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Düşük
+291,İzmir şubesi'daki toplantı için kahve ve su talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+292,"Burak Bey izin gününü ertelemek istiyor, işlem yapılabilir mi?",İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Düşük
+293,"Mükremin Bey'in kartı çalındı, iptal edilip yenisi verilmeli.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Orta
+294,"Telefonumda ses gelmiyor, arıza kaydı açmak istiyorum.",Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+295,Fatma Hanım'in tamamladığı eğitim sertifikası iletilebilir mi?,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+296,"Lojistik binası'da aydınlatma çalışmıyor, karanlıkta kaldık.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Yüksek
+297,Ankara ofisi'daki sabit telefon hattı çalışmıyor.,Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Orta
+298,"Sistem geneli çok yavaş çalışıyor, bu sabah beri.",Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+299,"Sağlık raporum var, sisteme işlenmesini rica ediyorum.",İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Yüksek
+300,Fatma Hanım için vejetaryen menü talep ediyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+301,"İstifa dilekçemi iletmek istiyorum, süreç hakkında bilgi rica ederim.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Orta
+302,2. kat toplantı salonu'daki halı yıkama talebinde bulunuyorum.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Düşük
+303,Merve Hanım için unvan değişikliği talep ediyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Orta
+304,"Adobe Acrobat şifremi sıfırlamam gerekiyor, acil.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Orta
+305,Su baskını sonrası acil temizlik talep ediyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Orta
+306,bu sabah saat için toplantı ikramı talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+307,"Yazıcıdan çıktı alamıyorum, dün beri arızalı.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Orta
+308,Yeni ekipman alımı için satınalma onayı bekliyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Yüksek
+309,3 günlük yıllık izin talebinde bulunmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Orta
+310,Performans değerlendirme dönemim hakkında bilgi almak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Orta
+311,Selin Hanım için yeni bir dahili hat talep ediyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+312,"Çağrı merkezi'a giriş yetkim yok, tanımlanmasını rica ederim.",İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Düşük
+313,"Başka bir departmana geçiş yapmak istiyorum, süreç nasıl işliyor?",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Düşük
+314,"Deniz Hanım olarak sistem şifremi hatırlamıyorum, yardımcı olur musunuz?",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Yüksek
+315,Gökhan Bey'e muhasebe programı için kullanıcı hesabı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+316,bu ay içinde için ziyaretçi girişi talep ediyorum.,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Düşük
+317,"Kocaeli fabrikası'daki yazıcı çalışmıyor, kağıt sıkışması var.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Yüksek
+318,Departmanımıza bir uzman alımı için talep oluşturuyorum.,İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Düşük
+319,Hangi eğitimlere katılabileceğimi öğrenmek istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+320,Caner Bey için referans kontrolü yapılmasını rica ediyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+321,"ERP sistemi dosyalarımı kaydetmiyor, acil bakılabilir mi?",Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Yüksek
+322,Su baskını sonrası acil temizlik talep ediyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Orta
+323,"Satış ofisi'daki lavabo tıkalı, su akmıyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Kritik
+324,"Sunucu çok yavaş çalışıyor, tüm ekip etkilendi.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Kritik
+325,Terfi sürecimin ne durumda olduğunu öğrenmek istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Orta
+326,"Satış ofisi'daki yazıcı çalışmıyor, kağıt sıkışması var.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Orta
+327,Deniz Hanım için referans kontrolü yapılmasını rica ediyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+328,Deniz Hanım'e Excel için kullanıcı hesabı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+329,Yeni işe başlayan personel için e-posta hesabı talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+330,Hakan Bey olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+331,Performans değerlendirme dönemim hakkında bilgi almak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Düşük
+332,"Priz kıvılcım yapıyor, acil müdahale gerekiyor.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Kritik
+333,"Hakan Bey olarak internete bağlanamıyorum, acil destek gerekiyor.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Kritik
+334,Çağrı merkezi'a yeni telefon hattı çekilmesini istiyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+335,Yemeklerin kalitesiyle ilgili bir şikayetim var.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Orta
+336,Caner Bey'in Adobe Acrobat modülüne erişim yetkisi olması gerekiyor.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Düşük
+337,"İzin tarihimi değiştirmek istiyorum, uygun müsaitlik var mı?",İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Düşük
+338,"tabletim çok yavaş açılıyor, kontrol edilmesini rica ediyorum.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Orta
+339,"Mehmet Bey'in görev tanımı güncellenecek, talep açıyorum.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Düşük
+340,Yeni başlayanlar için oryantasyon eğitimi planlanmasını istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+341,"Yazıcı kağıdı ve kalem stoku bitti, tedarik rica ederim.",İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+342,"masaüstü bilgisayarım açılmıyor, bir arıza var galiba.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Kritik
+343,"Fazla mesai ücretim bordroma yansımamış, kontrol edilebilir mi?",İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Yüksek
+344,"İstifa dilekçemi iletmek istiyorum, süreç hakkında bilgi rica ederim.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Yüksek
+345,Lojistik binası'a yeni bir çalışma masası talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Düşük
+346,"Yazıcı mürekkebi azaldı, tedarik edilmesini rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Orta
+347,950 TL tutarındaki satınalma talebimin onaylanmasını rica ederim.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Orta
+348,Caner Bey için çıkış işlemlerinin başlatılmasını istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Yüksek
+349,Zeynep Hanım için VPN erişim talebi açmak istiyorum.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Yüksek
+350,Onaylanan iznimi iptal etmek istiyorum.,İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Orta
+351,Adobe Acrobat için güncelleme talebinde bulunuyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Orta
+352,124 plakalı araçta motor arızası var.,İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Yüksek
+353,"İş telefonumun hattı arızalı, yenisi gerekiyor.",Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Düşük
+354,"Hijyen malzemeleri stoku azaldı, tedarik rica ederim.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+355,Kocaeli fabrikası'a yeni bir çalışma masası talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Orta
+356,Bu dönemki eğitim takvimi hakkında bilgi almak istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+357,Gökhan Bey için bina giriş kartı talep ediyorum.,İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Orta
+358,"Ayşe Hanım izin gününü ertelemek istiyor, işlem yapılabilir mi?",İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Orta
+359,Hangi eğitimlere katılabileceğimi öğrenmek istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+360,"Muhasebe birimi'daki lavabo tıkalı, su akmıyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Kritik
+361,"İzmir şubesi sunucusu yanıt vermiyor, acil kontrol gerekiyor.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Kritik
+362,2. kat toplantı salonu'da Wi-Fi şifresini alabilir miyim?,Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Orta
+363,Deniz Hanım olarak ERP sistemi kullanırken hata kodu alıyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Kritik
+364,Selin Hanım için VPN istemcisi kurulumu talep ediyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Orta
+365,220 plakalı araçta motor arızası var.,İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Yüksek
+366,"faremim sürekli donuyor, az önce beri böyle.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Yüksek
+367,Onaylanan iznimi iptal etmek istiyorum.,İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Düşük
+368,"Ankara ofisi'daki lavabo tıkalı, su akmıyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Kritik
+369,Yemeklerin kalitesiyle ilgili bir şikayetim var.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Düşük
+370,Toplantı öncesi Depo'un özel olarak temizlenmesini istiyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Yüksek
+371,"masaüstü bilgisayarım mavi ekran hatası veriyor, acil destek lazım.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Yüksek
+372,Hakan Bey için vejetaryen menü talep ediyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+373,3. kat paylaşım klasörüne erişim yetkisi rica ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Düşük
+374,Adobe Acrobat güncel sürümüne geçmek istiyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Orta
+375,Burak Bey'e MS Teams için kullanıcı hesabı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+376,geçen hafta için ziyaretçi girişi talep ediyorum.,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Orta
+377,Yeni başlayanlar için oryantasyon eğitimi planlanmasını istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+378,"Merve Hanım olarak internete bağlanamıyorum, acil destek gerekiyor.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Yüksek
+379,"3. kat genelinde internet erişimi yok, herkes şikayetçi.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Yüksek
+380,"Priz kıvılcım yapıyor, acil müdahale gerekiyor.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Yüksek
+381,Emre Bey için ofis koltuğu değişimi rica ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Düşük
+382,Yemeklerin kalitesiyle ilgili bir şikayetim var.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Düşük
+383,Departmanımıza bir uzman alımı için talep oluşturuyorum.,İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Düşük
+384,"Ankara ofisi genelinde internet erişimi yok, herkes şikayetçi.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Yüksek
+385,bu ay içinde saat için toplantı ikramı talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+386,Saha çalışması için bir araca ihtiyacımız var.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Düşük
+387,"Tavan sızıntısı var, acil kontrol edilmesi gerekiyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Kritik
+388,Caner Bey için bina giriş kartı talep ediyorum.,İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Orta
+389,Ana bina için ek bir monitör talep ediyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Orta
+390,dün saat için toplantı ikramı talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+391,Gökhan Bey için referans kontrolü yapılmasını rica ediyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+392,Mükremin Bey'in tamamladığı eğitim sertifikası iletilebilir mi?,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+393,Ekibimiz için yeni bir pozisyon açılmasını talep ediyorum.,İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Düşük
+394,2. kat toplantı salonu için kırtasiye malzemesi talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+395,Misafir Wi-Fi ağına erişim talep ediyorum.,Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Orta
+396,"Ağ yazıcısına bağlanamıyorum, kurulum desteği rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Orta
+397,Saha çalışması için bir araca ihtiyacımız var.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Düşük
+398,Kartuş değişimi için talep açmak istiyorum.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Düşük
+399,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Düşük
+400,"Yazıcı kağıdı ve kalem stoku bitti, tedarik rica ederim.",İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+401,Görüşme yapılan adaylar için geri bildirim formu talep ediyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Orta
+402,"Tavan sızıntısı var, acil kontrol edilmesi gerekiyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Kritik
+403,Yöneticimden yazılı geri bildirim talep ediyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+404,"İş telefonumun hattı arızalı, yenisi gerekiyor.",Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Orta
+405,Burak Bey için şirket telefonu talep ediyorum.,Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Düşük
+406,Silinen dosyalarımın yedekten geri yüklenmesi gerekiyor.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Yüksek
+407,geçen hafta için ziyaretçi girişi talep ediyorum.,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Düşük
+408,İnsan Kaynakları katı'daki tüm bilgisayarlarda CRM uygulaması güncellensin lütfen.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Orta
+409,Bu dönem hedeflerimin sisteme girilmesi gerekiyor.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Orta
+410,Caner Bey için yeni bir klavye ve fare talebinde bulunuyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Düşük
+411,3. kat temizliğinin yapılmasını rica ediyorum.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Orta
+412,"Şirket aracında lastik patlaması oldu, acil destek gerekiyor.",İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Yüksek
+413,"Hijyen malzemeleri stoku azaldı, tedarik rica ederim.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+414,CRM uygulaması için güncelleme talebinde bulunuyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Orta
+415,Zeynep Hanım için vejetaryen menü talep ediyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+416,"VPN istemcisi şifremi sıfırlamam gerekiyor, acil.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Orta
+417,"Dosya sunucusuna erişemiyoruz, geçen hafta beri sorun var.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Kritik
+418,Toplantı öncesi Ankara ofisi'un özel olarak temizlenmesini istiyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Yüksek
+419,"İstifa dilekçemi iletmek istiyorum, süreç hakkında bilgi rica ederim.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Orta
+420,Sunucu kaynakları yetersiz kalıyor gibi görünüyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Orta
+421,"Tavan sızıntısı var, acil kontrol edilmesi gerekiyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Yüksek
+422,Ofisimizde genel temizlik ihtiyacı var.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Orta
+423,Başvuran adayların mülakat sürecini planlamak istiyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Düşük
+424,İzmir şubesi için kırtasiye malzemesi talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+425,dün için ziyaretçi girişi talep ediyorum.,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Düşük
+426,geçen hafta için ziyaretçi girişi talep ediyorum.,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Düşük
+427,Deniz Hanım için performans görüşmesi planlanmasını rica ediyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Düşük
+428,"Emre Bey'in görev tanımı güncellenecek, talep açıyorum.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Orta
+429,Caner Bey için yeni bir sistem hesabı açılmasını rica ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+430,"Satış ofisi'da Wi-Fi sinyali çok zayıf, kontrol edilebilir mi?",Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Düşük
+431,"Şifremi unuttum, sıfırlanmasını rica ediyorum.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Yüksek
+432,Hakan Bey için çıkış işlemlerinin başlatılmasını istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Yüksek
+433,Misafir Wi-Fi ağına erişim talep ediyorum.,Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Orta
+434,2. kat toplantı salonu sunucusu için yedekleme planı oluşturulmasını istiyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Orta
+435,"MS Teams sürekli çöküyor, destek rica ediyorum.",Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Orta
+436,bu sabah saat için toplantı ikramı talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+437,Ali Bey için hizmet belgesi çıkarılmasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Orta
+438,"İnsan Kaynakları katı'daki yazıcı çalışmıyor, kağıt sıkışması var.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Yüksek
+439,Kartuş değişimi için talep açmak istiyorum.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Orta
+440,"İzin tarihimi değiştirmek istiyorum, uygun müsaitlik var mı?",İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Orta
+441,Yeni işe başlayan personel için e-posta hesabı talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+442,Aday hakkında önceki işyerinden referans teyidi istiyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+443,Departmanımıza bir uzman alımı için talep oluşturuyorum.,İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Düşük
+444,Sunucu kaynakları yetersiz kalıyor gibi görünüyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Orta
+445,"İK ofisi sunucusu yanıt vermiyor, acil kontrol gerekiyor.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Kritik
+446,Kartuş değişimi için talep açmak istiyorum.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Orta
+447,"Muhasebe birimi'da Wi-Fi sinyali çok zayıf, kontrol edilebilir mi?",Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Düşük
+448,"Yeni bir MS Teams lisansına ihtiyacım var, talep açabilir misiniz?",Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Orta
+449,Projemiz için 2 adet ek bilgisayar temin edilebilir mi?,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Düşük
+450,Yeni işe başlayan arkadaşımız için dizüstü bilgisayar talep ediyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Orta
+451,"Fazla mesai ücretim bordroma yansımamış, kontrol edilebilir mi?",İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Yüksek
+452,Deniz Hanım için ERP sistemi kurulumu talep ediyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Orta
+453,İK ofisi için servis saatleri hakkında bilgi almak istiyorum.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Orta
+454,SAP güncel sürümüne geçmek istiyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Orta
+455,"Dosya sunucusuna erişemiyoruz, dün beri sorun var.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Kritik
+456,Departmanımıza bir uzman alımı için talep oluşturuyorum.,İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Orta
+457,Deniz Hanım hakkında 360 derece geri bildirim süreci başlatmak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+458,Muhasebe birimi sunucusu için yedekleme planı oluşturulmasını istiyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Yüksek
+459,"Mükremin Bey'in görev tanımı güncellenecek, talep açıyorum.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Orta
+460,Burak Bey müşteri ziyareti için araç tahsisi istiyor.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Orta
+461,Mehmet Bey ile birlikte hedef belirleme toplantısı planlamak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Düşük
+462,"Sistem geneli çok yavaş çalışıyor, bu sabah beri.",Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+463,"Telefonumda ses gelmiyor, arıza kaydı açmak istiyorum.",Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+464,Katıldığım eğitimin sertifikasını talep ediyorum.,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+465,"Depo'daki yazıcının toneri bitti, yenisi gerekiyor.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Orta
+466,Saha çalışması için bir araca ihtiyacımız var.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Düşük
+467,Ahmet Bey'in tamamladığı eğitim sertifikası iletilebilir mi?,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+468,Ofisimizde genel temizlik ihtiyacı var.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Orta
+469,Merve Hanım için çıkış işlemlerinin başlatılmasını istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Orta
+470,"Ağ yazıcısına bağlanamıyorum, kurulum desteği rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Orta
+471,Ayşe Hanım için referans kontrolü yapılmasını rica ediyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+472,"İş telefonumun hattı arızalı, yenisi gerekiyor.",Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Orta
+473,"Ağ yazıcısına bağlanamıyorum, kurulum desteği rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Düşük
+474,"el terminalim sürekli donuyor, bu ay içinde beri böyle.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Yüksek
+475,"RAM yetersiz kalıyor, tabletim için yükseltme talep ediyorum.",Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Orta
+476,Emre Bey için performans görüşmesi planlanmasını rica ediyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Düşük
+477,SAP güncel sürümüne geçmek istiyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Orta
+478,Bilgisayarıma yeni yazıcı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Düşük
+479,Ahmet Bey için unvan değişikliği talep ediyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Orta
+480,"Hijyen malzemeleri stoku azaldı, tedarik rica ederim.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+481,Muhasebe birimi temizliğinin yapılmasını rica ediyorum.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Orta
+482,"yazıcım çok yavaş açılıyor, kontrol edilmesini rica ediyorum.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Yüksek
+483,İkametgah için işyerinden yazı almam gerekiyor.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Düşük
+484,Yeni ekipman alımı için satınalma onayı bekliyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Yüksek
+485,"Muhasebe birimi için ek personel ihtiyacımız var, ilan açılabilir mi?",İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Düşük
+486,Su baskını sonrası acil temizlik talep ediyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Yüksek
+487,Su baskını sonrası acil temizlik talep ediyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Orta
+488,"SSD değişimi için talep açmak istiyorum, dokunmatik ekranım çok yavaş.",Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Düşük
+489,"Depo için ek personel ihtiyacımız var, ilan açılabilir mi?",İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Orta
+490,"İK ofisi'daki klima çalışmıyor, çok sıcak/soğuk oluyor.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Yüksek
+491,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Orta
+492,Glutensiz menü talebinde bulunmak istiyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+493,Bu ayki maaşımda bir eksik ödeme fark ettim.,İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Yüksek
+494,Genel Müdürlük sunucusu için yedekleme planı oluşturulmasını istiyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Orta
+495,Performans değerlendirme dönemim hakkında bilgi almak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Düşük
+496,Silinen dosyalarımın yedekten geri yüklenmesi gerekiyor.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Yüksek
+497,Bu dönemki eğitim takvimi hakkında bilgi almak istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+498,İzmir şubesi'daki sabit telefon hattı çalışmıyor.,Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+499,bu sabah için şirket aracı talep ediyorum.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Düşük
+500,Fatma Hanım için hizmet belgesi çıkarılmasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Düşük
+501,Bilgisayarıma yeni yazıcı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Düşük
+502,Deniz Hanım için referans kontrolü yapılmasını rica ediyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+503,"İzmir şubesi'da internet bağlantısı kesik, yarından itibaren beri.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Kritik
+504,"Giriş kartımı kaybettim, yenisinin çıkarılmasını rica ediyorum.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Orta
+505,Gökhan Bey için ofis koltuğu değişimi rica ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Orta
+506,az önce için ziyaretçi girişi talep ediyorum.,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Orta
+507,Hakan Bey için vejetaryen menü talep ediyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+508,ITSM portalı sistemine erişim yetkisi talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Orta
+509,Excel sistemine erişim yetkisi talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Orta
+510,Zeynep Hanım için vejetaryen menü talep ediyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+511,Ali Bey için vejetaryen menü talep ediyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+512,"Şirket aracında lastik patlaması oldu, acil destek gerekiyor.",İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Kritik
+513,"Yeni bir bordro yazılımı lisansına ihtiyacım var, talep açabilir misiniz?",Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Orta
+514,VPN istemcisi güncel sürümüne geçmek istiyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Düşük
+515,Ofisimizde genel temizlik ihtiyacı var.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Orta
+516,Ali Bey için ofis koltuğu değişimi rica ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Düşük
+517,Bilgisayarıma yeni yazıcı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Düşük
+518,"Yeni bir MS Teams lisansına ihtiyacım var, talep açabilir misiniz?",Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Düşük
+519,"Emre Bey izin gününü ertelemek istiyor, işlem yapılabilir mi?",İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Düşük
+520,Glutensiz menü talebinde bulunmak istiyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+521,Performans değerlendirme dönemim hakkında bilgi almak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Orta
+522,Hakan Bey ile birlikte hedef belirleme toplantısı planlamak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Orta
+523,İnsan Kaynakları katı'daki sabit telefon hattı çalışmıyor.,Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+524,410 TL tutarındaki satınalma talebimin onaylanmasını rica ederim.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Orta
+525,Yeni işe başlayan arkadaşımız için dizüstü bilgisayar talep ediyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Düşük
+526,Çağrı merkezi temizliğinin yapılmasını rica ediyorum.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Orta
+527,yarından itibaren için ziyaretçi girişi talep ediyorum.,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Orta
+528,Fatma Hanım adlı misafirim için giriş izni oluşturur musunuz?,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Düşük
+529,"Sağlık raporum var, sisteme işlenmesini rica ediyorum.",İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Orta
+530,MS Teams için güncelleme talebinde bulunuyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Düşük
+531,"İzin tarihimi değiştirmek istiyorum, uygun müsaitlik var mı?",İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Düşük
+532,Mükremin Bey olarak VPN istemcisi kullanırken hata kodu alıyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Yüksek
+533,Tuvalet kağıdı ve kağıt havlu talep ediyorum.,İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+534,Ayşe Hanım için mesleki gelişim eğitimi talep ediyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Orta
+535,Ana bina'a yeni telefon hattı çekilmesini istiyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Orta
+536,"VPN istemcisi lisansım süresi doldu, yenilenmesi gerekiyor.",Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Düşük
+537,400 TL tutarındaki satınalma talebimin onaylanmasını rica ederim.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Yüksek
+538,Dosyalarımın yedeklenmesini talep ediyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Orta
+539,"Tavan sızıntısı var, acil kontrol edilmesi gerekiyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Kritik
+540,"2. kat toplantı salonu'da internet bağlantısı kesik, bu sabah beri.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Kritik
+541,Sunucu kaynakları yetersiz kalıyor gibi görünüyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+542,Fatma Hanım servis güzergahının değiştirilmesini talep ediyor.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Orta
+543,Emre Bey'in tamamladığı eğitim sertifikası iletilebilir mi?,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+544,Yeni personel için erişim kartı çıkarılması gerekiyor.,İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Düşük
+545,Bu dönem hedeflerimin sisteme girilmesi gerekiyor.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Düşük
+546,Departmanımıza bir uzman alımı için talep oluşturuyorum.,İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Düşük
+547,"Priz kıvılcım yapıyor, acil müdahale gerekiyor.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Yüksek
+548,2. kat toplantı salonu'daki tüm bilgisayarlarda MS Teams güncellensin lütfen.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Orta
+549,Mükremin Bey için bordro yazılımı kurulumu talep ediyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Düşük
+550,Dahili hattım geçen hafta beri kesik.,Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+551,Kocaeli fabrikası'a yeni telefon hattı çekilmesini istiyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Orta
+552,"Hesabım kilitlendi, şifre sıfırlama talep ediyorum.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Yüksek
+553,ITSM portalı sistemine erişim yetkisi talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Orta
+554,"Sistem geneli çok yavaş çalışıyor, bu ay içinde beri.",Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+555,"muhasebe programı sürekli çöküyor, destek rica ediyorum.",Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Orta
+556,Saha çalışması için bir araca ihtiyacımız var.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Düşük
+557,Dosyalarımın yedeklenmesini talep ediyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Yüksek
+558,Genel Müdürlük için kırtasiye malzemesi talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+559,Terfi sürecimin ne durumda olduğunu öğrenmek istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Orta
+560,Gökhan Bey için yeni bir dahili hat talep ediyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+561,İK ofisi paylaşım klasörüne erişim yetkisi rica ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Düşük
+562,SGK işe giriş belgemi talep ediyorum.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Düşük
+563,"Genel Müdürlük'da faremim çalışmıyor, teknisyen gönderebilir misiniz?",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Kritik
+564,"Telefonumda ses gelmiyor, arıza kaydı açmak istiyorum.",Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+565,Ankara ofisi'a yeni bir çalışma masası talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Düşük
+566,Burak Bey için performans görüşmesi planlanmasını rica ediyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Orta
+567,"bu ay içinde itibarıyla izne çıkmak istiyorum, onay rica ederim.",İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Orta
+568,Bu dönem hedeflerimin sisteme girilmesi gerekiyor.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Orta
+569,"RAM yetersiz kalıyor, faremim için yükseltme talep ediyorum.",Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Düşük
+570,Dosyalarımın yedeklenmesini talep ediyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Orta
+571,"SSD değişimi için talep açmak istiyorum, faremim çok yavaş.",Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Düşük
+572,Yeni başlayanlar için oryantasyon eğitimi planlanmasını istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+573,Mehmet Bey olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+574,Başvuran adayların mülakat sürecini planlamak istiyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Düşük
+575,"Lojistik binası için ek personel ihtiyacımız var, ilan açılabilir mi?",İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Düşük
+576,Yeni başlayanlar için oryantasyon eğitimi planlanmasını istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+577,Uzaktan çalışırken VPN sürekli kopuyor.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Orta
+578,Gökhan Bey adlı misafirim için giriş izni oluşturur musunuz?,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Düşük
+579,Glutensiz menü talebinde bulunmak istiyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+580,Ahmet Bey için çıkış işlemlerinin başlatılmasını istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Orta
+581,Dahili hattım geçen hafta beri kesik.,Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+582,"Hijyen malzemeleri stoku azaldı, tedarik rica ederim.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+583,15 günlük yıllık izin talebinde bulunmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Orta
+584,"Başka bir departmana geçiş yapmak istiyorum, süreç nasıl işliyor?",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Orta
+585,Hakan Bey rahatsızlandığı için bugün rapor kullanacak.,İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Orta
+586,Bu dönemki eğitim takvimi hakkında bilgi almak istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+587,MS Teams kullanırken sistem kilitleniyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+588,Mehmet Bey'in tamamladığı eğitim sertifikası iletilebilir mi?,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+589,Elif Hanım için bina giriş kartı talep ediyorum.,İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Orta
+590,"Başka bir departmana geçiş yapmak istiyorum, süreç nasıl işliyor?",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Düşük
+591,İzmir şubesi yazıcısı bağlantı hatası veriyor.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Yüksek
+592,"Genel Müdürlük'da aydınlatma çalışmıyor, karanlıkta kaldık.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Kritik
+593,Çağrı merkezi sunucusu için yedekleme planı oluşturulmasını istiyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Yüksek
+594,bugün için ziyaretçi girişi talep ediyorum.,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Düşük
+595,"Yazıcıdan çıktı alamıyorum, dün beri arızalı.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Yüksek
+596,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Orta
+597,bu sabah saat için toplantı ikramı talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+598,Mükremin Bey için VPN erişim talebi açmak istiyorum.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Orta
+599,"Excel lisansım süresi doldu, yenilenmesi gerekiyor.",Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Düşük
+600,Emre Bey için yeni bir sistem hesabı açılmasını rica ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+601,Hangi eğitimlere katılabileceğimi öğrenmek istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+602,541 TL tutarındaki satınalma talebimin onaylanmasını rica ederim.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Yüksek
+603,Departman değişikliği nedeniyle yeni yetki talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Düşük
+604,Hangi eğitimlere katılabileceğimi öğrenmek istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+605,"Şifremi unuttum, sıfırlanmasını rica ediyorum.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Yüksek
+606,Zeynep Hanım hakkında 360 derece geri bildirim süreci başlatmak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+607,909 plakalı araçta motor arızası var.,İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Kritik
+608,Caner Bey için performans görüşmesi planlanmasını rica ediyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Düşük
+609,Depo için kırtasiye malzemesi talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+610,"Elif Hanım olarak internete bağlanamıyorum, acil destek gerekiyor.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Kritik
+611,"Burak Bey olarak maaşımda hatalı kesinti olduğunu düşünüyorum, acil inceleme rica ederim.",İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Yüksek
+612,SAP sistemine erişim yetkisi talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Düşük
+613,"dizüstü bilgisayarım çok yavaş açılıyor, kontrol edilmesini rica ediyorum.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Orta
+614,"Dosya sunucusuna erişemiyoruz, yarından itibaren beri sorun var.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Kritik
+615,Yeni ekipman alımı için satınalma onayı bekliyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Orta
+616,"Giriş kartımı kaybettim, yenisinin çıkarılmasını rica ediyorum.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Yüksek
+617,"faremim çok eski, yükseltme yapılabilir mi?",Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Düşük
+618,Mehmet Bey olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+619,Mükremin Bey isimli adayın CV değerlendirmesi yapılabilir mi?,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Düşük
+620,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Orta
+621,Yöneticimden yazılı geri bildirim talep ediyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+622,"Priz kıvılcım yapıyor, acil müdahale gerekiyor.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Yüksek
+623,Adobe Acrobat için güncelleme talebinde bulunuyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Düşük
+624,Genel Müdürlük paylaşım klasörüne erişim yetkisi rica ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Düşük
+625,Gökhan Bey için unvan değişikliği talep ediyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Düşük
+626,"Yazıcı mürekkebi azaldı, tedarik edilmesini rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Düşük
+627,Deniz Hanım için yeni bir klavye ve fare talebinde bulunuyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Orta
+628,"Satış ofisi sunucusu yanıt vermiyor, acil kontrol gerekiyor.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Kritik
+629,"Başka bir departmana geçiş yapmak istiyorum, süreç nasıl işliyor?",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Düşük
+630,Terfi sürecimin ne durumda olduğunu öğrenmek istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Orta
+631,Hakan Bey adlı misafirim için giriş izni oluşturur musunuz?,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Orta
+632,Geçmiş aylara ait bordro dökümü talep ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+633,"Sağlık raporum var, sisteme işlenmesini rica ediyorum.",İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Orta
+634,Uzaktan çalışırken VPN sürekli kopuyor.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Orta
+635,"Genel Müdürlük'da dokunmatik ekranım çalışmıyor, teknisyen gönderebilir misiniz?",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Kritik
+636,Gökhan Bey için yeni bir sistem hesabı açılmasını rica ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+637,Ankara ofisi'a yeni bir çalışma masası talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Orta
+638,Yurt dışı hattı açılması için talep oluşturuyorum.,Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Düşük
+639,Burak Bey hakkında 360 derece geri bildirim süreci başlatmak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+640,Hakan Bey olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+641,"İş telefonumun hattı arızalı, yenisi gerekiyor.",Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Orta
+642,"Klimadan su damlıyor, acil kontrol rica ederim.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Orta
+643,Onaylanan iznimi iptal etmek istiyorum.,İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Orta
+644,2. kat toplantı salonu için ek bir monitör talep ediyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Orta
+645,dün saat için toplantı ikramı talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+646,bugün saat için toplantı ikramı talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+647,Glutensiz menü talebinde bulunmak istiyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+648,Emre Bey'in tamamladığı eğitim sertifikası iletilebilir mi?,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+649,İkametgah için işyerinden yazı almam gerekiyor.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Orta
+650,"2. kat toplantı salonu'daki klima çalışmıyor, çok sıcak/soğuk oluyor.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Orta
+651,"İstifa dilekçemi iletmek istiyorum, süreç hakkında bilgi rica ederim.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Orta
+652,Merve Hanım olarak 5 gün izin kullanmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Orta
+653,Selin Hanım'e SAP için kullanıcı hesabı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+654,"Ali Bey olarak monitörüm bozuldu, talep açmak istiyorum.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Orta
+655,"faremim sürekli donuyor, yarından itibaren beri böyle.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Yüksek
+656,Ali Bey adlı misafirim için giriş izni oluşturur musunuz?,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Orta
+657,Ali Bey hakkında 360 derece geri bildirim süreci başlatmak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+658,"Klimadan su damlıyor, acil kontrol rica ederim.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Yüksek
+659,"VPN'e bağlanamıyorum, bu sabah beri hata alıyorum.",Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Orta
+660,"İzmir şubesi'da yazıcım çalışmıyor, teknisyen gönderebilir misiniz?",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Yüksek
+661,Emre Bey için yeni bir dahili hat talep ediyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+662,Bu dönem hedeflerimin sisteme girilmesi gerekiyor.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Orta
+663,Selin Hanım rahatsızlandığı için bugün rapor kullanacak.,İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Yüksek
+664,"İstifa dilekçemi iletmek istiyorum, süreç hakkında bilgi rica ederim.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Yüksek
+665,Kocaeli fabrikası'a yeni telefon hattı çekilmesini istiyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+666,"Telefonumda ses gelmiyor, arıza kaydı açmak istiyorum.",Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+667,Saha çalışması için bir araca ihtiyacımız var.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Düşük
+668,Depo için servis saatleri hakkında bilgi almak istiyorum.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Orta
+669,553 TL tutarındaki satınalma talebimin onaylanmasını rica ederim.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Orta
+670,3. kat yazıcısı bağlantı hatası veriyor.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Orta
+671,"Fatma Hanım'in görev tanımı güncellenecek, talep açıyorum.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Orta
+672,Emre Bey için yeni bir dahili hat talep ediyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+673,Ofisimizde genel temizlik ihtiyacı var.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Düşük
+674,Ofisimizde genel temizlik ihtiyacı var.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Orta
+675,Hakan Bey hakkında 360 derece geri bildirim süreci başlatmak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+676,"Sunucu çok yavaş çalışıyor, tüm ekip etkilendi.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Yüksek
+677,"Deniz Hanım izin gününü ertelemek istiyor, işlem yapılabilir mi?",İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Orta
+678,"Ankara ofisi'daki yazıcının toneri bitti, yenisi gerekiyor.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Düşük
+679,Bu dönemki eğitim takvimi hakkında bilgi almak istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+680,2. kat toplantı salonu'da Wi-Fi şifresini alabilir miyim?,Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Orta
+681,"Klimadan su damlıyor, acil kontrol rica ederim.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Yüksek
+682,Gökhan Bey için ofis koltuğu değişimi rica ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Orta
+683,Su baskını sonrası acil temizlik talep ediyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Orta
+684,Bilgisayarıma yeni yazıcı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Düşük
+685,"Excel dosyalarımı kaydetmiyor, acil bakılabilir mi?",Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Yüksek
+686,Hangi eğitimlere katılabileceğimi öğrenmek istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+687,"Merve Hanım'in kartı çalındı, iptal edilip yenisi verilmeli.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Orta
+688,"MS Teams şifremi sıfırlamam gerekiyor, acil.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Orta
+689,Ahmet Bey için bina giriş kartı talep ediyorum.,İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Düşük
+690,"Yazıcı mürekkebi azaldı, tedarik edilmesini rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Düşük
+691,Aday hakkında önceki işyerinden referans teyidi istiyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+692,Bu dönem hedeflerimin sisteme girilmesi gerekiyor.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Orta
+693,"Depo'daki lavabo tıkalı, su akmıyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Kritik
+694,Ali Bey için unvan değişikliği talep ediyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Orta
+695,Mükremin Bey için şirket telefonu talep ediyorum.,Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Orta
+696,İkametgah için işyerinden yazı almam gerekiyor.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Orta
+697,Ankara ofisi için servis saatleri hakkında bilgi almak istiyorum.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Düşük
+698,Adobe Acrobat kullanırken sistem kilitleniyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+699,Elif Hanım ile birlikte hedef belirleme toplantısı planlamak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Düşük
+700,"Yazıcıdan çıktı alamıyorum, bugün beri arızalı.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Yüksek
+701,Hakan Bey isimli adayın CV değerlendirmesi yapılabilir mi?,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Orta
+702,Bilgisayarıma bordro yazılımı kurulmasını istiyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Orta
+703,"faremim sürekli donuyor, yarından itibaren beri böyle.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Yüksek
+704,"CRM uygulaması şifremi sıfırlamam gerekiyor, acil.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Orta
+705,Mükremin Bey için çıkış işlemlerinin başlatılmasını istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Yüksek
+706,"İnsan Kaynakları katı'da aydınlatma çalışmıyor, karanlıkta kaldık.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Kritik
+707,Terfi sürecimin ne durumda olduğunu öğrenmek istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Düşük
+708,İnsan Kaynakları katı'a yeni bir çalışma masası talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Düşük
+709,"dokunmatik ekranım açılmıyor, bir arıza var galiba.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Kritik
+710,Zeynep Hanım'in bilgisayarının donanımının yenilenmesini rica ediyoruz.,Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Orta
+711,10 günlük istirahat raporumu iletiyorum.,İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Orta
+712,"Şirket aracında lastik patlaması oldu, acil destek gerekiyor.",İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Kritik
+713,Ankara ofisi'daki toplantı için kahve ve su talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+714,Mehmet Bey'in tamamladığı eğitim sertifikası iletilebilir mi?,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+715,"Giriş kartımı kaybettim, yenisinin çıkarılmasını rica ediyorum.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Orta
+716,Toplantı öncesi 2. kat toplantı salonu'un özel olarak temizlenmesini istiyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Orta
+717,Ankara ofisi için kırtasiye malzemesi talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+718,Caner Bey olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Düşük
+719,"Hijyen malzemeleri stoku azaldı, tedarik rica ederim.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+720,CRM uygulaması sistemine erişim yetkisi talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Düşük
+721,Aday hakkında önceki işyerinden referans teyidi istiyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+722,Depo'a yeni bir çalışma masası talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Düşük
+723,Elif Hanım olarak bordro yazılımı kullanırken hata kodu alıyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Yüksek
+724,Ana bina'daki toplantı için kahve ve su talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+725,İnsan Kaynakları katı temizliğinin yapılmasını rica ediyorum.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Düşük
+726,Elif Hanım için performans görüşmesi planlanmasını rica ediyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Düşük
+727,Depo'da yeni alınan yazıcının kurulumu yapılabilir mi?,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Orta
+728,Zeynep Hanım için VPN erişim talebi açmak istiyorum.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Orta
+729,Ayşe Hanım için çıkış işlemlerinin başlatılmasını istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Yüksek
+730,Hangi eğitimlere katılabileceğimi öğrenmek istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+731,Sunucu kaynakları yetersiz kalıyor gibi görünüyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+732,CRM uygulaması için güncelleme talebinde bulunuyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Orta
+733,Servis güzergahına yeni bir durak eklenmesini rica ediyorum.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Düşük
+734,Tuvalet kağıdı ve kağıt havlu talep ediyorum.,İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+735,Bu dönemki eğitim takvimi hakkında bilgi almak istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+736,Lojistik binası'daki halı yıkama talebinde bulunuyorum.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Düşük
+737,"Zeynep Hanım'in kartı çalındı, iptal edilip yenisi verilmeli.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Yüksek
+738,Genel Müdürlük sunucusu için yedekleme planı oluşturulmasını istiyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Yüksek
+739,"Zeynep Hanım'in görev tanımı güncellenecek, talep açıyorum.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Düşük
+740,Çağrı merkezi'a yeni bir çalışma masası talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Orta
+741,Projemiz için 2 adet ek bilgisayar temin edilebilir mi?,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Orta
+742,Başvuran adayların mülakat sürecini planlamak istiyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Orta
+743,"Yeni bir CRM uygulaması lisansına ihtiyacım var, talep açabilir misiniz?",Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Düşük
+744,"Fazla mesai ücretim bordroma yansımamış, kontrol edilebilir mi?",İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Kritik
+745,Bu dönemki eğitim takvimi hakkında bilgi almak istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+746,"2. kat toplantı salonu için ek personel ihtiyacımız var, ilan açılabilir mi?",İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Orta
+747,Dahili hattım geçen hafta beri kesik.,Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+748,Bilgisayarıma VPN istemcisi kurulmasını istiyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Düşük
+749,İzmir şubesi yazıcısı bağlantı hatası veriyor.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Orta
+750,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Düşük
+751,SGK işe giriş belgemi talep ediyorum.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Düşük
+752,Yeni ekipman alımı için satınalma onayı bekliyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Yüksek
+753,Ali Bey için referans kontrolü yapılmasını rica ediyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+754,Görüşme yapılan adaylar için geri bildirim formu talep ediyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Düşük
+755,İK ofisi sunucusu için yedekleme planı oluşturulmasını istiyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Yüksek
+756,Ali Bey ile birlikte hedef belirleme toplantısı planlamak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Orta
+757,Bu dönem hedeflerimin sisteme girilmesi gerekiyor.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Düşük
+758,Dosyalarımın yedeklenmesini talep ediyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Orta
+759,Ali Bey'in Outlook modülüne erişim yetkisi olması gerekiyor.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Orta
+760,Hakan Bey'in bilgisayarının donanımının yenilenmesini rica ediyoruz.,Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Düşük
+761,"Deniz Hanım'in kartı çalındı, iptal edilip yenisi verilmeli.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Yüksek
+762,Mehmet Bey olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+763,Outlook kullanırken sistem kilitleniyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Orta
+764,Dahili hattım yarından itibaren beri kesik.,Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+765,5 günlük yıllık izin talebinde bulunmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Düşük
+766,"Priz kıvılcım yapıyor, acil müdahale gerekiyor.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Kritik
+767,2. kat toplantı salonu'daki sabit telefon hattı çalışmıyor.,Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Orta
+768,Emre Bey için bina giriş kartı talep ediyorum.,İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Düşük
+769,Vizite kağıdı talebinde bulunuyorum.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Düşük
+770,Bilgisayarıma yeni yazıcı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Düşük
+771,Bilgisayarıma ITSM portalı kurulmasını istiyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Düşük
+772,"Araç periyodik bakım zamanı geldi, randevu talep ediyorum.",İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Yüksek
+773,Muhasebe birimi için ek bir monitör talep ediyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Düşük
+774,Yeni işe başlayan personel için e-posta hesabı talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+775,Ali Bey için ofis koltuğu değişimi rica ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Düşük
+776,Yöneticimden yazılı geri bildirim talep ediyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+777,"Yeni bir ERP sistemi lisansına ihtiyacım var, talep açabilir misiniz?",Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Orta
+778,"MS Teams şifremi sıfırlamam gerekiyor, acil.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Yüksek
+779,Servis güzergahına yeni bir durak eklenmesini rica ediyorum.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Düşük
+780,"Fazla mesai ücretim bordroma yansımamış, kontrol edilebilir mi?",İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Kritik
+781,"Ağ yazıcısına bağlanamıyorum, kurulum desteği rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Orta
+782,Ankara ofisi'da Wi-Fi şifresini alabilir miyim?,Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Düşük
+783,Ahmet Bey için ofis koltuğu değişimi rica ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Düşük
+784,"Sistem geneli çok yavaş çalışıyor, bu ay içinde beri.",Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+785,"Kocaeli fabrikası'daki klima çalışmıyor, çok sıcak/soğuk oluyor.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Orta
+786,Bu haftaki yemek menüsünü öğrenmek istiyorum.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Orta
+787,"Yazıcı mürekkebi azaldı, tedarik edilmesini rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Orta
+788,"Hesabım kilitlendi, şifre sıfırlama talep ediyorum.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Yüksek
+789,Mehmet Bey adlı misafirim için giriş izni oluşturur musunuz?,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Düşük
+790,Excel için güncelleme talebinde bulunuyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Orta
+791,"Lojistik binası genelinde internet erişimi yok, herkes şikayetçi.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Yüksek
+792,ERP sistemi güncel sürümüne geçmek istiyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Orta
+793,Sunucu kaynakları yetersiz kalıyor gibi görünüyor.,Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Orta
+794,Ahmet Bey için hizmet belgesi çıkarılmasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Düşük
+795,"Telefonumda ses gelmiyor, arıza kaydı açmak istiyorum.",Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Orta
+796,Yeni başlayanlar için oryantasyon eğitimi planlanmasını istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+797,İnsan Kaynakları katı için ek bir monitör talep ediyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Düşük
+798,Zeynep Hanım olarak 15 gün izin kullanmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Düşük
+799,"Merve Hanım'in kartı çalındı, iptal edilip yenisi verilmeli.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Orta
+800,Onaylanan iznimi iptal etmek istiyorum.,İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Orta
+801,Ankara ofisi'a yeni telefon hattı çekilmesini istiyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Düşük
+802,Mükremin Bey'in ekipman envanterine yeni bir dizüstü eklenmesini istiyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Düşük
+803,Fatma Hanım isimli adayın CV değerlendirmesi yapılabilir mi?,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Düşük
+804,Çağrı merkezi için kırtasiye malzemesi talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+805,"Klimadan su damlıyor, acil kontrol rica ederim.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Orta
+806,Bu ayki maaşımda bir eksik ödeme fark ettim.,İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Kritik
+807,"Telefonumda ses gelmiyor, arıza kaydı açmak istiyorum.",Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+808,Burak Bey hakkında 360 derece geri bildirim süreci başlatmak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+809,Katıldığım eğitimin sertifikasını talep ediyorum.,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+810,"MS Teams sürekli çöküyor, destek rica ediyorum.",Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Kritik
+811,"İzin tarihimi değiştirmek istiyorum, uygun müsaitlik var mı?",İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Düşük
+812,Fatma Hanım için performans görüşmesi planlanmasını rica ediyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Düşük
+813,438 plakalı araçta motor arızası var.,İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Kritik
+814,"Sistem geneli çok yavaş çalışıyor, yarından itibaren beri.",Bilgi Teknolojileri,Sunucu/Sistem,Sistem Performans Sorunu,Yüksek
+815,ERP sistemi sistemine erişim yetkisi talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Düşük
+816,"Muhasebe birimi'a giriş yetkim yok, tanımlanmasını rica ederim.",İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Orta
+817,"İnsan Kaynakları katı'daki yazıcı çalışmıyor, kağıt sıkışması var.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Yüksek
+818,"Caner Bey'in kartı çalındı, iptal edilip yenisi verilmeli.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Yüksek
+819,Yeni işe başlayan personel için e-posta hesabı talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+820,Katıldığım eğitimin sertifikasını talep ediyorum.,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+821,Zeynep Hanım için çıkış işlemlerinin başlatılmasını istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Yüksek
+822,"Tavan sızıntısı var, acil kontrol edilmesi gerekiyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Kritik
+823,Zeynep Hanım'in ekipman envanterine yeni bir dizüstü eklenmesini istiyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Orta
+824,Merve Hanım için referans kontrolü yapılmasını rica ediyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+825,Glutensiz menü talebinde bulunmak istiyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+826,Tuvalet kağıdı ve kağıt havlu talep ediyorum.,İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+827,Emre Bey için yeni bir sistem hesabı açılmasını rica ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+828,Deniz Hanım için mesleki gelişim eğitimi talep ediyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Orta
+829,Burak Bey için performans görüşmesi planlanmasını rica ediyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Orta
+830,Kocaeli fabrikası'daki bilgisayarlara muhasebe programı kurulması gerekiyor.,Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Orta
+831,Su baskını sonrası acil temizlik talep ediyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Orta
+832,Deniz Hanım için performans görüşmesi planlanmasını rica ediyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Orta
+833,Emre Bey'in tamamladığı eğitim sertifikası iletilebilir mi?,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+834,Mehmet Bey için unvan değişikliği talep ediyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Düşük
+835,Departman değişikliği nedeniyle yeni yetki talep ediyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yetki/Sistem Erişim Talebi,Orta
+836,"CRM uygulaması açılırken hata veriyor, dün beri sorun yaşıyorum.",Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Orta
+837,"İzmir şubesi'daki lavabo tıkalı, su akmıyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Yüksek
+838,"Emre Bey'in görev tanımı güncellenecek, talep açıyorum.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Orta
+839,Uzaktan çalışırken VPN sürekli kopuyor.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Yüksek
+840,"Elif Hanım'in görev tanımı güncellenecek, talep açıyorum.",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Düşük
+841,Bu dönemki eğitim takvimi hakkında bilgi almak istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+842,"Ağ yazıcısına bağlanamıyorum, kurulum desteği rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Orta
+843,Hakan Bey için vejetaryen menü talep ediyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+844,Yeni personel için erişim kartı çıkarılması gerekiyor.,İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Orta
+845,"Giriş kartımı kaybettim, yenisinin çıkarılmasını rica ediyorum.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Yüksek
+846,Terfi sürecimin ne durumda olduğunu öğrenmek istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Orta
+847,"Priz kıvılcım yapıyor, acil müdahale gerekiyor.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Kritik
+848,Projemiz için 2 adet ek bilgisayar temin edilebilir mi?,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Orta
+849,"Araç periyodik bakım zamanı geldi, randevu talep ediyorum.",İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Yüksek
+850,"VPN istemcisi şifremi sıfırlamam gerekiyor, acil.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Orta
+851,ERP sistemi güncel sürümüne geçmek istiyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Orta
+852,"Başka bir departmana geçiş yapmak istiyorum, süreç nasıl işliyor?",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Orta
+853,"Yazıcı mürekkebi azaldı, tedarik edilmesini rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Orta
+854,"İzmir şubesi'da el dezenfektanı bitti, yenisi gerekiyor.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+855,Onaylanan iznimi iptal etmek istiyorum.,İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Orta
+856,Servis güzergahına yeni bir durak eklenmesini rica ediyorum.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Düşük
+857,"RAM yetersiz kalıyor, monitörüm için yükseltme talep ediyorum.",Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Düşük
+858,Selin Hanım'in tamamladığı eğitim sertifikası iletilebilir mi?,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+859,Emre Bey için yeni bir dahili hat talep ediyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Orta
+860,Çağrı merkezi'daki toplantı için kahve ve su talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+861,Dosyalarımın yedeklenmesini talep ediyorum.,Bilgi Teknolojileri,Sunucu/Sistem,Yedekleme Talebi,Orta
+862,İkametgah için işyerinden yazı almam gerekiyor.,İnsan Kaynakları,Bordro/Özlük,Özlük Belgesi Talebi,Orta
+863,"Mükremin Bey olarak maaşımda hatalı kesinti olduğunu düşünüyorum, acil inceleme rica ederim.",İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Kritik
+864,Terfi sürecimin ne durumda olduğunu öğrenmek istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Düşük
+865,Fatma Hanım için çıkış işlemlerinin başlatılmasını istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,İstifa/Çıkış İşlemleri Talebi,Yüksek
+866,Terfi sürecimin ne durumda olduğunu öğrenmek istiyorum.,İnsan Kaynakları,Kariyer/Özlük İşlemleri,Terfi/Unvan Değişikliği Talebi,Düşük
+867,"Giriş kartımı kaybettim, yenisinin çıkarılmasını rica ediyorum.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Yüksek
+868,muhasebe programı güncel sürümüne geçmek istiyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Düşük
+869,Dahili hattım geçen hafta beri kesik.,Bilgi Teknolojileri,Telefon/İletişim,Sabit Hat Arıza Bildirimi,Yüksek
+870,Ofisimizde genel temizlik ihtiyacı var.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Düşük
+871,Ana bina'da Wi-Fi şifresini alabilir miyim?,Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Düşük
+872,"Sağlık raporum var, sisteme işlenmesini rica ediyorum.",İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Orta
+873,Servis güzergahına yeni bir durak eklenmesini rica ediyorum.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Orta
+874,3 günlük istirahat raporumu iletiyorum.,İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Orta
+875,Su baskını sonrası acil temizlik talep ediyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Yüksek
+876,5 günlük istirahat raporumu iletiyorum.,İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Yüksek
+877,yarından itibaren saat için toplantı ikramı talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+878,Fatma Hanım için referans kontrolü yapılmasını rica ediyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+879,"VPN'e bağlanamıyorum, bu ay içinde beri hata alıyorum.",Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Yüksek
+880,Toplantı öncesi Ankara ofisi'un özel olarak temizlenmesini istiyorum.,İdari İşler,Temizlik/Hizmet,Özel Temizlik Talebi,Yüksek
+881,VPN şifremi girmeme rağmen bağlantı sağlanamıyor.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Orta
+882,Yöneticimden yazılı geri bildirim talep ediyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+883,Lojistik binası için kırtasiye malzemesi talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+884,Ofisimizde genel temizlik ihtiyacı var.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Düşük
+885,"Yazıcı kağıdı ve kalem stoku bitti, tedarik rica ederim.",İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+886,Ekibimiz için yeni bir pozisyon açılmasını talep ediyorum.,İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Orta
+887,Ayşe Hanım olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+888,Ali Bey için bina giriş kartı talep ediyorum.,İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Orta
+889,Hakan Bey için yeni bir dahili hat talep ediyorum.,Bilgi Teknolojileri,Telefon/İletişim,Dahili Hat Talebi,Orta
+890,"Sağlık raporum var, sisteme işlenmesini rica ediyorum.",İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Yüksek
+891,Hakan Bey için performans görüşmesi planlanmasını rica ediyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Orta
+892,"Ağ yazıcısına bağlanamıyorum, kurulum desteği rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Düşük
+893,Performans değerlendirme dönemim hakkında bilgi almak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Düşük
+894,Başvuran adayların mülakat sürecini planlamak istiyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Düşük
+895,7 günlük yıllık izin talebinde bulunmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Düşük
+896,"RAM yetersiz kalıyor, masaüstü bilgisayarım için yükseltme talep ediyorum.",Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Orta
+897,Yeni ekipman alımı için satınalma onayı bekliyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Yüksek
+898,"Yeni bir Adobe Acrobat lisansına ihtiyacım var, talep açabilir misiniz?",Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Düşük
+899,Yurt dışı hattı açılması için talep oluşturuyorum.,Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Orta
+900,Katıldığım eğitimin sertifikasını talep ediyorum.,İnsan Kaynakları,Eğitim,Sertifika Talebi,Düşük
+901,Hakan Bey için VPN erişim talebi açmak istiyorum.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Yüksek
+902,"Fatma Hanım olarak masaüstü bilgisayarım bozuldu, talep açmak istiyorum.",Bilgi Teknolojileri,Donanım,Bilgisayar Arıza/Onarım Talebi,Orta
+903,Deniz Hanım isimli adayın CV değerlendirmesi yapılabilir mi?,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Düşük
+904,"Kocaeli fabrikası'da el dezenfektanı bitti, yenisi gerekiyor.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+905,Emre Bey adlı misafirim için giriş izni oluşturur musunuz?,İdari İşler,Güvenlik,Ziyaretçi Giriş Talebi,Düşük
+906,Mehmet Bey'e bordro yazılımı için kullanıcı hesabı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Erişim ve Yetkilendirme,Yeni Kullanıcı Hesabı Açma,Orta
+907,"Sunucu çok yavaş çalışıyor, tüm ekip etkilendi.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Kritik
+908,"Yazıcı mürekkebi azaldı, tedarik edilmesini rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Orta
+909,"Satış ofisi'da aydınlatma çalışmıyor, karanlıkta kaldık.",İdari İşler,Bina/Tesis Bakım,Elektrik/Aydınlatma Arıza Bildirimi,Yüksek
+910,Elif Hanım'in bilgisayarının donanımının yenilenmesini rica ediyoruz.,Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Düşük
+911,3 günlük yıllık izin talebinde bulunmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Düşük
+912,Ayşe Hanım ile birlikte hedef belirleme toplantısı planlamak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Düşük
+913,"Ankara ofisi'a giriş yetkim yok, tanımlanmasını rica ederim.",İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Düşük
+914,"İK ofisi'da Wi-Fi sinyali çok zayıf, kontrol edilebilir mi?",Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Düşük
+915,2. kat toplantı salonu'da Wi-Fi şifresini alabilir miyim?,Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Orta
+916,"Giriş kartımı kaybettim, yenisinin çıkarılmasını rica ediyorum.",İdari İşler,Güvenlik,Kayıp Kart Bildirimi,Yüksek
+917,Fatma Hanım'in ekipman envanterine yeni bir dizüstü eklenmesini istiyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Orta
+918,Başvuran adayların mülakat sürecini planlamak istiyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Düşük
+919,Genel Müdürlük'da yeni alınan yazıcının kurulumu yapılabilir mi?,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Düşük
+920,"Ağ yazıcısına bağlanamıyorum, kurulum desteği rica ediyorum.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Orta
+921,Deniz Hanım olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+922,Bilgisayarıma yeni yazıcı tanımlanmasını istiyorum.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Kurulum Talebi,Orta
+923,Mehmet Bey olarak maaş bordromun bir kopyasını rica ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Düşük
+924,"Çağrı merkezi'daki lavabo tıkalı, su akmıyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Yüksek
+925,"İK ofisi'da Wi-Fi sinyali çok zayıf, kontrol edilebilir mi?",Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Düşük
+926,Burak Bey için mesleki gelişim eğitimi talep ediyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+927,Ayşe Hanım'in bilgisayarının donanımının yenilenmesini rica ediyoruz.,Bilgi Teknolojileri,Donanım,Ekipman Değişim/Yükseltme Talebi,Orta
+928,Kartuş değişimi için talep açmak istiyorum.,Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Toner/Kartuş Talebi,Düşük
+929,Performans değerlendirme dönemim hakkında bilgi almak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Performans Değerlendirme Talebi,Düşük
+930,"3. kat'daki lavabo tıkalı, su akmıyor.",İdari İşler,Bina/Tesis Bakım,Su Tesisatı Arıza Bildirimi,Yüksek
+931,"İnternetim çok yavaş, kontrol edilebilir mi?",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Yüksek
+932,"Lojistik binası'da internet bağlantısı kesik, bu ay içinde beri.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Yüksek
+933,Bu ayki maaşımda bir eksik ödeme fark ettim.,İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Yüksek
+934,Ankara ofisi'a yeni bir çalışma masası talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Mobilya Talebi,Düşük
+935,Mehmet Bey hakkında 360 derece geri bildirim süreci başlatmak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Geri Bildirim Talebi,Düşük
+936,"Ana bina genelinde internet erişimi yok, herkes şikayetçi.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Yüksek
+937,dün saat için toplantı ikramı talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+938,3. kat'daki toplantı için kahve ve su talep ediyorum.,İdari İşler,Catering/Yemekhane,Toplantı İkramı Talebi,Düşük
+939,"Şifremi unuttum, sıfırlanmasını rica ediyorum.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Yüksek
+940,"Hijyen malzemeleri stoku azaldı, tedarik rica ederim.",İdari İşler,Temizlik/Hizmet,Hijyen Malzeme Talebi,Düşük
+941,Mehmet Bey'in ekipman envanterine yeni bir dizüstü eklenmesini istiyorum.,Bilgi Teknolojileri,Donanım,Yeni Ekipman Talebi,Düşük
+942,Ekibimiz için yeni bir pozisyon açılmasını talep ediyorum.,İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Düşük
+943,15 günlük istirahat raporumu iletiyorum.,İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Yüksek
+944,"Sunucu çok yavaş çalışıyor, tüm ekip etkilendi.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Kritik
+945,Saha çalışması için bir araca ihtiyacımız var.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Orta
+946,"Çağrı merkezi genelinde internet erişimi yok, herkes şikayetçi.",Bilgi Teknolojileri,Ağ/Network,İnternet Bağlantı Sorunu,Kritik
+947,Yeni başlayanlar için oryantasyon eğitimi planlanmasını istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+948,Yeni ekipman alımı için satınalma onayı bekliyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Yüksek
+949,Burak Bey için referans kontrolü yapılmasını rica ediyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+950,802 plakalı araçta motor arızası var.,İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Kritik
+951,Uzaktan çalışırken VPN sürekli kopuyor.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Orta
+952,7 günlük istirahat raporumu iletiyorum.,İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Yüksek
+953,Deniz Hanım için vejetaryen menü talep ediyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+954,Görüşme yapılan adaylar için geri bildirim formu talep ediyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Düşük
+955,Burak Bey için VPN erişim talebi açmak istiyorum.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Orta
+956,Aday hakkında önceki işyerinden referans teyidi istiyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+957,"Muhasebe birimi'da Wi-Fi sinyali çok zayıf, kontrol edilebilir mi?",Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Düşük
+958,"bordro yazılımı şifremi sıfırlamam gerekiyor, acil.",Bilgi Teknolojileri,Erişim ve Yetkilendirme,Şifre Sıfırlama Talebi,Yüksek
+959,"Yazıcı kağıdı ve kalem stoku bitti, tedarik rica ederim.",İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+960,"bu ay içinde itibarıyla izne çıkmak istiyorum, onay rica ederim.",İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Orta
+961,Ana bina'daki halı yıkama talebinde bulunuyorum.,İdari İşler,Temizlik/Hizmet,Ofis Temizlik Talebi,Düşük
+962,Başvuran adayların mülakat sürecini planlamak istiyorum.,İnsan Kaynakları,İşe Alım,Aday Değerlendirme Süreci Talebi,Orta
+963,Yemeklerin kalitesiyle ilgili bir şikayetim var.,İdari İşler,Catering/Yemekhane,Yemek Menü Talebi/Şikayeti,Orta
+964,Saha çalışması için bir araca ihtiyacımız var.,İdari İşler,Ulaşım/Araç,Araç Tahsis Talebi,Düşük
+965,"Gökhan Bey izin gününü ertelemek istiyor, işlem yapılabilir mi?",İnsan Kaynakları,İzin Yönetimi,İzin İptal/Değişiklik Talebi,Orta
+966,Deniz Hanım olarak 5 gün izin kullanmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Düşük
+967,"Başka bir departmana geçiş yapmak istiyorum, süreç nasıl işliyor?",İnsan Kaynakları,Kariyer/Özlük İşlemleri,Departman/Görev Değişikliği Talebi,Düşük
+968,Aday hakkında önceki işyerinden referans teyidi istiyorum.,İnsan Kaynakları,İşe Alım,Referans Kontrolü Talebi,Düşük
+969,Caner Bey ile birlikte hedef belirleme toplantısı planlamak istiyorum.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Düşük
+970,"Yazıcıdan çıktı alamıyorum, az önce beri arızalı.",Bilgi Teknolojileri,Yazıcı/Ofis Ekipmanları,Yazıcı Arıza Bildirimi,Yüksek
+971,Yeni ekipman alımı için satınalma onayı bekliyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Satınalma Onay Talebi,Yüksek
+972,Bu ayki maaşımda bir eksik ödeme fark ettim.,İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Yüksek
+973,Mükremin Bey için vejetaryen menü talep ediyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+974,ERP sistemi eğitimine kayıt olmak istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+975,Bu dönemki eğitim takvimi hakkında bilgi almak istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Programı Bilgi Talebi,Düşük
+976,Bu dönem hedeflerimin sisteme girilmesi gerekiyor.,İnsan Kaynakları,Performans Yönetimi,Hedef Belirleme Süreci Talebi,Düşük
+977,Bu ayki maaşımda bir eksik ödeme fark ettim.,İnsan Kaynakları,Bordro/Özlük,Maaş Hatası Bildirimi,Kritik
+978,Yeni başlayanlar için oryantasyon eğitimi planlanmasını istiyorum.,İnsan Kaynakları,Eğitim,Eğitim Kaydı Talebi,Düşük
+979,Emre Bey servis güzergahının değiştirilmesini talep ediyor.,İdari İşler,Ulaşım/Araç,Servis Güzergah Talebi,Düşük
+980,Geçmiş aylara ait bordro dökümü talep ediyorum.,İnsan Kaynakları,Bordro/Özlük,Bordro/Maaş Bilgisi Talebi,Orta
+981,Fatma Hanım olarak muhasebe programı kullanırken hata kodu alıyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Yüksek
+982,"Sağlık raporum var, sisteme işlenmesini rica ediyorum.",İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Orta
+983,"Sunucu çok yavaş çalışıyor, tüm ekip etkilendi.",Bilgi Teknolojileri,Sunucu/Sistem,Sunucu Arıza Bildirimi,Yüksek
+984,Ekibimiz için yeni bir pozisyon açılmasını talep ediyorum.,İnsan Kaynakları,İşe Alım,Pozisyon Açma Talebi,Orta
+985,Uzaktan çalışırken VPN sürekli kopuyor.,Bilgi Teknolojileri,Ağ/Network,VPN Erişim Sorunu,Orta
+986,"Klimadan su damlıyor, acil kontrol rica ederim.",İdari İşler,Bina/Tesis Bakım,Klima Arıza Bildirimi,Orta
+987,Glutensiz menü talebinde bulunmak istiyorum.,İdari İşler,Catering/Yemekhane,Diyet/Özel Menü Talebi,Düşük
+988,"Yeni bir ERP sistemi lisansına ihtiyacım var, talep açabilir misiniz?",Bilgi Teknolojileri,Yazılım,Yazılım Kurulum/Lisans Talebi,Düşük
+989,CRM uygulaması için güncelleme talebinde bulunuyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Düşük
+990,"ITSM portalı dosyalarımı kaydetmiyor, acil bakılabilir mi?",Bilgi Teknolojileri,Yazılım,Yazılım Hata/Arıza Bildirimi,Kritik
+991,Emre Bey olarak 10 gün izin kullanmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Orta
+992,"Yazıcı kağıdı ve kalem stoku bitti, tedarik rica ederim.",İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük
+993,15 günlük yıllık izin talebinde bulunmak istiyorum.,İnsan Kaynakları,İzin Yönetimi,Yıllık İzin Talebi,Düşük
+994,"Araç periyodik bakım zamanı geldi, randevu talep ediyorum.",İdari İşler,Ulaşım/Araç,Araç Arıza/Bakım Bildirimi,Yüksek
+995,"Ankara ofisi'da Wi-Fi sinyali çok zayıf, kontrol edilebilir mi?",Bilgi Teknolojileri,Ağ/Network,Wi-Fi Bağlantı Talebi,Orta
+996,CRM uygulaması güncel sürümüne geçmek istiyorum.,Bilgi Teknolojileri,Yazılım,Yazılım Güncelleme Talebi,Düşük
+997,Ahmet Bey rahatsızlandığı için bugün rapor kullanacak.,İnsan Kaynakları,İzin Yönetimi,Rapor/Sağlık İzni Bildirimi,Yüksek
+998,Ali Bey için şirket telefonu talep ediyorum.,Bilgi Teknolojileri,Telefon/İletişim,Mobil Cihaz Talebi,Düşük
+999,Yeni personel için erişim kartı çıkarılması gerekiyor.,İdari İşler,Güvenlik,Kart/Giriş Yetkisi Talebi,Düşük
+1000,Depo için kırtasiye malzemesi talep ediyorum.,İdari İşler,Ofis Malzemesi/Satınalma,Kırtasiye Malzeme Talebi,Düşük

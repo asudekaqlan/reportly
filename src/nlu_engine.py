@@ -5,6 +5,8 @@ from pathlib import Path
 
 import joblib
 
+from text_norm import fold_tr
+
 ROOT = Path(__file__).resolve().parent.parent
 MODELS_DIR = ROOT / "models"
 
@@ -26,7 +28,7 @@ def model_available() -> bool:
 def predict_category(text: str, top_k: int = 3) -> dict:
     """Return category, confidence, and top-k alternatives."""
     vectorizer, model = _artifacts()
-    cleaned = (text or "").strip()
+    cleaned = " ".join(fold_tr(text or "").split())
     if not cleaned or vectorizer is None or model is None:
         return {
             "category": "Unknown",

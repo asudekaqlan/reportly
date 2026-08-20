@@ -2,54 +2,68 @@
 
 import re
 
+from text_norm import fold_tr
+
 ANGRY_PHRASES = (
-    "furious",
-    "lawsuit",
-    "attorney",
-    "lawyer",
-    "stolen",
-    "identity theft",
-    "harassing",
-    "harassment",
-    "fed up",
-    "ridiculous",
-    "worst company",
-    "worst experience",
-    "disgusting",
-    "never again",
-    "scam",
-    "criminal",
-    "sue you",
-    "going to sue",
+    "bıktım",
+    "biktım",
+    "bıktim",
+    "rezalet",
+    "yazıklar olsun",
+    "yaziklar olsun",
+    "dava açacağım",
+    "dava acacagim",
+    "avukat",
+    "dolandırıcılık",
+    "dolandiricilik",
+    "sahtekâr",
+    "sahtekar",
+    "tehdit",
+    "asla bir daha",
+    "en kötü",
+    "en kotu",
+    "skandal",
+    "i̇ğrenç",
+    "iğrenç",
+    "igrenc",
+    "suç",
+    "suc",
 )
 
 CALM_PHRASES = (
-    "thank you",
-    "thanks",
-    "that helps",
-    "that helped",
-    "appreciate it",
-    "understood",
-    "sounds good",
-    "it's fixed",
-    "its fixed",
-    "resolved",
-    "problem solved",
+    "teşekkür",
+    "tesekkur",
+    "sağ ol",
+    "sag ol",
+    "işe yaradı",
+    "ise yaradi",
+    "düzeldi",
+    "duzeldi",
+    "çözüldü",
+    "cozuldu",
+    "anladım",
+    "anladim",
+    "tamamdır",
 )
 
 HIGH_RISK_PHRASES = (
-    "fraud",
-    "identity theft",
-    "stolen",
-    "lawsuit",
-    "attorney",
-    "foreclosure",
-    "unauthorized",
+    "dolandırıcılık",
+    "dolandiricilik",
+    "sahtekarlık",
+    "sahtekarlik",
+    "izinsiz çekim",
+    "izinsiz cekim",
+    "dava",
+    "avukat",
+    "icra",
+    "tehdit",
+    "kimlik hırsız",
+    "kimlik hirsiz",
 )
 
 
 def _contains_phrase(text: str, phrases: tuple[str, ...]) -> list[str]:
-    lowered = f" {text.lower()} "
+    lowered = f" {fold_tr(text)} "
     hits = []
     for phrase in phrases:
         if phrase in lowered:
@@ -81,5 +95,5 @@ def analyze_sentiment(text: str) -> dict:
 
 def looks_positive_resolution(text: str) -> bool:
     return bool(_contains_phrase(text or "", CALM_PHRASES)) or bool(
-        re.search(r"\b(ok|okay|got it|all good)\b", (text or "").lower())
+        re.search(r"\b(ok|okay|tamam)\b", fold_tr(text or ""))
     )

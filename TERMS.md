@@ -1,4 +1,4 @@
-# Reportly — terms you need
+# ITSM Asistanı — terms you need
 
 If you are starting from zero, this file is enough. Each item: **what it is**, **what it does here**, **how deep you need to go**.
 
@@ -6,14 +6,23 @@ If you are starting from zero, this file is enough. Each item: **what it is**, *
 
 ## A. Product and demo
 
-### Reportly
-The complaint assistant. It tries a rule first; if that is not enough it opens a record with a manager brief.
+### ITSM Asistanı
+The ITSM chatbot shell. First-line assistant for tickets: classify, suggest a past solution, complete fields, open a record, queue reports.
 
-### CFPB
-US consumer finance complaints (public data). The `complaints.csv` you download from Kaggle. Texts and labels are English product names such as `Student loan` and `Mortgage`.
+### Taxonomy
+Four-level routing: **Talep → Birim → Modül → Süreç/Talep tipi**. Example: Arıza → IT Destek → Uç birim → Donanım arızası.
+
+### Solution record
+A past ITSM knowledge item in `data/solutions.jsonl`. The bot retrieves by keyword overlap; it does not call a live CMDB.
+
+### Ticket
+A JSONL ITSM record (`data/tickets.jsonl`) after required fields (varlık, konum, etki) are filled. Not ServiceNow.
+
+### Report JOB
+A stored chatbot command (“açık talepler raporu”). `python src/daily_jobs.py` writes a unit summary. No real mail gateway.
 
 ### Demo
-A **fixed scenario** you play in an interview or for yourself. Not random typing. Lines: Demo sentences in `README.md`. Goal: show three doors in two minutes — rule → ticket → extra detail on the same record.
+A **fixed scenario**. Lines in `README.md`. Goal: show classify → solution → fields → ticket, plus a report command.
 
 ### Memorizing the demo
 Not the model math. Rehearse **what you will say** and **which sentence you paste** into the box.
@@ -23,10 +32,10 @@ Not the model math. Rehearse **what you will say** and **which sentence you past
 ## B. Text → numbers → category (NLU engine)
 
 ### NLU (Natural Language Understanding)
-The computer extracting “what is this about / what do they want?” from text. Here, the narrow form: **product category** prediction.
+The computer extracting “what is this about / what do they want?” from text. Here, the narrow form: **issue-type category** prediction.
 
 ### Category
-The product of the complaint: student loan, mortgage, collections… The model’s output. Not the assistant reply; a **routing signal**. Under the box: `topic: Student loan (72%)`.
+The issue type of the complaint: cargo delay, refund, billing… The model’s output. Not the assistant reply; a **routing signal**. Under the box: `konu: kargo_teslimat (72%)`.
 
 ### Bag of words
 Treat the sentence as a bag of words; order is forgotten. The crude ancestor of TF-IDF.
@@ -35,13 +44,13 @@ Treat the sentence as a bag of words; order is forgotten. The crude ancestor of 
 How often a word appears **in this complaint**. Usually a ratio so long text does not dominate.
 
 ### IDF (Inverse Document Frequency)
-How rare a word is **across the dataset**. Words everywhere (`the`, `account`) fade; words in few documents (`foreclosure`) stand out.
+How rare a word is **across the dataset**. Words everywhere (`bir`, `ürün`) fade; words in few documents (`icra`) stand out.
 
 ### TF-IDF
-TF × IDF. Turns text into a list of numbers: “frequent here + rare in the collection = important.” Reportly uses `TfidfVectorizer`, at most 5000 features, 1–2 word patterns (ngrams). It does **not** understand meaning; it looks at word overlap.
+TF × IDF. Turns text into a list of numbers: “frequent here + rare in the collection = important.” The classifier uses `TfidfVectorizer`, at most 5000 features, 1–2 word patterns (ngrams). It does **not** understand meaning; it looks at word overlap.
 
 ### n-gram
-1-gram: one word (`loan`). 2-gram: two words (`student loan`). In code: `ngram_range=(1, 2)`.
+1-gram: one word (`kargo`). 2-gram: two words (`teslim edilmedi`). In code: `ngram_range=(1, 2)`.
 
 ### Vector / feature
 Each complaint’s TF-IDF number list. The model can only work with this.
@@ -53,10 +62,10 @@ Gives those numbers **weights** and produces a 0–1 **probability**; picks the 
 Input → one of a finite set of labels. Not price prediction (regression).
 
 ### Probability / confidence
-The `predict_proba` value of the winning class. Do not confuse with ~64% accuracy: confidence is “how sure **for this message**?”
+The `predict_proba` value of the winning class. Do not confuse with test accuracy: confidence is “how sure **for this message**?”
 
-### Accuracy (~64%)
-How many of 100 test complaints got the right category. **That is not assistant success.** Assistant success: did the right rule or ticket happen?
+### Accuracy
+How many of 100 test complaints got the right (weak) category. **That is not assistant success.** Assistant success: did the right rule or ticket happen?
 
 ### Train / test split
 Learn on part of the data (`fit`), test on the unseen part. To catch memorization. Here roughly 80% / 20%, `stratify` = keep category ratios.
@@ -65,7 +74,7 @@ Learn on part of the data (`fit`), test on the unseen part. To catch memorizatio
 Memorizing the training set and failing on new text. The test set exists for this.
 
 ### Label
-The correct category a human (CFPB) assigned. The model tries to copy that.
+The category assigned for training. Here it is a **weak label** from keywords, not an official human `Product` field. The model tries to copy that.
 
 ---
 
@@ -75,19 +84,19 @@ The correct category a human (CFPB) assigned. The model tries to copy that.
 `orchestrator.py`. The code that decides **which door?** on each message. Not an LLM; sequential `if`. The brain lives here.
 
 ### Rule
-“These words + this category → this canned text.” There are 8. It does not fix the account; it speaks a **procedure** (reference number, 3–5 days…). `rules.py`.
+“These words + this category → this policy.” High-severity skip-KB vs self-serve. `rules.py`.
 
 ### Procedure
 The step list printed when a rule matches. “Try this before opening a ticket.”
 
 ### Intent
-Not category: what does the customer **want**? File a complaint, still broken, thanks. `intents.py`, phrases such as `file a complaint`, `did not help`.
+Not category: what does the customer **want**? File a complaint, still broken, thanks. `intents.py`, phrases such as `şikayet aç`, `işe yaramadı`.
 
 ### Sentiment
 Lexicon: `angry` / `negative` / `calm`. Complaints are already negative; the real split is **about to explode?** Anger alone does not silently open a ticket; it offers one. `sentiment.py`.
 
 ### High-risk
-Fraud, identity theft, lawsuit, foreclosure, unauthorized. A rule is not enough → **ticket immediately**.
+Fraud, unauthorized charge, lawsuit, enforcement (`icra`). A rule is not enough → **ticket immediately**.
 
 ### Ticket
 Specialist / manager record. `T-YYYYMMDD-0001`. Fields: urgency, category, summary bullets, why it did not finish, record notes. `data/tickets.jsonl`.
@@ -137,14 +146,14 @@ Run a local model on the machine. Not required.
 ## E. Short chain (the one schema to remember)
 
 ```text
-complaint
-  → TF-IDF (numbers)
-  → logistic regression (category + %)
-  → sentiment + intent
-  → does a rule match?
-       yes and calm           → procedure
-       no / unresolved / risk → ticket
-       extra detail on open   → same ticket (followup)
+şikayet
+  → TF-IDF (sayılar)
+  → lojistik regresyon (kategori + %)
+  → üslup + niyet
+  → kural eşleşti mi?
+       evet ve sakin           → prosedür
+       hayır / çözülmedi / risk → kayıt
+       açık kayda ek ayrıntı   → aynı ticket (followup)
 ```
 
 Deeper math is not needed; this schema plus `README.md` Demo sentences is enough for an interview.

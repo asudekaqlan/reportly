@@ -1,47 +1,85 @@
-"""Keyword intents on top of category: file a complaint, still broken."""
+"""Chat intents: open ticket, solution failed, confirm, reporting."""
 
-FILE_COMPLAINT_PHRASES = (
-    "file a complaint",
-    "open a complaint",
-    "create a complaint",
-    "open a ticket",
-    "create a ticket",
-    "i want to complain",
-    "file a formal",
-    "speak to a manager",
-    "talk to a manager",
+from text_norm import fold_tr
+
+OPEN_TICKET_PHRASES = (
+    "ticket aç",
+    "talep aç",
+    "kayıt aç",
+    "kayit ac",
+    "iş kaydı",
+    "is kaydi",
+    "şikayet aç",
+    "sikayet ac",
+    "oluştur",
+    "olustur",
 )
 
 STILL_UNRESOLVED_PHRASES = (
-    "didn't work",
-    "did not work",
-    "didn't help",
-    "did not help",
-    "still the same",
-    "not resolved",
-    "that didn't",
-    "no luck",
-    "nothing changed",
-    "still broken",
-    "still wrong",
-    "that didn't fix",
-    "still happening",
+    "işe yaramadı",
+    "ise yaramadi",
+    "yaramadı",
+    "çözülmedi",
+    "cozulmedi",
+    "düzelmedi",
+    "hala aynı",
+    "hala ayni",
+    "yine olmadı",
+    "yine olmadi",
+)
+
+CONFIRM_PHRASES = (
+    "evet",
+    "isterim",
+    "istiyorum",
+    "olur",
+    "tamam",
+    "lütfen",
+    "lutfen",
+    "yapalım",
+    "yapalim",
+    "ok",
+    "okay",
+)
+
+DECLINE_PHRASES = (
+    "hayır",
+    "hayir",
+    "istemiyorum",
+    "gerek yok",
+    "lazım değil",
+    "lazim degil",
+    "vazgeç",
+    "vazgec",
 )
 
 
 def _hits(text: str, phrases: tuple[str, ...]) -> list[str]:
-    lowered = (text or "").lower()
+    lowered = fold_tr(text)
     return [p for p in phrases if p in lowered]
 
 
+def looks_confirm(text: str) -> bool:
+    return bool(_hits(text, CONFIRM_PHRASES))
+
+
+def looks_decline(text: str) -> bool:
+    lowered = fold_tr(text)
+    if any(p in lowered for p in DECLINE_PHRASES):
+        if "evet" in lowered or "istiyorum" in lowered:
+            return False
+        return True
+    return False
+
+
 def detect_intents(text: str) -> dict:
-    file_complaint = _hits(text, FILE_COMPLAINT_PHRASES)
+    open_ticket = _hits(text, OPEN_TICKET_PHRASES)
     still_unresolved = _hits(text, STILL_UNRESOLVED_PHRASES)
     return {
-        "file_complaint": bool(file_complaint),
+        "open_ticket": bool(open_ticket),
         "still_unresolved": bool(still_unresolved),
         "hits": {
-            "file_complaint": file_complaint,
+            "open_ticket": open_ticket,
             "still_unresolved": still_unresolved,
         },
     }

@@ -1,47 +1,26 @@
-# Product Requirements — Reportly
+# Product Requirements — ITSM Asistanı
 
-Repo: `reportly`. Product: **Reportly**. This PRD describes **what exists now** and **what to build next**. It is not a separate HearBack/e-commerce product.
+Repo: `nlu-insight-lab`. Product: **ITSM Asistanı**, an AI-supported first-line chatbot on a demo ITSM/ticket process.
 
 ## 1. Overview
-A first-line complaint assistant. It tries a defined procedure, then opens a specialist record with a structured manager brief if that fails or the customer asks. An angry customer can request a formal complaint.
+The user describes a request in natural language. The bot classifies it as **Talep → Birim → Modül → Süreç/Talep tipi**, offers matching past **solution records**, collects missing ticket fields, then opens a structured ticket. Reporting commands are queued for a daily JOB.
 
-Training data is CFPB-style consumer complaints. The Streamlit UI is English.
+There is **no** live ServiceNow/Jira. Tickets are JSONL. Solutions are a seeded knowledge file.
 
 ## 2. Personas
-- **Customer:** Describes a complaint in chat; wants a procedure or a complaint record. May register a local account.
-- **Admin / supervisor:** Logs in separately, reads the queue: urgency, category, bullets, why unresolved, record notes. Does not yet get clustering or CRM.
+- **Employee / requester:** Opens incidents and service requests in chat.
+- **ITSM admin:** Reads the classified queue and report JOB output.
 
-## 3. Current MVP (shipped)
+## 3. Current prototype
 
-### A. Chat + rule-first resolution
-- Natural-language complaint on the customer home.
-- Category from the saved TF-IDF + logistic regression model (`models/`).
-- Eight self-serve rules (payment not posted, credit report error, debt not mine, harassing calls, unauthorized charge, overdraft/fee, transfer delay, vehicle dealer vs lender).
-- If a rule matches and is expected to help: procedure reply, then ask if it is resolved.
+1. **Talebi anlama** — keyword taxonomy first; if unclear, a small TF-IDF + logistic regression classifier; clarify when still unsure.
+2. **Çözüm önerme** — retrieve from `data/solutions.jsonl` (past ITSM solution records).
+3. **Veri tamamlama** — required fields: varlık, konum, etki.
+4. **Sınıflandırma** — 4-level path, shown in the bubble meta and on the ticket.
+5. **Raporlama** — “rapor / günlük özet / açık talepler” queues a job; `python src/daily_jobs.py` writes the unit summary.
 
-### B. Sentiment and intents
-- Lexicon sentiment: `angry` / `negative` / `calm`, plus `high_risk` phrases.
-- Intents: file a complaint, still unresolved, thanks/resolved.
-- Angry + matching rule → offer to file a complaint; do **not** auto-ticket on anger alone.
-- High-risk (fraud, identity theft, lawsuit, foreclosure, unauthorized) → ticket immediately, with the procedure text if a rule also matched.
+## 4. Out of scope
+Live CMDB, real mail gateways, ServiceNow APIs, marketplace returns.
 
-### C. Tickets
-- Ticket when: no rule, forced (high-risk / hard rule), customer files a complaint, or self-serve did not work.
-- Record fields: id, urgency, category, confidence, sentiment, customer ask, rules tried, why unresolved, summary bullets, next step, record notes (`handoff_notes` in JSON), status (`open` | `in_progress` | `resolved`).
-- Stored in `data/tickets.jsonl`.
-- Extra detail after a ticket is open stays on the same record (`ticket_followup` writes `followups` + notes); live agent handoff is out of scope.
-
-### D. UI
-- Customer home: chat panel. The side menu lists conversations.
-- Login / register (local JSONL in `data/users.jsonl`).
-- Admin login opens the complaint queue (ticket inspector + status actions).
-- Debug line under assistant replies: topic, sentiment, rule, action.
-
-## 4. Out of scope for now
-Semantic clustering, UUID CRM, TypeScript/API backend, RFM, forecasting. Do not implement these unless this PRD’s “later” section is explicitly chosen.
-
-## 5. Later (when the MVP is stable)
-Similar-ticket grouping for the admin view.
-
-## 6. Success
-Category accuracy (~0.64 on the sample) is the NLU engine, not the product. Assistant success: the right **rule or ticket** on the demo scenarios, and a manager who can read a ticket in about ten seconds.
+## 5. Success
+Demo sentences: laptop arızası → çözüm; “talep aç” → alanlar → ticket; belirsiz metin → netleştirme; rapor komutu → kuyruk.

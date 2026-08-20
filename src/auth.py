@@ -41,11 +41,11 @@ def password_checks(password: str) -> dict[str, bool]:
 def password_issues(password: str) -> list[str]:
     checks = password_checks(password)
     labels = {
-        "length": "Must be at least 12 characters.",
-        "upper": "Must include at least one uppercase letter.",
-        "lower": "Must include at least one lowercase letter.",
-        "digit": "Must include at least one number.",
-        "special": "Must include at least one special character.",
+        "length": "En az 12 karakter olmalı.",
+        "upper": "En az bir büyük harf olmalı.",
+        "lower": "En az bir küçük harf olmalı.",
+        "digit": "En az bir rakam olmalı.",
+        "special": "En az bir özel karakter olmalı.",
     }
     return [labels[key] for key, ok in checks.items() if not ok]
 
@@ -131,7 +131,7 @@ def register_user(
 ) -> dict:
     email_norm = email.strip().lower()
     if find_user(email_norm):
-        raise ValueError("An account with this email already exists.")
+        raise ValueError("Bu e-posta ile kayıtlı bir hesap zaten var.")
     salt, password_hash = _hash_password(password)
     user = {
         "email": email_norm,
@@ -155,7 +155,7 @@ def ensure_default_admin() -> None:
     salt, password_hash = _hash_password(DEFAULT_ADMIN_PASSWORD)
     admin = {
         "email": DEFAULT_ADMIN_EMAIL,
-        "first_name": "Reportly",
+        "first_name": "ITSM",
         "last_name": "Admin",
         "salt": salt,
         "password_hash": password_hash,
