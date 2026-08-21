@@ -483,6 +483,16 @@ a[href*="#itsm-asistani"] {
 }
 
 /* Kayıt Kartları ve Listesi */
+.record-empty {
+  padding: 0.85rem 1.1rem 1rem !important;
+  margin: 0 !important;
+  color: var(--paper);
+  opacity: 0.88;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  text-align: left !important;
+}
+
 .st-key-tickets_pane .ticket-card {
   margin: 0.55rem 0.9rem 0;
   padding: 0.85rem 0.95rem;
@@ -1336,7 +1346,7 @@ def _render_tickets_pane() -> None:
         )
         if not email and not records:
             st.markdown(
-                '<p class="record-empty">Giriş yapınca kayıtların burada durur. '
+                '<p class="record-empty">Giriş yapınca kayıtların burada durur.<br>'
                 "Sohbette ticket açınca da bu listeye düşer.</p>",
                 unsafe_allow_html=True,
             )
